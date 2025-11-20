@@ -20,7 +20,10 @@
     "title": "Full-stack Developer",
     "subtitle": "完璧なパフォーマンスでプレミアムなデジタル体験を創造",
     "viewProjects": "プロジェクトを見る",
-    "getInTouch": "お問い合わせ"
+    "getInTouch": "お問い合わせ",
+    "terminalPrompt": "$",
+    "terminalCommand": "cat portfolio.txt",
+    "terminalCursor": "|"
   },
   "stack": {
     "categoryCore": "Core",
@@ -44,7 +47,11 @@
     "error": "エラー 404:",
     "message": "ページが見つかりません",
     "description": "要求されたリソースが見つかりませんでした。",
-    "returnHome": "ホームに戻る"
+    "returnHome": "ホームに戻る",
+    "terminalCommand": "ls -la /",
+    "terminalOutput1": "drwxr-xr-x home",
+    "terminalOutput2": "drwxr-xr-x projects",
+    "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
     "backgroundLabel": "Background:",
@@ -86,5 +93,26 @@
     "title": "Thought Log",
     "subtitle": "思考のアーカイブ。マニフェストエントリ。ランダムな暴言。",
     "backToHome": "← ホームに戻る"
+  },
+  "language": {
+    "changeLanguage": "Change language",
+    "selectRegion": "SELECT REGION",
+    "amer": "AMER",
+    "emea": "EMEA",
+    "apac": "APAC",
+    "mena": "MENA",
+    "pressHint": "Press",
+    "or": "or",
+    "toClose": "to close"
+  },
+  "easterEgg": {
+    "doNotPress": "Do not press",
+    "messages": {
+      "systemOverload": "System Overload. Too much style.",
+      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
+      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
+      "vibecodingProgress": "Critical: Vibecoding in progress...",
+      "codeQualityHigh": "Alert: Code quality too high."
+    }
   }
 }

@@ -2,19 +2,22 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const easterEggMessages = [
-  'System Overload. Too much style.',
-  'Error: Aesthetic levels exceeded.',
-  'Warning: Excessive perfectionism detected.',
-  'Critical: Vibecoding in progress...',
-  'Alert: Code quality too high.',
-]
+import { useTranslations } from 'next-intl'
 
 export function EasterEgg() {
+  const t = useTranslations('easterEgg.messages')
+  const tButton = useTranslations('easterEgg')
   const [isTriggered, setIsTriggered] = useState(false)
   const [message, setMessage] = useState('')
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const easterEggMessages = [
+    t('systemOverload'),
+    t('aestheticExceeded'),
+    t('perfectionismDetected'),
+    t('vibecodingProgress'),
+    t('codeQualityHigh'),
+  ]
 
   useEffect(() => {
     return () => {
@@ -50,9 +53,9 @@ export function EasterEgg() {
       <button
         onClick={handleTrigger}
         className="fixed bottom-4 left-4 z-50 rounded-md border border-accent/30 bg-accent/20 px-3 py-1.5 font-mono text-xs text-foreground/30 transition-all hover:border-accent/50 hover:text-foreground/50"
-        aria-label="Do not press"
+        aria-label={tButton('doNotPress')}
       >
-        Do not press
+        {tButton('doNotPress')}
       </button>
 
       {/* Overlay effect */}

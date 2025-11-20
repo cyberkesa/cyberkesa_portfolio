@@ -20,7 +20,10 @@
     "title": "Full-stack Developer",
     "subtitle": "완벽한 성능으로 프리미엄 디지털 경험 창조",
     "viewProjects": "프로젝트 보기",
-    "getInTouch": "연락하기"
+    "getInTouch": "연락하기",
+    "terminalPrompt": "$",
+    "terminalCommand": "cat portfolio.txt",
+    "terminalCursor": "|"
   },
   "stack": {
     "categoryCore": "Core",
@@ -44,7 +47,11 @@
     "error": "오류 404:",
     "message": "페이지를 찾을 수 없습니다",
     "description": "요청한 리소스를 찾을 수 없습니다.",
-    "returnHome": "홈으로 돌아가기"
+    "returnHome": "홈으로 돌아가기",
+    "terminalCommand": "ls -la /",
+    "terminalOutput1": "drwxr-xr-x home",
+    "terminalOutput2": "drwxr-xr-x projects",
+    "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
     "backgroundLabel": "Background:",
@@ -86,5 +93,26 @@
     "title": "Thought Log",
     "subtitle": "생각의 아카이브. 선언 항목. 무작위 불평.",
     "backToHome": "← 홈으로 돌아가기"
+  },
+  "language": {
+    "changeLanguage": "Change language",
+    "selectRegion": "SELECT REGION",
+    "amer": "AMER",
+    "emea": "EMEA",
+    "apac": "APAC",
+    "mena": "MENA",
+    "pressHint": "Press",
+    "or": "or",
+    "toClose": "to close"
+  },
+  "easterEgg": {
+    "doNotPress": "Do not press",
+    "messages": {
+      "systemOverload": "System Overload. Too much style.",
+      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
+      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
+      "vibecodingProgress": "Critical: Vibecoding in progress...",
+      "codeQualityHigh": "Alert: Code quality too high."
+    }
   }
 }

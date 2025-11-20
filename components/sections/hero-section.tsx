@@ -69,8 +69,8 @@ export function HeroSection() {
           <Terminal>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="text-glow">$</span>
-                <span className="text-foreground/70">cat portfolio.txt</span>
+                <span className="text-glow">{t('terminalPrompt')}</span>
+                <span className="text-foreground/70">{t('terminalCommand')}</span>
               </div>
               <div className="mt-4">
                 <span className="text-foreground">{displayText}</span>
@@ -79,7 +79,7 @@ export function HeroSection() {
                   transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
                   className="ml-1 text-glow"
                 >
-                  |
+                  {t('terminalCursor')}
                 </motion.span>
               </div>
             </div>

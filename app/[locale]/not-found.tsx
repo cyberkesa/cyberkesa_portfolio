@@ -22,12 +22,12 @@ export default function NotFound() {
             </div>
             <div className="mt-8">
               <div className="mb-2 text-foreground/50">
-                $ <span className="text-foreground">ls -la /</span>
+                $ <span className="text-foreground">{t('terminalCommand')}</span>
               </div>
               <div className="ml-4 space-y-1 font-mono text-sm text-foreground/60">
-                <div>drwxr-xr-x home</div>
-                <div>drwxr-xr-x projects</div>
-                <div>drwxr-xr-x contact</div>
+                <div>{t('terminalOutput1')}</div>
+                <div>{t('terminalOutput2')}</div>
+                <div>{t('terminalOutput3')}</div>
               </div>
             </div>
             <div className="mt-8">

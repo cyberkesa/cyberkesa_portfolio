@@ -20,7 +20,10 @@
     "title": "Full-stack Developer",
     "subtitle": "Création d'expériences numériques premium avec une performance parfaite",
     "viewProjects": "Voir les projets",
-    "getInTouch": "Prendre contact"
+    "getInTouch": "Prendre contact",
+    "terminalPrompt": "$",
+    "terminalCommand": "cat portfolio.txt",
+    "terminalCursor": "|"
   },
   "stack": {
     "categoryCore": "Core",
@@ -44,7 +47,11 @@
     "error": "ERREUR 404:",
     "message": "Page non trouvée",
     "description": "La ressource demandée n'a pas pu être localisée.",
-    "returnHome": "Retour à l'accueil"
+    "returnHome": "Retour à l'accueil",
+    "terminalCommand": "ls -la /",
+    "terminalOutput1": "drwxr-xr-x home",
+    "terminalOutput2": "drwxr-xr-x projects",
+    "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
     "backgroundLabel": "Background:",
@@ -86,5 +93,26 @@
     "title": "Thought Log",
     "subtitle": "Archives de pensées. Entrées du manifeste. Tirades aléatoires.",
     "backToHome": "← Retour à l'accueil"
+  },
+  "language": {
+    "changeLanguage": "Change language",
+    "selectRegion": "SELECT REGION",
+    "amer": "AMER",
+    "emea": "EMEA",
+    "apac": "APAC",
+    "mena": "MENA",
+    "pressHint": "Press",
+    "or": "or",
+    "toClose": "to close"
+  },
+  "easterEgg": {
+    "doNotPress": "Do not press",
+    "messages": {
+      "systemOverload": "System Overload. Too much style.",
+      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
+      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
+      "vibecodingProgress": "Critical: Vibecoding in progress...",
+      "codeQualityHigh": "Alert: Code quality too high."
+    }
   }
 }

@@ -20,7 +20,10 @@
     "title": "Full-stack Developer",
     "subtitle": "יוצר חוויות דיגיטליות יוקרתיות עם ביצועים מושלמים",
     "viewProjects": "צפה בפרויקטים",
-    "getInTouch": "יצירת קשר"
+    "getInTouch": "יצירת קשר",
+    "terminalPrompt": "$",
+    "terminalCommand": "cat portfolio.txt",
+    "terminalCursor": "|"
   },
   "stack": {
     "categoryCore": "Core",
@@ -44,7 +47,11 @@
     "error": "שגיאה 404:",
     "message": "הדף לא נמצא",
     "description": "המשאב המבוקש לא נמצא.",
-    "returnHome": "חזור לדף הבית"
+    "returnHome": "חזור לדף הבית",
+    "terminalCommand": "ls -la /",
+    "terminalOutput1": "drwxr-xr-x home",
+    "terminalOutput2": "drwxr-xr-x projects",
+    "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
     "backgroundLabel": "Background:",
@@ -86,5 +93,26 @@
     "title": "Thought Log",
     "subtitle": "ארכיון מחשבות. רשומות מניפסט. טיראדות אקראיות.",
     "backToHome": "← חזור לדף הבית"
+  },
+  "language": {
+    "changeLanguage": "Change language",
+    "selectRegion": "SELECT REGION",
+    "amer": "AMER",
+    "emea": "EMEA",
+    "apac": "APAC",
+    "mena": "MENA",
+    "pressHint": "Press",
+    "or": "or",
+    "toClose": "to close"
+  },
+  "easterEgg": {
+    "doNotPress": "Do not press",
+    "messages": {
+      "systemOverload": "System Overload. Too much style.",
+      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
+      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
+      "vibecodingProgress": "Critical: Vibecoding in progress...",
+      "codeQualityHigh": "Alert: Code quality too high."
+    }
   }
 }

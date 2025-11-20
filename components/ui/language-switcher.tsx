@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Globe, X } from 'lucide-react'
@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 import { fadeIn } from '@/lib/animations'
 
 export function LanguageSwitcher() {
+  const t = useTranslations('language')
   const [isOpen, setIsOpen] = useState(false)
   const [hoveredLocale, setHoveredLocale] = useState<Locale | null>(null)
   const router = useRouter()
@@ -64,7 +65,7 @@ export function LanguageSwitcher() {
         className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent/80 backdrop-blur-sm transition-all hover:border-glow-soft hover:bg-accent"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        aria-label="Change language"
+        aria-label={t('changeLanguage')}
       >
         <Globe className="h-5 w-5" />
       </motion.button>
@@ -93,7 +94,7 @@ export function LanguageSwitcher() {
             >
               {/* Header */}
               <div className="mb-6 flex items-center justify-between">
-                <h2 className="font-mono text-xl font-bold">SELECT REGION</h2>
+                <h2 className="font-mono text-xl font-bold">{t('selectRegion')}</h2>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="rounded-md p-1 transition-colors hover:bg-accent-hover"
@@ -107,7 +108,7 @@ export function LanguageSwitcher() {
                 {/* AMER */}
                 <div>
                   <div className="mb-3 font-mono text-sm text-foreground/60">
-                    &gt; AMER:
+                    &gt; {t('amer')}:
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {localeGroups.amer.map((locale) => (
@@ -126,7 +127,7 @@ export function LanguageSwitcher() {
                 {/* EMEA */}
                 <div>
                   <div className="mb-3 font-mono text-sm text-foreground/60">
-                    &gt; EMEA:
+                    &gt; {t('emea')}:
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {localeGroups.emea.map((locale) => (
@@ -145,7 +146,7 @@ export function LanguageSwitcher() {
                 {/* APAC */}
                 <div>
                   <div className="mb-3 font-mono text-sm text-foreground/60">
-                    &gt; APAC:
+                    &gt; {t('apac')}:
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {localeGroups.apac.map((locale) => (
@@ -164,7 +165,7 @@ export function LanguageSwitcher() {
                 {/* MENA */}
                 <div>
                   <div className="mb-3 font-mono text-sm text-foreground/60">
-                    &gt; MENA:
+                    &gt; {t('mena')}:
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {localeGroups.mena.map((locale) => (
@@ -183,8 +184,8 @@ export function LanguageSwitcher() {
 
               {/* Footer hint */}
               <div className="mt-6 border-t border-accent pt-4 text-center font-mono text-xs text-foreground/50">
-                Press <kbd className="rounded bg-accent px-1.5 py-0.5">Ctrl+K</kbd> or{' '}
-                <kbd className="rounded bg-accent px-1.5 py-0.5">Esc</kbd> to close
+                {t('pressHint')} <kbd className="rounded bg-accent px-1.5 py-0.5">Ctrl+K</kbd> {t('or')}{' '}
+                <kbd className="rounded bg-accent px-1.5 py-0.5">Esc</kbd> {t('toClose')}
               </div>
             </motion.div>
           </>
