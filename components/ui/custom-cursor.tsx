@@ -54,22 +54,24 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Custom cursor dot */}
+      {/* Custom cursor dot - highest z-index to be always visible */}
       <div
-        className="pointer-events-none fixed z-[9999] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-foreground mix-blend-difference transition-transform duration-150 ease-out"
+        className="pointer-events-none fixed z-[99999] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-foreground mix-blend-difference transition-transform duration-150 ease-out"
         style={{
           left: `${x}px`,
           top: `${y}px`,
           transform: isHovering
             ? 'translate(-50%, -50%) scale(2)'
             : 'translate(-50%, -50%) scale(1)',
+          // Fallback: ensure visibility even if mix-blend-mode doesn't work
+          willChange: 'transform',
         }}
       />
 
       {/* Spotlight effect on text */}
       {isHovering && (
         <div
-          className="pointer-events-none fixed z-[9998] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow/20 blur-2xl transition-opacity duration-300"
+          className="pointer-events-none fixed z-[99998] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow/20 blur-2xl transition-opacity duration-300"
           style={{
             left: `${x}px`,
             top: `${y}px`,

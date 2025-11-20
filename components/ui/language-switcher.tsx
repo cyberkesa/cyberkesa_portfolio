@@ -75,7 +75,7 @@ export function LanguageSwitcher() {
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+              className="fixed inset-0 z-[99980] bg-background/80 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ export function LanguageSwitcher() {
             {/* Palette */}
             <motion.div
               ref={containerRef}
-              className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-lg border border-accent bg-accent/90 p-6 backdrop-blur-md"
+              className="fixed left-1/2 top-1/2 z-[99981] w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-lg border border-accent bg-accent/90 p-6 backdrop-blur-md"
               variants={fadeIn}
               initial="hidden"
               animate="visible"

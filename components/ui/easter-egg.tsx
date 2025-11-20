@@ -45,14 +45,14 @@ export function EasterEgg() {
         {isTriggered && (
           <>
             <motion.div
-              className="fixed inset-0 z-[10000] bg-background"
+              className="fixed inset-0 z-[99990] bg-background"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             />
             <motion.div
-              className="fixed inset-0 z-[10001] flex items-center justify-center"
+              className="fixed inset-0 z-[99991] flex items-center justify-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
