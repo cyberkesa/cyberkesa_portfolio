@@ -235,13 +235,9 @@ export function ProgressPill() {
                   // Check if menu item is active
                   let isActive = false
                   if (item.href.includes('#')) {
-                    // For anchor links, check if we're on the same path and hash matches current hash
+                    // For anchor links, check if we're on the same path
                     const [path] = item.href.split('#')
                     isActive = pathname === path || pathname.startsWith(path)
-                    // Also check if hash matches current hash (for anchor links)
-                    if (typeof window !== 'undefined' && window.location.hash) {
-                      isActive = isActive && window.location.hash === `#${item.href.split('#')[1]}`
-                    }
                   } else {
                     // For route links, check exact match or starts with
                     isActive = pathname === item.href || pathname.startsWith(item.href)
