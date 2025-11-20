@@ -49,7 +49,7 @@ export function ProgressPill() {
     { key: 'about', href: `/${locale}#about` },
     { key: 'projects', href: `/${locale}#projects` },
     { key: 'stack', href: `/${locale}#stack` },
-    { key: 'access', href: `/${locale}#access` },
+    { key: 'access', href: `/${locale}#services` }, // Services section uses id="services"
     { key: 'log', href: `/${locale}/log` },
     { key: 'contact', href: `/${locale}#contact` },
   ]
@@ -95,14 +95,29 @@ export function ProgressPill() {
     lightTap()
     setIsMenuOpen(false)
     
-    if (href.startsWith('#')) {
-      // Internal anchor link
-      const element = document.querySelector(href)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
+    if (href.includes('#')) {
+      // Internal anchor link (format: /${locale}#section)
+      const [path, hash] = href.split('#')
+      
+      // Navigate to route first if needed
+      if (path !== pathname) {
+        router.push(path)
+        // Wait for navigation, then scroll to anchor
+        setTimeout(() => {
+          const element = document.querySelector(`#${hash}`)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      } else {
+        // Already on the page, just scroll to anchor
+        const element = document.querySelector(`#${hash}`)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
       }
     } else {
-      // Route navigation
+      // Route navigation (no anchor)
       router.push(href)
     }
   }
@@ -217,7 +232,20 @@ export function ProgressPill() {
               {/* Menu Items */}
               <div className="space-y-2">
                 {menuItems.map((item, index) => {
-                  const isActive = pathname === item.href || pathname.startsWith(item.href)
+                  // Check if menu item is active
+                  let isActive = false
+                  if (item.href.includes('#')) {
+                    // For anchor links, check if we're on the same path and hash matches current hash
+                    const [path] = item.href.split('#')
+                    isActive = pathname === path || pathname.startsWith(path)
+                    // Also check if hash matches current hash (for anchor links)
+                    if (typeof window !== 'undefined' && window.location.hash) {
+                      isActive = isActive && window.location.hash === `#${item.href.split('#')[1]}`
+                    }
+                  } else {
+                    // For route links, check exact match or starts with
+                    isActive = pathname === item.href || pathname.startsWith(item.href)
+                  }
                   
                   return (
                     <motion.button

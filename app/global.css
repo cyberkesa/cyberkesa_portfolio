@@ -106,58 +106,6 @@ body::before {
   background: var(--accent-hover);
 }
 
-/* View Transitions API - Custom theme transition animation */
-/* Disable default fade animation for View Transitions */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-/* Layer order: new state on top */
-::view-transition-new(root) {
-  z-index: 2147483646;
-}
-
-::view-transition-old(root) {
-  z-index: 2147483646;
-}
-
-/* Dark theme: make transition deeper */
-.dark::view-transition-old(root) {
-  z-index: 1;
-}
-
-.dark::view-transition-new(root) {
-  z-index: 2;
-}
-
-/* View Transitions API - Custom theme transition animation */
-/* Disable default fade animation for View Transitions */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-/* Layer order: new state on top */
-::view-transition-new(root) {
-  z-index: 2147483646;
-}
-
-::view-transition-old(root) {
-  z-index: 2147483646;
-}
-
-/* Dark theme: make transition deeper */
-.dark::view-transition-old(root) {
-  z-index: 1;
-}
-
-.dark::view-transition-new(root) {
-  z-index: 2;
-}
-
 /* RTL scrollbar */
 [dir='rtl'] ::-webkit-scrollbar-thumb {
   background: var(--accent);
