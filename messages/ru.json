@@ -119,6 +119,9 @@
     "close": "Закрыть",
     "menu": "Меню",
     "navigation": "Навигация",
-    "scrollToTop": "Наверх"
+    "scrollToTop": "Наверх",
+    "swipeUpToAccess": "Свайп вверх для доступа",
+    "releaseToOpen": "Отпустите для открытия",
+    "closeAccess": "Закрыть доступ"
   }
 }

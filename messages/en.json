@@ -119,7 +119,10 @@
     "close": "Close",
     "menu": "Menu",
     "navigation": "Navigation",
-    "scrollToTop": "Scroll to Top"
+    "scrollToTop": "Scroll to Top",
+    "swipeUpToAccess": "Swipe Up to Access",
+    "releaseToOpen": "Release to Open",
+    "closeAccess": "Close Access"
   }
 }
 

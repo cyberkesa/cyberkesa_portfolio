@@ -4,7 +4,7 @@ import { LogSection } from '@/components/sections/log-section'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
 import { StatusIndicator } from '@/components/ui/status-indicator'
 import { CustomCursor } from '@/components/ui/custom-cursor'
-import { ProgressPill } from '@/components/ui/progress-pill'
+import { MobileMenu } from '@/components/ui/mobile-menu'
 
 export default function LogPage() {
   return (
@@ -12,7 +12,7 @@ export default function LogPage() {
       <Header />
       <StatusIndicator />
       <CustomCursor />
-      <ProgressPill />
+      <MobileMenu />
       <main>
         <LogSection />
       </main>
