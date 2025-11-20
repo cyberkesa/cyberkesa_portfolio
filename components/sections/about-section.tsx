@@ -38,7 +38,7 @@ export function AboutSection() {
           <div className="space-y-6">
             <div>
               <h3 className="mb-2 font-mono text-lg font-bold text-glow">
-                Background:
+                {t('backgroundLabel')}
               </h3>
               <p className="font-mono text-sm text-foreground/70">
                 {t('background')}
@@ -47,7 +47,7 @@ export function AboutSection() {
 
             <div>
               <h3 className="mb-2 font-mono text-lg font-bold text-glow">
-                Philosophy:
+                {t('philosophyLabel')}
               </h3>
               <p className="font-mono text-sm text-foreground/70">
                 {t('philosophy')}
@@ -56,7 +56,7 @@ export function AboutSection() {
 
             <div>
               <h3 className="mb-2 font-mono text-lg font-bold text-glow">
-                Current Status:
+                {t('currentStatusLabel')}
               </h3>
               <p className="font-mono text-sm text-foreground/70">
                 {t('currentStatus')}

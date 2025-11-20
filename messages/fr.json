@@ -23,7 +23,11 @@
     "getInTouch": "Prendre contact"
   },
   "stack": {
-    "title": "Stack Technologique"
+    "categoryCore": "Core",
+    "categoryVisuals": "Visuals",
+    "categoryInfrastructure": "Infrastructure",
+    "categoryIntelligence": "Intelligence",
+    "mobileHint": "Incline ton appareil pour déplacer les puces"
   },
   "projects": {
     "title": "Projets"
@@ -42,15 +46,12 @@
     "returnHome": "Retour à l'accueil"
   },
   "about": {
-    "headline": "Ingénierie de l'Esthétique Numérique.",
-    "bioShort": "Je ne construis pas de sites web ; j'architecte des domaines numériques.\nDéveloppeuse Full-stack et perfectionniste visuelle.\nMon code est plus propre que votre conscience.",
-    "background": "Commencé en Design Graphique (2016). Évolué vers C/C++ (School 21). Trouvé mon zen dans le Web Moderne (Next.js + AI).",
-    "philosophy": "Je crois que \"assez bon\" est une insulte. J'utilise des agents IA pour automatiser l'ennuyeux afin de me concentrer sur l'essentiel : Physique, Typographie et Vibe.",
-    "currentStatus": "Obsédée par les shaders R3F, construisant mon propre backend en Go, et évitant strictement la médiocrité."
+    "backgroundLabel": "Background:",
+    "philosophyLabel": "Philosophy:",
+    "currentStatusLabel": "Current Status:"
   },
   "services": {
-    "title": "Niveaux d'Accès",
-    "subtitle": "Pas une liste de prix. C'est un marché."
+    "levelLabel": "NIVEAU"
   },
   "status": {
     "deploying": "Déploiement Production",
@@ -72,6 +73,10 @@
     "budgetLabel": "Plage de budget",
     "budgetLowMessage": "Pour ce budget, je recommande un constructeur sans code.",
     "budgetHighMessage": "Maintenant, nous parlons affaires."
+  },
+  "log": {
+    "title": "Thought Log",
+    "subtitle": "Archives de pensées. Entrées du manifeste. Tirades aléatoires.",
+    "backToHome": "← Retour à l'accueil"
   }
 }
-

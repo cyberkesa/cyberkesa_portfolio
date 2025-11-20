@@ -46,11 +46,15 @@
     "bioShort": "I don't build websites; I architect digital estates.\nFull-stack developer & Visual perfectionist.\nMy code is cleaner than your conscience.",
     "background": "Started in Graphic Design (2016). Evolved into C/C++ (School 21). Mastered the Modern Web (Next.js + AI).",
     "philosophy": "I believe that \"good enough\" is an insult. I use AI agents to automate the boring stuff so I can focus on what matters: Physics, Typography, and Vibe.",
-    "currentStatus": "Obsessed with R3F shaders, building my own backend in Go, and strictly avoiding mediocrity."
+    "currentStatus": "Obsessed with R3F shaders, building my own backend in Go, and strictly avoiding mediocrity.",
+    "backgroundLabel": "Background:",
+    "philosophyLabel": "Philosophy:",
+    "currentStatusLabel": "Current Status:"
   },
   "services": {
     "title": "Access Levels",
-    "subtitle": "Not a price list. This is a market."
+    "subtitle": "Not a price list. This is a market.",
+    "levelLabel": "LEVEL"
   },
   "status": {
     "deploying": "Deploying Production",
@@ -72,6 +76,19 @@
     "budgetLabel": "Budget Range",
     "budgetLowMessage": "For this budget, I recommend a No-Code builder.",
     "budgetHighMessage": "Now we are talking business."
+  },
+  "log": {
+    "title": "Thought Log",
+    "subtitle": "Archive of thoughts. Manifesto entries. Random rants.",
+    "backToHome": "← Back to Home"
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "categoryCore": "Core",
+    "categoryVisuals": "Visuals",
+    "categoryInfrastructure": "Infrastructure",
+    "categoryIntelligence": "Intelligence",
+    "mobileHint": "Tilt your device to move chips"
   }
 }
 

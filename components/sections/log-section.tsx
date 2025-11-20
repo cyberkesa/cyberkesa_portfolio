@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { logEntries } from '@/config/log'
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export function LogSection() {
   const locale = useLocale()
+  const t = useTranslations('log')
 
   return (
     <section className="min-h-screen py-24">
@@ -21,14 +22,14 @@ export function LogSection() {
           variants={fadeInUp}
           className="mb-12 text-center font-mono text-4xl font-bold md:text-5xl"
         >
-          Thought Log
+          {t('title')}
         </motion.h1>
 
         <motion.p
           variants={fadeInUp}
           className="mb-16 text-center font-mono text-sm text-foreground/70"
         >
-          Archive of thoughts. Manifesto entries. Random rants.
+          {t('subtitle')}
         </motion.p>
 
         <div className="mx-auto max-w-3xl space-y-8">
@@ -71,7 +72,7 @@ export function LogSection() {
             href={`/${locale}`}
             className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
           >
-            ← Back to Home
+            {t('backToHome')}
           </Link>
         </motion.div>
       </motion.div>

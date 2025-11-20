@@ -23,7 +23,11 @@
     "getInTouch": "تواصل معنا"
   },
   "stack": {
-    "title": "المجموعة التقنية"
+    "categoryCore": "Core",
+    "categoryVisuals": "Visuals",
+    "categoryInfrastructure": "Infrastructure",
+    "categoryIntelligence": "Intelligence",
+    "mobileHint": "أمِل جهازك لتحريك الرقائق"
   },
   "projects": {
     "title": "المشاريع"
@@ -42,15 +46,12 @@
     "returnHome": "العودة إلى الرئيسية"
   },
   "about": {
-    "headline": "هندسة الجماليات الرقمية.",
-    "bioShort": "أنا لا أبني مواقع ويب؛ أنا أهندس عقارات رقمية.\nمطورة Full-stack وكمالية بصرية.\nكودي أنظف من ضميرك.",
-    "background": "بدأت في التصميم الجرافيكي (2016). تطورت إلى C/C++ (School 21). وجدت سكيني في الويب الحديث (Next.js + AI).",
-    "philosophy": "أعتقد أن \"جيد بما فيه الكفاية\" إهانة. أستخدم وكلاء AI لأتمتة الممل لأركز على المهم: الفيزياء، الطباعة، والـ Vibe.",
-    "currentStatus": "مهووسة بـ R3F shaders، أبني خادمي الخلفي الخاص في Go، وأتجنب الصرامة الوسطية."
+    "backgroundLabel": "Background:",
+    "philosophyLabel": "Philosophy:",
+    "currentStatusLabel": "Current Status:"
   },
   "services": {
-    "title": "مستويات الوصول",
-    "subtitle": "ليست قائمة أسعار. هذا سوق."
+    "levelLabel": "المستوى"
   },
   "status": {
     "deploying": "نشر الإنتاج",
@@ -72,6 +73,10 @@
     "budgetLabel": "نطاق الميزانية",
     "budgetLowMessage": "لهذه الميزانية، أنصح بمنشئ بدون كود.",
     "budgetHighMessage": "الآن نحن نتحدث عن الأعمال."
+  },
+  "log": {
+    "title": "Thought Log",
+    "subtitle": "أرشيف الأفكار. إدخالات البيان. شكاوى عشوائية.",
+    "backToHome": "← العودة إلى الرئيسية"
   }
 }
-

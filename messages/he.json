@@ -23,7 +23,11 @@
     "getInTouch": "יצירת קשר"
   },
   "stack": {
-    "title": "מערך הטכנולוגיות"
+    "categoryCore": "Core",
+    "categoryVisuals": "Visuals",
+    "categoryInfrastructure": "Infrastructure",
+    "categoryIntelligence": "Intelligence",
+    "mobileHint": "הטה את המכשיר כדי להזיז את השבבים"
   },
   "projects": {
     "title": "פרויקטים"
@@ -42,15 +46,12 @@
     "returnHome": "חזור לדף הבית"
   },
   "about": {
-    "headline": "הנדסת אסתטיקה דיגיטלית.",
-    "bioShort": "אני לא בונה אתרים; אני מתכננת נכסים דיגיטליים.\nמפתחת Full-stack ופרפקציוניסטית ויזואלית.\nהקוד שלי נקי יותר מהמצפון שלך.",
-    "background": "התחלתי בעיצוב גרפי (2016). התפתחתי ל-C/C++ (School 21). מצאתי את הזן שלי באינטרנט המודרני (Next.js + AI).",
-    "philosophy": "אני מאמינה ש\"טוב מספיק\" זו עלבון. אני משתמשת בסוכני AI כדי automatize את המשעמם ולהתמקד במה שחשוב: פיזיקה, טיפוגרפיה ו-Vibe.",
-    "currentStatus": "אובססיבית ל-R3F shaders, בונה את ה-backend שלי ב-Go, ונמנעת בקפדנות מבינוניות."
+    "backgroundLabel": "Background:",
+    "philosophyLabel": "Philosophy:",
+    "currentStatusLabel": "Current Status:"
   },
   "services": {
-    "title": "רמות גישה",
-    "subtitle": "לא רשימת מחירים. זה שוק."
+    "levelLabel": "רמה"
   },
   "status": {
     "deploying": "העלאת Production",
@@ -72,6 +73,10 @@
     "budgetLabel": "טווח תקציב",
     "budgetLowMessage": "לתקציב הזה, אני ממליצה על בונה ללא קוד.",
     "budgetHighMessage": "עכשיו אנחנו מדברים עסקים."
+  },
+  "log": {
+    "title": "Thought Log",
+    "subtitle": "ארכיון מחשבות. רשומות מניפסט. טיראדות אקראיות.",
+    "backToHome": "← חזור לדף הבית"
   }
 }
-

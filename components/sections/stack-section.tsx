@@ -105,19 +105,19 @@ export function StackSection() {
             <div className="mt-12 flex justify-center gap-8 text-xs font-mono text-foreground/30">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-foreground/20" />
-                Core
+                {t('categoryCore')}
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-foreground/20" />
-                Visuals
+                {t('categoryVisuals')}
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-foreground/20" />
-                Infrastructure
+                {t('categoryInfrastructure')}
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-foreground/20" />
-                Intelligence
+                {t('categoryIntelligence')}
               </div>
             </div>
           )}
@@ -130,7 +130,7 @@ export function StackSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              Tilt your device to move chips
+              {t('mobileHint')}
             </motion.p>
           )}
         </div>

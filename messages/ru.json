@@ -23,7 +23,12 @@
     "getInTouch": "Связаться"
   },
   "stack": {
-    "title": "Технологический стек"
+    "title": "Технологический стек",
+    "categoryCore": "Core",
+    "categoryVisuals": "Visuals",
+    "categoryInfrastructure": "Infrastructure",
+    "categoryIntelligence": "Intelligence",
+    "mobileHint": "Наклони устройство, чтобы двигать чипы"
   },
   "projects": {
     "title": "Проекты"
@@ -46,11 +51,15 @@
     "bioShort": "Я не создаю сайты; я проектирую цифровые владения.\nFull-stack разработчик и визуальный перфекционист.\nМой код чище твоей совести.",
     "background": "Начала с графического дизайна (2016). Эволюционировала в C/C++ (School 21). Нашла дзен в современном вебе (Next.js + AI).",
     "philosophy": "Я верю, что \"достаточно хорошо\" — это оскорбление. Я использую AI агентов для автоматизации скучных задач, чтобы сосредоточиться на важном: Физика, Типографика и Вайб.",
-    "currentStatus": "Одержима R3F шейдерами, создаю свой бэкенд на Go и строго избегаю посредственности."
+    "currentStatus": "Одержима R3F шейдерами, создаю свой бэкенд на Go и строго избегаю посредственности.",
+    "backgroundLabel": "Background:",
+    "philosophyLabel": "Philosophy:",
+    "currentStatusLabel": "Current Status:"
   },
   "services": {
     "title": "Уровни Доступа",
-    "subtitle": "Не прайс-лист. Это рынок."
+    "subtitle": "Не прайс-лист. Это рынок.",
+    "levelLabel": "УРОВЕНЬ"
   },
   "status": {
     "deploying": "Деплой Production",
@@ -72,6 +81,11 @@
     "budgetLabel": "Диапазон бюджета",
     "budgetLowMessage": "Для этого бюджета рекомендую конструктор.",
     "budgetHighMessage": "Вот это уже деловой разговор."
+  },
+  "log": {
+    "title": "Thought Log",
+    "subtitle": "Архив мыслей. Записи манифеста. Случайные тирады.",
+    "backToHome": "← Вернуться на главную"
   }
 }
 

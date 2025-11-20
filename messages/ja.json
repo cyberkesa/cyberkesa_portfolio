@@ -23,7 +23,11 @@
     "getInTouch": "お問い合わせ"
   },
   "stack": {
-    "title": "技術スタック"
+    "categoryCore": "Core",
+    "categoryVisuals": "Visuals",
+    "categoryInfrastructure": "Infrastructure",
+    "categoryIntelligence": "Intelligence",
+    "mobileHint": "デバイスを傾けてチップを動かす"
   },
   "projects": {
     "title": "プロジェクト"
@@ -42,15 +46,12 @@
     "returnHome": "ホームに戻る"
   },
   "about": {
-    "headline": "デジタル美学のエンジニアリング。",
-    "bioShort": "私はウェブサイトを構築しない；デジタル資産を設計する。\nFull-stack開発者と視覚的完璧主義者。\n私のコードはあなたの良心より清潔。",
-    "background": "グラフィックデザインから始めた（2016）。C/C++に進化（School 21）。モダンウェブ（Next.js + AI）で禅を見つけた。",
-    "philosophy": "「十分良い」は侮辱だと信じている。AIエージェントを使って退屈なことを自動化し、重要なことに集中する：物理学、タイポグラフィ、そしてVibe。",
-    "currentStatus": "R3Fシェーダーに夢中で、Goで独自のバックエンドを構築し、厳密に平凡を避けている。"
+    "backgroundLabel": "Background:",
+    "philosophyLabel": "Philosophy:",
+    "currentStatusLabel": "Current Status:"
   },
   "services": {
-    "title": "アクセスレベル",
-    "subtitle": "価格表ではない。これは市場。"
+    "levelLabel": "レベル"
   },
   "status": {
     "deploying": "本番環境をデプロイ中",
@@ -72,6 +73,10 @@
     "budgetLabel": "予算範囲",
     "budgetLowMessage": "この予算には、ノーコードビルダーをお勧めします。",
     "budgetHighMessage": "これでビジネスの話になります。"
+  },
+  "log": {
+    "title": "Thought Log",
+    "subtitle": "思考のアーカイブ。マニフェストエントリ。ランダムな暴言。",
+    "backToHome": "← ホームに戻る"
   }
 }
-

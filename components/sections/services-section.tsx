@@ -34,7 +34,7 @@ export function ServicesSection() {
               {/* Level Badge */}
               <div className="mb-4 flex items-center justify-between">
                 <span className="font-mono text-xs text-foreground/50">
-                  LEVEL {level.level}
+                  {t('levelLabel')} {level.level}
                 </span>
                 <span className="font-mono text-2xl font-bold text-glow">
                   {level.level}
