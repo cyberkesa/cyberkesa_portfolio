@@ -1,0 +1,59 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Full-stack Developer Portfolio - Premium luxury aesthetics with perfect performance"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "stack": "Stack",
+    "contact": "Contact"
+  },
+  "hero": {
+    "initializing": "Initializing...",
+    "loading": "Loading portfolio...",
+    "ready": "System ready.",
+    "welcome": "System Online.",
+    "title": "Full-stack Developer",
+    "subtitle": "High-performance digital architecture. No compromises.",
+    "viewProjects": "Initialize Showcase",
+    "getInTouch": "Execute Contact"
+  },
+  "stack": {
+    "title": "Tech Stack"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "footer": {
+    "title": "Initialize Contact",
+    "description": "Ready to upgrade your digital presence?",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. All rights reserved.",
+    "location": "Designed & Engineered in Podolsk (ironically)."
+  },
+  "notFound": {
+    "error": "SYSTEM ERROR: 404",
+    "message": "Reality Glitch.",
+    "description": "The requested sector does not exist in this timeline.",
+    "returnHome": "Reboot System"
+  },
+  "about": {
+    "headline": "Engineering Digital Aesthetics.",
+    "bioShort": "I don't build websites; I architect digital estates.\nFull-stack developer & Visual perfectionist.\nMy code is cleaner than your conscience.",
+    "background": "Started in Graphic Design (2016). Evolved into C/C++ (School 21). Mastered the Modern Web (Next.js + AI).",
+    "philosophy": "I believe that \"good enough\" is an insult. I use AI agents to automate the boring stuff so I can focus on what matters: Physics, Typography, and Vibe.",
+    "currentStatus": "Obsessed with R3F shaders, building my own backend in Go, and strictly avoiding mediocrity."
+  },
+  "services": {
+    "title": "Access Levels",
+    "subtitle": "Not a price list. This is a market."
+  },
+  "status": {
+    "deploying": "Deploying Production",
+    "gym": "Gym (Leg Day)",
+    "recharging": "Recharging (Do not disturb)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

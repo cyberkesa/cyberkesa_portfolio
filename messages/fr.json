@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Portfolio Frontend Developer - Esthétique de luxe premium avec performance parfaite"
+  },
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "stack": "Stack",
+    "contact": "Contact"
+  },
+  "hero": {
+    "initializing": "Initialisation...",
+    "loading": "Chargement du portfolio...",
+    "ready": "Système prêt.",
+    "welcome": "Bienvenue sur cyberkesa.",
+    "title": "Frontend Developer",
+    "subtitle": "Création d'expériences numériques premium avec une performance parfaite",
+    "viewProjects": "Voir les projets",
+    "getInTouch": "Prendre contact"
+  },
+  "stack": {
+    "title": "Stack Technologique"
+  },
+  "projects": {
+    "title": "Projets"
+  },
+  "footer": {
+    "title": "Initialiser le contact",
+    "description": "Prêt à démarrer un nouveau projet ? Contactons-nous.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. Tous droits réservés."
+  },
+  "notFound": {
+    "error": "ERREUR 404:",
+    "message": "Page non trouvée",
+    "description": "La ressource demandée n'a pas pu être localisée.",
+    "returnHome": "Retour à l'accueil"
+  },
+  "about": {
+    "headline": "Ingénierie de l'Esthétique Numérique.",
+    "bioShort": "Je ne construis pas de sites web ; j'architecte des domaines numériques.\nDéveloppeuse Full-stack et perfectionniste visuelle.\nMon code est plus propre que votre conscience.",
+    "background": "Commencé en Design Graphique (2016). Évolué vers C/C++ (School 21). Trouvé mon zen dans le Web Moderne (Next.js + AI).",
+    "philosophy": "Je crois que \"assez bon\" est une insulte. J'utilise des agents IA pour automatiser l'ennuyeux afin de me concentrer sur l'essentiel : Physique, Typographie et Vibe.",
+    "currentStatus": "Obsédée par les shaders R3F, construisant mon propre backend en Go, et évitant strictement la médiocrité."
+  },
+  "services": {
+    "title": "Niveaux d'Accès",
+    "subtitle": "Pas une liste de prix. C'est un marché."
+  },
+  "status": {
+    "deploying": "Déploiement Production",
+    "gym": "Salle de Sport (Jour Jambes)",
+    "recharging": "Rechargement (Ne pas déranger)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

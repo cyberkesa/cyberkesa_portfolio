@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Portafolio de Frontend Developer - Estética de lujo premium con rendimiento perfecto"
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "stack": "Stack",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "initializing": "Inicializando...",
+    "loading": "Cargando portafolio...",
+    "ready": "Sistema listo.",
+    "welcome": "Bienvenido a cyberkesa.",
+    "title": "Frontend Developer",
+    "subtitle": "Creando experiencias digitales premium con rendimiento perfecto",
+    "viewProjects": "Ver Proyectos",
+    "getInTouch": "Ponerse en contacto"
+  },
+  "stack": {
+    "title": "Stack Tecnológico"
+  },
+  "projects": {
+    "title": "Proyectos"
+  },
+  "footer": {
+    "title": "Inicializar Contacto",
+    "description": "¿Listo para comenzar un nuevo proyecto? Conectemos.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. Todos los derechos reservados."
+  },
+  "notFound": {
+    "error": "ERROR 404:",
+    "message": "Página no encontrada",
+    "description": "El recurso solicitado no pudo ser localizado.",
+    "returnHome": "Volver al inicio"
+  },
+  "about": {
+    "headline": "Ingeniería de Estética Digital.",
+    "bioShort": "No construyo sitios web; arquitecto propiedades digitales.\nDesarrollador Full-stack y perfeccionista visual.\nMi código es más limpio que tu conciencia.",
+    "background": "Comencé en Diseño Gráfico (2016). Evolucioné a C/C++ (School 21). Encontré mi zen en la Web Moderna (Next.js + AI).",
+    "philosophy": "Creo que \"suficientemente bueno\" es un insulto. Uso agentes de IA para automatizar lo aburrido y enfocarme en lo importante: Física, Tipografía y Vibe.",
+    "currentStatus": "Obsesionada con shaders R3F, construyendo mi propio backend en Go, y evitando estrictamente la mediocridad."
+  },
+  "services": {
+    "title": "Niveles de Acceso",
+    "subtitle": "No es una lista de precios. Esto es un mercado."
+  },
+  "status": {
+    "deploying": "Desplegando Producción",
+    "gym": "Gimnasio (Día de Piernas)",
+    "recharging": "Recargando (No molestar)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

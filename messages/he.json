@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "תיק עבודות Frontend Developer - אסתטיקה יוקרתית עם ביצועים מושלמים"
+  },
+  "nav": {
+    "home": "בית",
+    "projects": "פרויקטים",
+    "stack": "טכנולוגיות",
+    "contact": "יצירת קשר"
+  },
+  "hero": {
+    "initializing": "מאתחל...",
+    "loading": "טוען תיק עבודות...",
+    "ready": "המערכת מוכנה.",
+    "welcome": "ברוכים הבאים ל-cyberkesa.",
+    "title": "Frontend Developer",
+    "subtitle": "יוצר חוויות דיגיטליות יוקרתיות עם ביצועים מושלמים",
+    "viewProjects": "צפה בפרויקטים",
+    "getInTouch": "יצירת קשר"
+  },
+  "stack": {
+    "title": "מערך הטכנולוגיות"
+  },
+  "projects": {
+    "title": "פרויקטים"
+  },
+  "footer": {
+    "title": "אתחל יצירת קשר",
+    "description": "מוכן להתחיל פרויקט חדש? בואו נתחבר.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. כל הזכויות שמורות."
+  },
+  "notFound": {
+    "error": "שגיאה 404:",
+    "message": "הדף לא נמצא",
+    "description": "המשאב המבוקש לא נמצא.",
+    "returnHome": "חזור לדף הבית"
+  },
+  "about": {
+    "headline": "הנדסת אסתטיקה דיגיטלית.",
+    "bioShort": "אני לא בונה אתרים; אני מתכננת נכסים דיגיטליים.\nמפתחת Full-stack ופרפקציוניסטית ויזואלית.\nהקוד שלי נקי יותר מהמצפון שלך.",
+    "background": "התחלתי בעיצוב גרפי (2016). התפתחתי ל-C/C++ (School 21). מצאתי את הזן שלי באינטרנט המודרני (Next.js + AI).",
+    "philosophy": "אני מאמינה ש\"טוב מספיק\" זו עלבון. אני משתמשת בסוכני AI כדי automatize את המשעמם ולהתמקד במה שחשוב: פיזיקה, טיפוגרפיה ו-Vibe.",
+    "currentStatus": "אובססיבית ל-R3F shaders, בונה את ה-backend שלי ב-Go, ונמנעת בקפדנות מבינוניות."
+  },
+  "services": {
+    "title": "רמות גישה",
+    "subtitle": "לא רשימת מחירים. זה שוק."
+  },
+  "status": {
+    "deploying": "העלאת Production",
+    "gym": "מכון כושר (יום רגליים)",
+    "recharging": "טעינה (לא להפריע)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

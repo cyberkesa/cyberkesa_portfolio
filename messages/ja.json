@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Frontend Developer ポートフォリオ - プレミアムな高級感と完璧なパフォーマンス"
+  },
+  "nav": {
+    "home": "ホーム",
+    "projects": "プロジェクト",
+    "stack": "技術スタック",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "initializing": "初期化中...",
+    "loading": "ポートフォリオを読み込み中...",
+    "ready": "システム準備完了。",
+    "welcome": "cyberkesaへようこそ。",
+    "title": "Frontend Developer",
+    "subtitle": "完璧なパフォーマンスでプレミアムなデジタル体験を創造",
+    "viewProjects": "プロジェクトを見る",
+    "getInTouch": "お問い合わせ"
+  },
+  "stack": {
+    "title": "技術スタック"
+  },
+  "projects": {
+    "title": "プロジェクト"
+  },
+  "footer": {
+    "title": "コンタクトを開始",
+    "description": "新しいプロジェクトを始める準備はできていますか？お問い合わせください。",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. 全著作権所有。"
+  },
+  "notFound": {
+    "error": "エラー 404:",
+    "message": "ページが見つかりません",
+    "description": "要求されたリソースが見つかりませんでした。",
+    "returnHome": "ホームに戻る"
+  },
+  "about": {
+    "headline": "デジタル美学のエンジニアリング。",
+    "bioShort": "私はウェブサイトを構築しない；デジタル資産を設計する。\nFull-stack開発者と視覚的完璧主義者。\n私のコードはあなたの良心より清潔。",
+    "background": "グラフィックデザインから始めた（2016）。C/C++に進化（School 21）。モダンウェブ（Next.js + AI）で禅を見つけた。",
+    "philosophy": "「十分良い」は侮辱だと信じている。AIエージェントを使って退屈なことを自動化し、重要なことに集中する：物理学、タイポグラフィ、そしてVibe。",
+    "currentStatus": "R3Fシェーダーに夢中で、Goで独自のバックエンドを構築し、厳密に平凡を避けている。"
+  },
+  "services": {
+    "title": "アクセスレベル",
+    "subtitle": "価格表ではない。これは市場。"
+  },
+  "status": {
+    "deploying": "本番環境をデプロイ中",
+    "gym": "ジム（脚の日）",
+    "recharging": "充電中（邪魔しないで）",
+    "vibecoding": "Vibecoding"
+  }
+}
+

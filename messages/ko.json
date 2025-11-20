@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Frontend Developer 포트폴리오 - 프리미엄 럭셔리 미학과 완벽한 성능"
+  },
+  "nav": {
+    "home": "홈",
+    "projects": "프로젝트",
+    "stack": "기술 스택",
+    "contact": "연락처"
+  },
+  "hero": {
+    "initializing": "초기화 중...",
+    "loading": "포트폴리오 로딩 중...",
+    "ready": "시스템 준비 완료.",
+    "welcome": "cyberkesa에 오신 것을 환영합니다.",
+    "title": "Frontend Developer",
+    "subtitle": "완벽한 성능으로 프리미엄 디지털 경험 창조",
+    "viewProjects": "프로젝트 보기",
+    "getInTouch": "연락하기"
+  },
+  "stack": {
+    "title": "기술 스택"
+  },
+  "projects": {
+    "title": "프로젝트"
+  },
+  "footer": {
+    "title": "연락처 초기화",
+    "description": "새 프로젝트를 시작할 준비가 되셨나요? 연락해 주세요.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. 모든 권리 보유."
+  },
+  "notFound": {
+    "error": "오류 404:",
+    "message": "페이지를 찾을 수 없습니다",
+    "description": "요청한 리소스를 찾을 수 없습니다.",
+    "returnHome": "홈으로 돌아가기"
+  },
+  "about": {
+    "headline": "디지털 미학의 엔지니어링.",
+    "bioShort": "나는 웹사이트를 만들지 않는다; 디지털 자산을 설계한다.\nFull-stack 개발자 및 시각적 완벽주의자.\n내 코드는 당신의 양심보다 깨끗하다.",
+    "background": "그래픽 디자인으로 시작 (2016). C/C++로 진화 (School 21). 모던 웹 (Next.js + AI)에서 내 선을 찾았다.",
+    "philosophy": "\"충분히 좋다\"는 모욕이라고 믿는다. AI 에이전트를 사용해 지루한 일을 자동화하고 중요한 것에 집중한다: 물리학, 타이포그래피, 그리고 Vibe.",
+    "currentStatus": "R3F 셰이더에 집착하고, Go로 내 백엔드를 구축하며, 엄격하게 평범함을 피한다."
+  },
+  "services": {
+    "title": "액세스 레벨",
+    "subtitle": "가격표가 아니다. 이것은 시장이다."
+  },
+  "status": {
+    "deploying": "프로덕션 배포 중",
+    "gym": "체육관 (다리 운동)",
+    "recharging": "충전 중 (방해 금지)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

@@ -1,0 +1,81 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { useMousePosition } from '@/hooks/use-mouse-position'
+
+/**
+ * CustomCursor - Inverted color cursor with spotlight effect
+ * Desktop only - shows custom cursor with mix-blend-mode: difference
+ */
+export function CustomCursor() {
+  const { x, y } = useMousePosition()
+  const [isHovering, setIsHovering] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    // Only show on desktop
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+    
+    checkDesktop()
+    window.addEventListener('resize', checkDesktop)
+    
+    // Check if hovering over text
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (
+        target.tagName === 'P' ||
+        target.tagName === 'H1' ||
+        target.tagName === 'H2' ||
+        target.tagName === 'H3' ||
+        target.tagName === 'SPAN' ||
+        target.classList.contains('text-foreground')
+      ) {
+        setIsHovering(true)
+      }
+    }
+
+    const handleMouseOut = () => {
+      setIsHovering(false)
+    }
+
+    document.addEventListener('mouseover', handleMouseOver)
+    document.addEventListener('mouseout', handleMouseOut)
+
+    return () => {
+      window.removeEventListener('resize', checkDesktop)
+      document.removeEventListener('mouseover', handleMouseOver)
+      document.removeEventListener('mouseout', handleMouseOut)
+    }
+  }, [])
+
+  if (!isDesktop) return null
+
+  return (
+    <>
+      {/* Custom cursor dot */}
+      <div
+        className="pointer-events-none fixed z-[9999] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-foreground mix-blend-difference transition-transform duration-150 ease-out"
+        style={{
+          left: `${x}px`,
+          top: `${y}px`,
+          transform: isHovering
+            ? 'translate(-50%, -50%) scale(2)'
+            : 'translate(-50%, -50%) scale(1)',
+        }}
+      />
+
+      {/* Spotlight effect on text */}
+      {isHovering && (
+        <div
+          className="pointer-events-none fixed z-[9998] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow/20 blur-2xl transition-opacity duration-300"
+          style={{
+            left: `${x}px`,
+            top: `${y}px`,
+          }}
+        />
+      )}
+    </>
+  )
+}

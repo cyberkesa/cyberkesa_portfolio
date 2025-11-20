@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Frontend Developer Portfolio - Premium Luxus-Ästhetik mit perfekter Leistung"
+  },
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "stack": "Technologie-Stack",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "initializing": "Initialisiere...",
+    "loading": "Portfolio wird geladen...",
+    "ready": "System bereit.",
+    "welcome": "Willkommen bei cyberkesa.",
+    "title": "Frontend Developer",
+    "subtitle": "Erschaffe Premium-Digitalerlebnisse mit perfekter Leistung",
+    "viewProjects": "Projekte ansehen",
+    "getInTouch": "Kontakt aufnehmen"
+  },
+  "stack": {
+    "title": "Technologie-Stack"
+  },
+  "projects": {
+    "title": "Projekte"
+  },
+  "footer": {
+    "title": "Kontakt initialisieren",
+    "description": "Bereit, ein neues Projekt zu starten? Lassen Sie uns in Verbindung treten.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. Alle Rechte vorbehalten."
+  },
+  "notFound": {
+    "error": "FEHLER 404:",
+    "message": "Seite nicht gefunden",
+    "description": "Die angeforderte Ressource konnte nicht gefunden werden.",
+    "returnHome": "Zur Startseite zurückkehren"
+  },
+  "about": {
+    "headline": "Ingenieurwesen digitaler Ästhetik.",
+    "bioShort": "Ich baue keine Websites; ich architekturiere digitale Anwesen.\nFull-stack Entwicklerin & visuelle Perfektionistin.\nMein Code ist sauberer als dein Gewissen.",
+    "background": "Begonnen im Grafikdesign (2016). Entwickelt zu C/C++ (School 21). Meinen Zen im modernen Web gefunden (Next.js + AI).",
+    "philosophy": "Ich glaube, dass \"gut genug\" eine Beleidigung ist. Ich nutze KI-Agenten, um Langweiliges zu automatisieren und mich auf das Wichtige zu konzentrieren: Physik, Typografie und Vibe.",
+    "currentStatus": "Besessen von R3F-Shadern, baue mein eigenes Backend in Go und vermeide strikt Mittelmäßigkeit."
+  },
+  "services": {
+    "title": "Zugriffsebenen",
+    "subtitle": "Keine Preisliste. Das ist ein Markt."
+  },
+  "status": {
+    "deploying": "Produktion deployen",
+    "gym": "Fitnessstudio (Beintag)",
+    "recharging": "Aufladen (Nicht stören)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

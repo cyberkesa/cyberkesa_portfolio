@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "معرض أعمال Frontend Developer - جماليات فاخرة مع أداء مثالي"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "projects": "المشاريع",
+    "stack": "التقنيات",
+    "contact": "اتصل"
+  },
+  "hero": {
+    "initializing": "جاري التهيئة...",
+    "loading": "جاري تحميل المعرض...",
+    "ready": "النظام جاهز.",
+    "welcome": "مرحباً بك في cyberkesa.",
+    "title": "Frontend Developer",
+    "subtitle": "إنشاء تجارب رقمية فاخرة بأداء مثالي",
+    "viewProjects": "عرض المشاريع",
+    "getInTouch": "تواصل معنا"
+  },
+  "stack": {
+    "title": "المجموعة التقنية"
+  },
+  "projects": {
+    "title": "المشاريع"
+  },
+  "footer": {
+    "title": "تهيئة الاتصال",
+    "description": "مستعد لبدء مشروع جديد؟ دعنا نتصل.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. جميع الحقوق محفوظة."
+  },
+  "notFound": {
+    "error": "خطأ 404:",
+    "message": "الصفحة غير موجودة",
+    "description": "تعذر العثور على المورد المطلوب.",
+    "returnHome": "العودة إلى الرئيسية"
+  },
+  "about": {
+    "headline": "هندسة الجماليات الرقمية.",
+    "bioShort": "أنا لا أبني مواقع ويب؛ أنا أهندس عقارات رقمية.\nمطورة Full-stack وكمالية بصرية.\nكودي أنظف من ضميرك.",
+    "background": "بدأت في التصميم الجرافيكي (2016). تطورت إلى C/C++ (School 21). وجدت سكيني في الويب الحديث (Next.js + AI).",
+    "philosophy": "أعتقد أن \"جيد بما فيه الكفاية\" إهانة. أستخدم وكلاء AI لأتمتة الممل لأركز على المهم: الفيزياء، الطباعة، والـ Vibe.",
+    "currentStatus": "مهووسة بـ R3F shaders، أبني خادمي الخلفي الخاص في Go، وأتجنب الصرامة الوسطية."
+  },
+  "services": {
+    "title": "مستويات الوصول",
+    "subtitle": "ليست قائمة أسعار. هذا سوق."
+  },
+  "status": {
+    "deploying": "نشر الإنتاج",
+    "gym": "صالة الألعاب (يوم الساقين)",
+    "recharging": "إعادة الشحن (لا تزعج)",
+    "vibecoding": "Vibecoding"
+  }
+}
+

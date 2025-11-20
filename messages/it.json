@@ -1,0 +1,58 @@
+{
+  "site": {
+    "name": "cyberkesa",
+    "description": "Portfolio Frontend Developer - Estetica di lusso premium con prestazioni perfette"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Progetti",
+    "stack": "Stack",
+    "contact": "Contatto"
+  },
+  "hero": {
+    "initializing": "Inizializzazione...",
+    "loading": "Caricamento portfolio...",
+    "ready": "Sistema pronto.",
+    "welcome": "Benvenuto su cyberkesa.",
+    "title": "Frontend Developer",
+    "subtitle": "Creazione di esperienze digitali premium con prestazioni perfette",
+    "viewProjects": "Vedi Progetti",
+    "getInTouch": "Mettersi in contatto"
+  },
+  "stack": {
+    "title": "Stack Tecnologico"
+  },
+  "projects": {
+    "title": "Progetti"
+  },
+  "footer": {
+    "title": "Inizializza Contatto",
+    "description": "Pronto per iniziare un nuovo progetto? Mettiamoci in contatto.",
+    "email": "contact@cyberkesa.com",
+    "copyright": "© {year} cyberkesa. Tutti i diritti riservati."
+  },
+  "notFound": {
+    "error": "ERRORE 404:",
+    "message": "Pagina non trovata",
+    "description": "La risorsa richiesta non è stata trovata.",
+    "returnHome": "Torna alla home"
+  },
+  "about": {
+    "headline": "Ingegneria dell'Estetica Digitale.",
+    "bioShort": "Non costruisco siti web; progetto proprietà digitali.\nSviluppatrice Full-stack e perfezionista visiva.\nIl mio codice è più pulito della tua coscienza.",
+    "background": "Iniziata nel Graphic Design (2016). Evoluta in C/C++ (School 21). Trovato il mio zen nel Web Moderno (Next.js + AI).",
+    "philosophy": "Credo che \"abbastanza buono\" sia un insulto. Uso agenti AI per automatizzare il noioso e concentrarmi su ciò che conta: Fisica, Tipografia e Vibe.",
+    "currentStatus": "Ossessionata con shader R3F, costruendo il mio backend in Go, ed evitando rigorosamente la mediocrità."
+  },
+  "services": {
+    "title": "Livelli di Accesso",
+    "subtitle": "Non una lista prezzi. Questo è un mercato."
+  },
+  "status": {
+    "deploying": "Distribuzione Produzione",
+    "gym": "Palestra (Giorno Gambe)",
+    "recharging": "Ricarica (Non disturbare)",
+    "vibecoding": "Vibecoding"
+  }
+}
+
