@@ -139,20 +139,28 @@ export function BudgetFilter({
           }}
         />
 
-        {/* Custom Thumb (styled via CSS) */}
+        {/* Custom Thumb */}
         <motion.div
           className={cn(
-            'absolute top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border-2 transition-all',
+            'absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 transition-all',
+            'pointer-events-none',
             isHighBudget
-              ? 'border-glow bg-glow shadow-[0_0_15px_rgba(0,255,255,0.6)]'
+              ? 'border-glow bg-glow'
               : 'border-foreground/30 bg-accent',
             isLowBudget && 'border-foreground/10 bg-accent/50'
           )}
           style={{
-            left: `calc(${percentage}% - 8px)`,
+            left: `${percentage}%`,
           }}
           animate={{
             scale: isHighBudget ? [1, 1.2, 1] : 1,
+            boxShadow: isHighBudget
+              ? [
+                  '0 0 15px rgba(0, 255, 255, 0.6)',
+                  '0 0 25px rgba(0, 255, 255, 0.8)',
+                  '0 0 15px rgba(0, 255, 255, 0.6)',
+                ]
+              : '0 2px 8px rgba(0, 0, 0, 0.2)',
           }}
           transition={{
             duration: 0.5,
