@@ -54,6 +54,18 @@
     "gym": "Academia (Dia de Pernas)",
     "recharging": "Recarregando (Não perturbe)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Mensagem",
+    "messagePlaceholder": "Conte-me sobre seu projeto...",
+    "submit": "Enviar solicitação",
+    "submitting": "Enviando...",
+    "successTitle": "Solicitação enviada",
+    "successMessage": "Entrarei em contato em breve."
   }
 }
 

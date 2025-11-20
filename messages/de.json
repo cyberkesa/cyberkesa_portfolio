@@ -54,6 +54,18 @@
     "gym": "Fitnessstudio (Beintag)",
     "recharging": "Aufladen (Nicht stören)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Name",
+    "namePlaceholder": "Ihr Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "your@email.com",
+    "message": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt...",
+    "submit": "Anfrage senden",
+    "submitting": "Wird gesendet...",
+    "successTitle": "Anfrage gesendet",
+    "successMessage": "Ich werde mich bald bei Ihnen melden."
   }
 }
 

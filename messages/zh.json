@@ -54,6 +54,18 @@
     "gym": "健身房（腿部日）",
     "recharging": "充电中（请勿打扰）",
     "vibecoding": "氛围编码中"
+  },
+  "contact": {
+    "name": "姓名",
+    "namePlaceholder": "您的姓名",
+    "email": "邮箱",
+    "emailPlaceholder": "your@email.com",
+    "message": "消息",
+    "messagePlaceholder": "告诉我您的项目...",
+    "submit": "发送请求",
+    "submitting": "发送中...",
+    "successTitle": "请求已发送",
+    "successMessage": "我会尽快回复您。"
   }
 }
 

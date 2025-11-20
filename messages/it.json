@@ -54,6 +54,18 @@
     "gym": "Palestra (Giorno Gambe)",
     "recharging": "Ricarica (Non disturbare)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Messaggio",
+    "messagePlaceholder": "Raccontami del tuo progetto...",
+    "submit": "Invia richiesta",
+    "submitting": "Invio in corso...",
+    "successTitle": "Richiesta inviata",
+    "successMessage": "Ti risponderò presto."
   }
 }
 

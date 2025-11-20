@@ -54,6 +54,18 @@
     "gym": "ジム（脚の日）",
     "recharging": "充電中（邪魔しないで）",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "名前",
+    "namePlaceholder": "お名前",
+    "email": "メール",
+    "emailPlaceholder": "your@email.com",
+    "message": "メッセージ",
+    "messagePlaceholder": "プロジェクトについて教えてください...",
+    "submit": "リクエストを送信",
+    "submitting": "送信中...",
+    "successTitle": "リクエスト送信済み",
+    "successMessage": "すぐに返信いたします。"
   }
 }
 

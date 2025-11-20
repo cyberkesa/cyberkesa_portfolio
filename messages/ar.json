@@ -54,6 +54,18 @@
     "gym": "صالة الألعاب (يوم الساقين)",
     "recharging": "إعادة الشحن (لا تزعج)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "الاسم",
+    "namePlaceholder": "اسمك",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "your@email.com",
+    "message": "الرسالة",
+    "messagePlaceholder": "أخبرني عن مشروعك...",
+    "submit": "إرسال الطلب",
+    "submitting": "جاري الإرسال...",
+    "successTitle": "تم إرسال الطلب",
+    "successMessage": "سأعود إليك قريباً."
   }
 }
 

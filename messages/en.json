@@ -54,6 +54,21 @@
     "gym": "Gym (Leg Day)",
     "recharging": "Recharging (Do not disturb)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "submit": "Send Request",
+    "submitting": "Sending...",
+    "successTitle": "Request Sent",
+    "successMessage": "I'll get back to you soon.",
+    "budgetLabel": "Budget Range",
+    "budgetLowMessage": "For this budget, I recommend a No-Code builder.",
+    "budgetHighMessage": "Now we are talking business."
   }
 }
 

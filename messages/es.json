@@ -54,6 +54,18 @@
     "gym": "Gimnasio (Día de Piernas)",
     "recharging": "Recargando (No molestar)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando...",
+    "successTitle": "Solicitud enviada",
+    "successMessage": "Te responderé pronto."
   }
 }
 

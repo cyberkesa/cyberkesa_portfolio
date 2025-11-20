@@ -54,6 +54,21 @@
     "gym": "Тренажерный зал (День ног)",
     "recharging": "Перезарядка (Не беспокоить)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Имя",
+    "namePlaceholder": "Ваше имя",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Сообщение",
+    "messagePlaceholder": "Расскажите о вашем проекте...",
+    "submit": "Отправить запрос",
+    "submitting": "Отправка...",
+    "successTitle": "Запрос отправлен",
+    "successMessage": "Я свяжусь с вами в ближайшее время.",
+    "budgetLabel": "Диапазон бюджета",
+    "budgetLowMessage": "Для этого бюджета рекомендую конструктор.",
+    "budgetHighMessage": "Вот это уже деловой разговор."
   }
 }
 

@@ -54,6 +54,18 @@
     "gym": "Salle de Sport (Jour Jambes)",
     "recharging": "Rechargement (Ne pas déranger)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet...",
+    "submit": "Envoyer la demande",
+    "submitting": "Envoi en cours...",
+    "successTitle": "Demande envoyée",
+    "successMessage": "Je vous répondrai bientôt."
   }
 }
 

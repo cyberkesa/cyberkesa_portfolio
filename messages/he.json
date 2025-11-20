@@ -54,6 +54,18 @@
     "gym": "מכון כושר (יום רגליים)",
     "recharging": "טעינה (לא להפריע)",
     "vibecoding": "Vibecoding"
+  },
+  "contact": {
+    "name": "שם",
+    "namePlaceholder": "השם שלך",
+    "email": "אימייל",
+    "emailPlaceholder": "your@email.com",
+    "message": "הודעה",
+    "messagePlaceholder": "ספר לי על הפרויקט שלך...",
+    "submit": "שלח בקשה",
+    "submitting": "שולח...",
+    "successTitle": "הבקשה נשלחה",
+    "successMessage": "אחזור אליך בקרוב."
   }
 }
 

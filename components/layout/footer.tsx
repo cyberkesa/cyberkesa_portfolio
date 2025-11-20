@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { fadeIn } from '@/lib/animations'
-import { Mail } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ContactForm } from '@/components/ui/contact-form'
 
 export function Footer() {
   const t = useTranslations('footer')
@@ -18,19 +17,20 @@ export function Footer() {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="container mx-auto px-6 py-12">
-        <div className="mb-8 text-center">
-          <h2 className="mb-4 font-mono text-2xl font-bold">{t('title')}</h2>
-          <p className="mb-6 text-foreground/70">{t('description')}</p>
-          <a href={`mailto:${t('email')}`}>
-            <Button size="lg" className="inline-flex items-center gap-2">
-              <Mail className="h-4 w-4" />
-              {t('email')}
-            </Button>
-          </a>
+      <div className="container mx-auto px-6 py-16">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 font-mono text-2xl font-bold md:text-3xl">
+            {t('title')}
+          </h2>
+          <p className="mb-8 font-mono text-sm text-foreground/70 md:text-base">
+            {t('description')}
+          </p>
         </div>
 
-        <div className="border-t border-accent pt-8 text-center">
+        {/* Contact Form with Budget Filter */}
+        <ContactForm />
+
+        <div className="mt-16 border-t border-accent pt-8 text-center">
           <p className="font-mono text-sm text-foreground/50">
             {t('copyright', { year: new Date().getFullYear() })}
           </p>
