@@ -27,7 +27,8 @@
     "categoryVisuals": "Visuals",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
-    "mobileHint": "הטה את המכשיר כדי להזיז את השבבים"
+    "mobileHint": "הטה את המכשיר כדי להזיז את השבבים",
+    "title": "מערך הטכנולוגיות"
   },
   "projects": {
     "title": "פרויקטים"
@@ -48,10 +49,17 @@
   "about": {
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "currentStatusLabel": "Current Status:",
+    "headline": "הנדסת אסתטיקה דיגיטלית.",
+    "bioShort": "אני לא בונה אתרים; אני מתכננת נכסים דיגיטליים.\nמפתחת Full-stack ופרפקציוניסטית ויזואלית.\nהקוד שלי נקי יותר מהמצפון שלך.",
+    "background": "התחלתי בעיצוב גרפי (2016). התפתחתי ל-C/C++ (School 21). מצאתי את הזן שלי באינטרנט המודרני (Next.js + AI).",
+    "philosophy": "אני מאמינה ש\"טוב מספיק\" זו עלבון. אני משתמשת בסוכני AI כדי automatize את המשעמם ולהתמקד במה שחשוב: פיזיקה, טיפוגרפיה ו-Vibe.",
+    "currentStatus": "אובססיבית ל-R3F shaders, בונה את ה-backend שלי ב-Go, ונמנעת בקפדנות מבינוניות."
   },
   "services": {
-    "levelLabel": "רמה"
+    "levelLabel": "רמה",
+    "title": "רמות גישה",
+    "subtitle": "לא רשימת מחירים. זה שוק."
   },
   "status": {
     "deploying": "העלאת Production",

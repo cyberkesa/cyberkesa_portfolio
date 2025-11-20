@@ -27,7 +27,8 @@
     "categoryVisuals": "Visuals",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
-    "mobileHint": "倾斜设备移动芯片"
+    "mobileHint": "倾斜设备移动芯片",
+    "title": "技术栈"
   },
   "projects": {
     "title": "项目"
@@ -48,10 +49,17 @@
   "about": {
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "currentStatusLabel": "Current Status:",
+    "headline": "工程化数字美学。",
+    "bioShort": "我不建网站；我设计数字资产。\n全栈开发者与视觉完美主义者。\n我的代码比你的良心更干净。",
+    "background": "从平面设计开始（2016）。进化为 C/C++（School 21）。在现代 Web（Next.js + AI）中找到禅意。",
+    "philosophy": "我相信\"足够好\"是一种侮辱。我使用 AI 代理自动化无聊的工作，专注于重要的事：物理、排版和氛围。",
+    "currentStatus": "痴迷于 R3F 着色器，用 Go 构建自己的后端，严格避免平庸。"
   },
   "services": {
-    "levelLabel": "级别"
+    "levelLabel": "级别",
+    "title": "访问级别",
+    "subtitle": "不是价格表。这是市场。"
   },
   "status": {
     "deploying": "部署生产环境",

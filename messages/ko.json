@@ -27,7 +27,8 @@
     "categoryVisuals": "Visuals",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
-    "mobileHint": "기기를 기울여 칩을 이동하세요"
+    "mobileHint": "기기를 기울여 칩을 이동하세요",
+    "title": "기술 스택"
   },
   "projects": {
     "title": "프로젝트"
@@ -48,10 +49,17 @@
   "about": {
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "currentStatusLabel": "Current Status:",
+    "headline": "디지털 미학의 엔지니어링.",
+    "bioShort": "나는 웹사이트를 만들지 않는다; 디지털 자산을 설계한다.\nFull-stack 개발자 및 시각적 완벽주의자.\n내 코드는 당신의 양심보다 깨끗하다.",
+    "background": "그래픽 디자인으로 시작 (2016). C/C++로 진화 (School 21). 모던 웹 (Next.js + AI)에서 내 선을 찾았다.",
+    "philosophy": "\"충분히 좋다\"는 모욕이라고 믿는다. AI 에이전트를 사용해 지루한 일을 자동화하고 중요한 것에 집중한다: 물리학, 타이포그래피, 그리고 Vibe.",
+    "currentStatus": "R3F 셰이더에 집착하고, Go로 내 백엔드를 구축하며, 엄격하게 평범함을 피한다."
   },
   "services": {
-    "levelLabel": "레벨"
+    "levelLabel": "레벨",
+    "title": "액세스 레벨",
+    "subtitle": "가격표가 아니다. 이것은 시장이다."
   },
   "status": {
     "deploying": "프로덕션 배포 중",

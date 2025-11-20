@@ -27,7 +27,8 @@
     "categoryVisuals": "Visuals",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
-    "mobileHint": "أمِل جهازك لتحريك الرقائق"
+    "mobileHint": "أمِل جهازك لتحريك الرقائق",
+    "title": "المجموعة التقنية"
   },
   "projects": {
     "title": "المشاريع"
@@ -48,10 +49,17 @@
   "about": {
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "currentStatusLabel": "Current Status:",
+    "headline": "هندسة الجماليات الرقمية.",
+    "bioShort": "أنا لا أبني مواقع ويب؛ أنا أهندس عقارات رقمية.\nمطورة Full-stack وكمالية بصرية.\nكودي أنظف من ضميرك.",
+    "background": "بدأت في التصميم الجرافيكي (2016). تطورت إلى C/C++ (School 21). وجدت سكيني في الويب الحديث (Next.js + AI).",
+    "philosophy": "أعتقد أن \"جيد بما فيه الكفاية\" إهانة. أستخدم وكلاء AI لأتمتة الممل لأركز على المهم: الفيزياء، الطباعة، والـ Vibe.",
+    "currentStatus": "مهووسة بـ R3F shaders، أبني خادمي الخلفي الخاص في Go، وأتجنب الصرامة الوسطية."
   },
   "services": {
-    "levelLabel": "المستوى"
+    "levelLabel": "المستوى",
+    "title": "مستويات الوصول",
+    "subtitle": "ليست قائمة أسعار. هذا سوق."
   },
   "status": {
     "deploying": "نشر الإنتاج",

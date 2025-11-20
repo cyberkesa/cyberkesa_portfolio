@@ -27,7 +27,8 @@
     "categoryVisuals": "Visuals",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
-    "mobileHint": "Neige dein Gerät, um Chips zu bewegen"
+    "mobileHint": "Neige dein Gerät, um Chips zu bewegen",
+    "title": "Technologie-Stack"
   },
   "projects": {
     "title": "Projekte"
@@ -48,10 +49,17 @@
   "about": {
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "currentStatusLabel": "Current Status:",
+    "headline": "Ingenieurwesen digitaler Ästhetik.",
+    "bioShort": "Ich baue keine Websites; ich architekturiere digitale Anwesen.\nFull-stack Entwicklerin & visuelle Perfektionistin.\nMein Code ist sauberer als dein Gewissen.",
+    "background": "Begonnen im Grafikdesign (2016). Entwickelt zu C/C++ (School 21). Meinen Zen im modernen Web gefunden (Next.js + AI).",
+    "philosophy": "Ich glaube, dass \"gut genug\" eine Beleidigung ist. Ich nutze KI-Agenten, um Langweiliges zu automatisieren und mich auf das Wichtige zu konzentrieren: Physik, Typografie und Vibe.",
+    "currentStatus": "Besessen von R3F-Shadern, baue mein eigenes Backend in Go und vermeide strikt Mittelmäßigkeit."
   },
   "services": {
-    "levelLabel": "EBENE"
+    "levelLabel": "EBENE",
+    "title": "Zugriffsebenen",
+    "subtitle": "Keine Preisliste. Das ist ein Markt."
   },
   "status": {
     "deploying": "Produktion deployen",

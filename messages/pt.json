@@ -27,7 +27,8 @@
     "categoryVisuals": "Visuals",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
-    "mobileHint": "Incline seu dispositivo para mover os chips"
+    "mobileHint": "Incline seu dispositivo para mover os chips",
+    "title": "Stack Tecnológico"
   },
   "projects": {
     "title": "Projetos"
@@ -48,10 +49,17 @@
   "about": {
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "currentStatusLabel": "Current Status:",
+    "headline": "Engenharia de Estética Digital.",
+    "bioShort": "Eu não construo sites; arquiteto propriedades digitais.\nDesenvolvedora Full-stack e perfeccionista visual.\nMeu código é mais limpo que sua consciência.",
+    "background": "Comecei em Design Gráfico (2016). Evoluí para C/C++ (School 21). Encontrei meu zen no Web Moderno (Next.js + AI).",
+    "philosophy": "Acredito que \"bom o suficiente\" é um insulto. Uso agentes de IA para automatizar o chato e focar no que importa: Física, Tipografia e Vibe.",
+    "currentStatus": "Obcecada com shaders R3F, construindo meu próprio backend em Go, e evitando estritamente a mediocridade."
   },
   "services": {
-    "levelLabel": "NÍVEL"
+    "levelLabel": "NÍVEL",
+    "title": "Níveis de Acesso",
+    "subtitle": "Não é uma lista de preços. Isso é um mercado."
   },
   "status": {
     "deploying": "Implantando Produção",
