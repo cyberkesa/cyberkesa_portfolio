@@ -126,11 +126,9 @@ export function ProgressPill() {
   
   if (!isMobile) return null
   
-  const progressPercentage = Math.round(scrollProgress * 100)
-  
   return (
     <>
-      {/* Progress Pill */}
+      {/* Up Arrow Button */}
       <motion.div
         data-progress-pill
         className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2"
@@ -151,50 +149,32 @@ export function ProgressPill() {
         <motion.button
           onClick={handleScrollToTop}
           className={cn(
-            'relative flex h-12 items-center justify-center gap-2 rounded-full',
+            'flex h-12 w-12 items-center justify-center rounded-full',
             'border border-foreground/10 bg-accent/80 backdrop-blur-xl',
-            'px-6 font-mono text-xs text-foreground/80',
-            'transition-all duration-300',
-            'hover:border-foreground/20 hover:bg-accent',
+            'text-foreground/80 transition-all duration-300',
+            'hover:border-foreground/20 hover:bg-accent hover:text-foreground',
             isDragging && 'scale-105',
             isMenuOpen && 'pointer-events-none'
           )}
           whileHover={{ scale: 1.05 }}
         >
-          {/* Progress bar inside pill */}
-          <div className="absolute inset-0 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-gradient-to-r from-glow via-glow-soft to-glow"
-              style={{
-                width: `${scrollProgress * 100}%`,
-              }}
-              transition={{ duration: 0.1 }}
-            />
-          </div>
-          
-          {/* Content */}
-          <span className="relative z-10 flex items-center gap-2">
-            {isMenuOpen ? (
-              <>
-                <X className="h-4 w-4" />
-                <span>{tMobile('close')}</span>
-              </>
-            ) : (
-              <>
-                <span className="tabular-nums">{progressPercentage}%</span>
-                {dragY < -30 && (
-                  <motion.span
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-glow"
-                  >
-                    {tMobile('menu')}
-                  </motion.span>
-                )}
-              </>
-            )}
-          </span>
+          {isMenuOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <ChevronUp className="h-5 w-5" />
+          )}
         </motion.button>
+        
+        {/* Hint text when dragging up */}
+        {dragY < -30 && !isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-xs text-glow"
+          >
+            {tMobile('menu')}
+          </motion.div>
+        )}
       </motion.div>
       
       {/* Expanded Menu */}
