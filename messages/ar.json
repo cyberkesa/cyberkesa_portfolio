@@ -65,7 +65,10 @@
     "submit": "إرسال الطلب",
     "submitting": "جاري الإرسال...",
     "successTitle": "تم إرسال الطلب",
-    "successMessage": "سأعود إليك قريباً."
+    "successMessage": "سأعود إليك قريباً.",
+    "budgetLabel": "نطاق الميزانية",
+    "budgetLowMessage": "لهذه الميزانية، أنصح بمنشئ بدون كود.",
+    "budgetHighMessage": "الآن نحن نتحدث عن الأعمال."
   }
 }
 

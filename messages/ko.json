@@ -65,7 +65,10 @@
     "submit": "요청 보내기",
     "submitting": "전송 중...",
     "successTitle": "요청 전송됨",
-    "successMessage": "곧 답변드리겠습니다."
+    "successMessage": "곧 답변드리겠습니다.",
+    "budgetLabel": "예산 범위",
+    "budgetLowMessage": "이 예산에는 노코드 빌더를 추천합니다.",
+    "budgetHighMessage": "이제 비즈니스 이야기를 하고 있네요."
   }
 }
 

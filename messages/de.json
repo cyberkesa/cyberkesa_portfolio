@@ -65,7 +65,10 @@
     "submit": "Anfrage senden",
     "submitting": "Wird gesendet...",
     "successTitle": "Anfrage gesendet",
-    "successMessage": "Ich werde mich bald bei Ihnen melden."
+    "successMessage": "Ich werde mich bald bei Ihnen melden.",
+    "budgetLabel": "Budgetbereich",
+    "budgetLowMessage": "Für dieses Budget empfehle ich einen No-Code-Builder.",
+    "budgetHighMessage": "Jetzt reden wir über Geschäfte."
   }
 }
 

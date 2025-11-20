@@ -65,7 +65,10 @@
     "submit": "Enviar solicitud",
     "submitting": "Enviando...",
     "successTitle": "Solicitud enviada",
-    "successMessage": "Te responderé pronto."
+    "successMessage": "Te responderé pronto.",
+    "budgetLabel": "Rango de presupuesto",
+    "budgetLowMessage": "Para este presupuesto, recomiendo un constructor sin código.",
+    "budgetHighMessage": "Ahora sí estamos hablando de negocios."
   }
 }
 

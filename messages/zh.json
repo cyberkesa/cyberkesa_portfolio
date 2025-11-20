@@ -65,7 +65,10 @@
     "submit": "发送请求",
     "submitting": "发送中...",
     "successTitle": "请求已发送",
-    "successMessage": "我会尽快回复您。"
+    "successMessage": "我会尽快回复您。",
+    "budgetLabel": "预算范围",
+    "budgetLowMessage": "对于这个预算，我推荐使用无代码构建器。",
+    "budgetHighMessage": "这才是谈生意的样子。"
   }
 }
 

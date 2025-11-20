@@ -65,7 +65,10 @@
     "submit": "Invia richiesta",
     "submitting": "Invio in corso...",
     "successTitle": "Richiesta inviata",
-    "successMessage": "Ti risponderò presto."
+    "successMessage": "Ti risponderò presto.",
+    "budgetLabel": "Fascia di budget",
+    "budgetLowMessage": "Per questo budget, consiglio un costruttore senza codice.",
+    "budgetHighMessage": "Ora stiamo parlando di affari."
   }
 }
 

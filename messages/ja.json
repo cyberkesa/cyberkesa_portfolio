@@ -65,7 +65,10 @@
     "submit": "リクエストを送信",
     "submitting": "送信中...",
     "successTitle": "リクエスト送信済み",
-    "successMessage": "すぐに返信いたします。"
+    "successMessage": "すぐに返信いたします。",
+    "budgetLabel": "予算範囲",
+    "budgetLowMessage": "この予算には、ノーコードビルダーをお勧めします。",
+    "budgetHighMessage": "これでビジネスの話になります。"
   }
 }
 

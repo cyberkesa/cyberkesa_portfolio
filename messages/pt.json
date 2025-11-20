@@ -65,7 +65,10 @@
     "submit": "Enviar solicitação",
     "submitting": "Enviando...",
     "successTitle": "Solicitação enviada",
-    "successMessage": "Entrarei em contato em breve."
+    "successMessage": "Entrarei em contato em breve.",
+    "budgetLabel": "Faixa de orçamento",
+    "budgetLowMessage": "Para este orçamento, recomendo um construtor sem código.",
+    "budgetHighMessage": "Agora sim estamos falando de negócios."
   }
 }
 

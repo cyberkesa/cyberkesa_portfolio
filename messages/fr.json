@@ -65,7 +65,10 @@
     "submit": "Envoyer la demande",
     "submitting": "Envoi en cours...",
     "successTitle": "Demande envoyée",
-    "successMessage": "Je vous répondrai bientôt."
+    "successMessage": "Je vous répondrai bientôt.",
+    "budgetLabel": "Plage de budget",
+    "budgetLowMessage": "Pour ce budget, je recommande un constructeur sans code.",
+    "budgetHighMessage": "Maintenant, nous parlons affaires."
   }
 }
 

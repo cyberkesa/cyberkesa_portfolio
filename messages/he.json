@@ -65,7 +65,10 @@
     "submit": "שלח בקשה",
     "submitting": "שולח...",
     "successTitle": "הבקשה נשלחה",
-    "successMessage": "אחזור אליך בקרוב."
+    "successMessage": "אחזור אליך בקרוב.",
+    "budgetLabel": "טווח תקציב",
+    "budgetLowMessage": "לתקציב הזה, אני ממליצה על בונה ללא קוד.",
+    "budgetHighMessage": "עכשיו אנחנו מדברים עסקים."
   }
 }
 
