@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
@@ -28,6 +28,9 @@ export function MobileMenu() {
   const orientation = useDeviceOrientation()
   
   const y = useMotionValue(0)
+  const mainContentRef = useRef<HTMLElement | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   
   // Detect mobile
   useEffect(() => {
@@ -42,8 +45,14 @@ export function MobileMenu() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
   
-  // Menu items
-  const menuItems = [
+  // Get main content ref
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    mainContentRef.current = document.querySelector('main')
+  }, [])
+  
+  // Menu items - memoized to prevent recreation on each render
+  const menuItems = useMemo(() => [
     { key: 'home', href: `/${locale}`, label: t('home') },
     { key: 'about', href: `/${locale}#about`, label: t('about') },
     { key: 'projects', href: `/${locale}#projects`, label: t('projects') },
@@ -51,7 +60,7 @@ export function MobileMenu() {
     { key: 'access', href: `/${locale}#access`, label: t('access') },
     { key: 'log', href: `/${locale}/log`, label: t('log') },
     { key: 'contact', href: `/${locale}#contact`, label: t('contact') },
-  ]
+  ], [locale, t])
   
   // Handle drag end
   const handleDragEnd = (_event: any, info: any) => {
@@ -70,10 +79,9 @@ export function MobileMenu() {
   
   // Apply content transform when menu is open
   useEffect(() => {
-    if (typeof document === 'undefined') return
+    if (!mainContentRef.current) return
     
-    const mainContent = document.querySelector('main')
-    if (!mainContent) return
+    const mainContent = mainContentRef.current
     
     if (isOpen) {
       mainContent.style.transform = 'scale(0.85)'
@@ -97,8 +105,13 @@ export function MobileMenu() {
   const handleMenuItemClick = (href: string, index: number) => {
     lightTap()
     
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+    
     // Add delay for visual feedback
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setIsOpen(false)
       
       if (href.startsWith('#')) {
@@ -119,7 +132,12 @@ export function MobileMenu() {
     mediumTap()
     setIsOpen(false)
     
-    setTimeout(() => {
+    // Clear any existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current)
+    }
+    
+    scrollTimeoutRef.current = setTimeout(() => {
       if (typeof window !== 'undefined' && (window as any).lenis) {
         ;(window as any).lenis.scrollTo(0, { duration: 1.2 })
       } else {
@@ -131,21 +149,35 @@ export function MobileMenu() {
     }, 300)
   }
   
-  // Calculate parallax offset from gyroscope
-  const getParallaxOffset = (index: number) => {
-    if (!isOpen || orientation.beta === null || orientation.gamma === null) {
-      return { x: 0, y: 0 }
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
     }
-    
-    // Subtle parallax effect based on device orientation
-    const tiltX = (orientation.gamma / 90) * (index + 1) * 5
-    const tiltY = (orientation.beta / 180) * (index + 1) * 5
-    
-    return {
-      x: tiltX,
-      y: tiltY,
+  }, [])
+  
+  // Calculate parallax offset from gyroscope - memoized
+  const getParallaxOffset = useMemo(() => {
+    return (index: number) => {
+      if (!isOpen || orientation.beta === null || orientation.gamma === null) {
+        return { x: 0, y: 0 }
+      }
+      
+      // Subtle parallax effect based on device orientation
+      const tiltX = (orientation.gamma / 90) * (index + 1) * 5
+      const tiltY = (orientation.beta / 180) * (index + 1) * 5
+      
+      return {
+        x: tiltX,
+        y: tiltY,
+      }
     }
-  }
+  }, [isOpen, orientation.beta, orientation.gamma])
   
   if (!isMobile) return null
   
@@ -300,4 +332,3 @@ export function MobileMenu() {
     </>
   )
 }
-
