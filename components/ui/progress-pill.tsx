@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
-import { useScrollProgress } from '@/hooks/use-scroll-progress'
 import { useHapticFeedback } from '@/hooks/use-haptic-feedback'
 import { cn } from '@/lib/utils'
 import { X, ChevronUp } from 'lucide-react'
@@ -22,7 +21,6 @@ export function ProgressPill() {
   const router = useRouter()
   const pathname = usePathname()
   const locale = useLocale()
-  const scrollProgress = useScrollProgress()
   const { lightTap, mediumTap } = useHapticFeedback()
   
   const [isMenuOpen, setIsMenuOpen] = useState(false)
