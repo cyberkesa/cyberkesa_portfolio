@@ -9,6 +9,7 @@ import { LanguageSwitcher } from '@/components/ui/language-switcher'
 import { StatusIndicator } from '@/components/ui/status-indicator'
 import { CustomCursor } from '@/components/ui/custom-cursor'
 import { EasterEgg } from '@/components/ui/easter-egg'
+import { ProgressPill } from '@/components/ui/progress-pill'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <StatusIndicator />
       <CustomCursor />
       <EasterEgg />
+      <ProgressPill />
       <main>
         <HeroSection />
         <AboutSection />

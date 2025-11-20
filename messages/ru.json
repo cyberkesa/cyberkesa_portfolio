@@ -114,5 +114,11 @@
       "vibecodingProgress": "Критично: Vibecoding в процессе...",
       "codeQualityHigh": "Предупреждение: Качество кода слишком высокое."
     }
+  },
+  "mobileNav": {
+    "close": "Закрыть",
+    "menu": "Меню",
+    "navigation": "Навигация",
+    "scrollToTop": "Наверх"
   }
 }

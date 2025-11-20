@@ -114,5 +114,11 @@
       "vibecodingProgress": "Critical: Vibecoding in progress...",
       "codeQualityHigh": "Alert: Code quality too high."
     }
+  },
+  "mobileNav": {
+    "close": "Close",
+    "menu": "Menu",
+    "navigation": "Navigation",
+    "scrollToTop": "Scroll to Top"
   }
 }

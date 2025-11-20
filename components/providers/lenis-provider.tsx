@@ -18,6 +18,11 @@ export function LenisProvider({ children }: LenisProviderProps) {
       syncTouch: false,
     })
 
+    // Expose Lenis instance to window for ProgressPill
+    if (typeof window !== 'undefined') {
+      ;(window as any).lenis = lenis
+    }
+
     let rafId: number
 
     function raf(time: number) {
@@ -30,6 +35,9 @@ export function LenisProvider({ children }: LenisProviderProps) {
     return () => {
       cancelAnimationFrame(rafId)
       lenis.destroy()
+      if (typeof window !== 'undefined') {
+        delete (window as any).lenis
+      }
     }
   }, [])
 
