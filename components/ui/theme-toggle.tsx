@@ -21,7 +21,6 @@ export function ThemeToggle() {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
 
     // 1. Check if browser supports View Transitions API
-    // @ts-expect-error - TypeScript may complain about startViewTransition
     if (!document.startViewTransition) {
       setTheme(newTheme)
       return
@@ -38,7 +37,6 @@ export function ThemeToggle() {
     )
 
     // 4. Start transition
-    // @ts-expect-error - TypeScript may complain about startViewTransition
     const transition = document.startViewTransition(async () => {
       setTheme(newTheme)
       // Wait for next tick so React can apply theme class
@@ -57,9 +55,8 @@ export function ThemeToggle() {
         {
           duration: 750, // 750ms - slow and "expensive" (usually 300ms)
           easing: 'cubic-bezier(0.65, 0, 0.35, 1)', // Custom curve (Heavy Ease)
-          // @ts-expect-error - TypeScript may complain about pseudoElement
           pseudoElement: '::view-transition-new(root)', // Apply to "new" state
-        }
+        } as KeyframeAnimationOptions
       )
     })
   }
