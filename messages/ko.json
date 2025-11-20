@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "cyberkesa",
-    "description": "Frontend Developer 포트폴리오 - 프리미엄 럭셔리 미학과 완벽한 성능"
+    "description": "Full-stack Developer 포트폴리오 - 프리미엄 럭셔리 미학과 완벽한 성능"
   },
   "nav": {
     "home": "홈",
@@ -14,7 +14,7 @@
     "loading": "포트폴리오 로딩 중...",
     "ready": "시스템 준비 완료.",
     "welcome": "cyberkesa에 오신 것을 환영합니다.",
-    "title": "Frontend Developer",
+    "title": "Full-stack Developer",
     "subtitle": "완벽한 성능으로 프리미엄 디지털 경험 창조",
     "viewProjects": "프로젝트 보기",
     "getInTouch": "연락하기"

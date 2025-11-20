@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "cyberkesa",
-    "description": "Frontend Developer Portfolio - Premium Luxus-Ästhetik mit perfekter Leistung"
+    "description": "Full-stack Developer Portfolio - Premium Luxus-Ästhetik mit perfekter Leistung"
   },
   "nav": {
     "home": "Startseite",
@@ -14,7 +14,7 @@
     "loading": "Portfolio wird geladen...",
     "ready": "System bereit.",
     "welcome": "Willkommen bei cyberkesa.",
-    "title": "Frontend Developer",
+    "title": "Full-stack Developer",
     "subtitle": "Erschaffe Premium-Digitalerlebnisse mit perfekter Leistung",
     "viewProjects": "Projekte ansehen",
     "getInTouch": "Kontakt aufnehmen"

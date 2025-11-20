@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "cyberkesa",
-    "description": "Portafolio de Frontend Developer - Estética de lujo premium con rendimiento perfecto"
+    "description": "Portafolio de Full-stack Developer - Estética de lujo premium con rendimiento perfecto"
   },
   "nav": {
     "home": "Inicio",
@@ -14,7 +14,7 @@
     "loading": "Cargando portafolio...",
     "ready": "Sistema listo.",
     "welcome": "Bienvenido a cyberkesa.",
-    "title": "Frontend Developer",
+    "title": "Full-stack Developer",
     "subtitle": "Creando experiencias digitales premium con rendimiento perfecto",
     "viewProjects": "Ver Proyectos",
     "getInTouch": "Ponerse en contacto"

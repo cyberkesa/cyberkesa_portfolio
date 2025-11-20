@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "cyberkesa",
-    "description": "תיק עבודות Frontend Developer - אסתטיקה יוקרתית עם ביצועים מושלמים"
+    "description": "תיק עבודות Full-stack Developer - אסתטיקה יוקרתית עם ביצועים מושלמים"
   },
   "nav": {
     "home": "בית",
@@ -14,7 +14,7 @@
     "loading": "טוען תיק עבודות...",
     "ready": "המערכת מוכנה.",
     "welcome": "ברוכים הבאים ל-cyberkesa.",
-    "title": "Frontend Developer",
+    "title": "Full-stack Developer",
     "subtitle": "יוצר חוויות דיגיטליות יוקרתיות עם ביצועים מושלמים",
     "viewProjects": "צפה בפרויקטים",
     "getInTouch": "יצירת קשר"

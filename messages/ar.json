@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "cyberkesa",
-    "description": "معرض أعمال Frontend Developer - جماليات فاخرة مع أداء مثالي"
+    "description": "معرض أعمال Full-stack Developer - جماليات فاخرة مع أداء مثالي"
   },
   "nav": {
     "home": "الرئيسية",
@@ -14,7 +14,7 @@
     "loading": "جاري تحميل المعرض...",
     "ready": "النظام جاهز.",
     "welcome": "مرحباً بك في cyberkesa.",
-    "title": "Frontend Developer",
+    "title": "Full-stack Developer",
     "subtitle": "إنشاء تجارب رقمية فاخرة بأداء مثالي",
     "viewProjects": "عرض المشاريع",
     "getInTouch": "تواصل معنا"
