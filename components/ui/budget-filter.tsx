@@ -40,12 +40,13 @@ export function BudgetFilter({
     setIsHighBudget(value >= HIGH_THRESHOLD)
   }, [value])
 
-  // Haptic feedback on high budget
+  // Haptic feedback on high budget (only trigger once when crossing threshold)
   useEffect(() => {
     if (isHighBudget && value >= HIGH_THRESHOLD) {
       mediumTap()
     }
-  }, [isHighBudget, value, mediumTap])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isHighBudget, value])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(e.target.value, 10)

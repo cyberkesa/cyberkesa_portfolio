@@ -40,11 +40,13 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       })
 
-      const data = await response.json()
-
+      // Handle network errors
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message')
+        const data = await response.json().catch(() => ({}))
+        throw new Error(data.error || `HTTP error! status: ${response.status}`)
       }
+
+      const data = await response.json()
 
       setIsSubmitting(false)
       setIsSubmitted(true)
@@ -58,8 +60,11 @@ export function ContactForm() {
     } catch (error) {
       console.error('Error submitting form:', error)
       setIsSubmitting(false)
-      // You can add error state handling here if needed
-      alert('Failed to send message. Please try again or contact directly.')
+      // Handle network errors and other errors
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Network error. Please check your connection and try again.'
+      alert(`Failed to send message: ${errorMessage}`)
     }
   }
 

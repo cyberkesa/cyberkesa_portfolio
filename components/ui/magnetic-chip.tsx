@@ -69,31 +69,45 @@ export function MagneticChip({
   const xSpring = useSpring(x, springConfig)
   const ySpring = useSpring(y, springConfig)
 
-  // Calculate repulsion from mouse
+  // Calculate repulsion from mouse (throttled with requestAnimationFrame)
   useEffect(() => {
     if (!ref.current) return
 
-    const rect = ref.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
+    let rafId: number
 
-    const dx = mouseX - centerX
-    const dy = mouseY - centerY
-    const distance = Math.sqrt(dx * dx + dy * dy)
+    const updatePosition = () => {
+      if (!ref.current) return
 
-    // Repulsion force (stronger when closer)
-    const minDistance = 100
-    if (distance < minDistance) {
-      const force = (minDistance - distance) / minDistance
-      const angle = Math.atan2(dy, dx)
+      const rect = ref.current.getBoundingClientRect()
+      const centerX = rect.left + rect.width / 2
+      const centerY = rect.top + rect.height / 2
 
-      // Push away from cursor
-      x.set(-Math.cos(angle) * force * 30)
-      y.set(-Math.sin(angle) * force * 30)
-    } else {
-      // Return to original position
-      x.set(0)
-      y.set(0)
+      const dx = mouseX - centerX
+      const dy = mouseY - centerY
+      const distance = Math.sqrt(dx * dx + dy * dy)
+
+      // Repulsion force (stronger when closer)
+      const minDistance = 100
+      if (distance < minDistance) {
+        const force = (minDistance - distance) / minDistance
+        const angle = Math.atan2(dy, dx)
+
+        // Push away from cursor
+        x.set(-Math.cos(angle) * force * 30)
+        y.set(-Math.sin(angle) * force * 30)
+      } else {
+        // Return to original position
+        x.set(0)
+        y.set(0)
+      }
+
+      rafId = requestAnimationFrame(updatePosition)
+    }
+
+    rafId = requestAnimationFrame(updatePosition)
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [mouseX, mouseY, x, y])
 

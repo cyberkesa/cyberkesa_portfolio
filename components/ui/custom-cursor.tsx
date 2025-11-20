@@ -29,15 +29,35 @@ export function CustomCursor() {
         target.tagName === 'H1' ||
         target.tagName === 'H2' ||
         target.tagName === 'H3' ||
+        target.tagName === 'H4' ||
+        target.tagName === 'H5' ||
+        target.tagName === 'H6' ||
         target.tagName === 'SPAN' ||
+        target.tagName === 'A' ||
         target.classList.contains('text-foreground')
       ) {
         setIsHovering(true)
+      } else {
+        setIsHovering(false)
       }
     }
 
-    const handleMouseOut = () => {
-      setIsHovering(false)
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const relatedTarget = e.relatedTarget as HTMLElement
+      
+      // Only reset if not moving to another text element
+      if (
+        !relatedTarget ||
+        (relatedTarget.tagName !== 'P' &&
+         relatedTarget.tagName !== 'H1' &&
+         relatedTarget.tagName !== 'H2' &&
+         relatedTarget.tagName !== 'H3' &&
+         relatedTarget.tagName !== 'SPAN' &&
+         !relatedTarget.classList.contains('text-foreground'))
+      ) {
+        setIsHovering(false)
+      }
     }
 
     document.addEventListener('mouseover', handleMouseOver)

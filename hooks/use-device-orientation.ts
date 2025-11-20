@@ -30,13 +30,16 @@ export function useDeviceOrientation(): DeviceOrientation {
       })
     }
 
+    let isListenerAdded = false
+
     // Request permission for iOS 13+
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
       ;(DeviceOrientationEvent as any)
         .requestPermission()
         .then((response: string) => {
           if (response === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation)
+            window.addEventListener('deviceorientation', handleOrientation, true)
+            isListenerAdded = true
           }
         })
         .catch(() => {
@@ -44,11 +47,14 @@ export function useDeviceOrientation(): DeviceOrientation {
         })
     } else {
       // Android or older iOS
-      window.addEventListener('deviceorientation', handleOrientation)
+      window.addEventListener('deviceorientation', handleOrientation, true)
+      isListenerAdded = true
     }
 
     return () => {
-      window.removeEventListener('deviceorientation', handleOrientation)
+      if (isListenerAdded) {
+        window.removeEventListener('deviceorientation', handleOrientation, true)
+      }
     }
   }, [])
 
