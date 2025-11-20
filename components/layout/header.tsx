@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { fadeIn } from '@/lib/animations'
 import { useScrollProgress } from '@/hooks/use-scroll-progress'
 import { cn } from '@/lib/utils'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export function Header() {
   const t = useTranslations('nav')
@@ -61,7 +62,13 @@ export function Header() {
           >
             {t('contact')}
           </a>
+          <ThemeToggle />
         </nav>
+
+        {/* Mobile: Theme toggle only */}
+        <div className="flex md:hidden">
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* Scroll progress bar */}

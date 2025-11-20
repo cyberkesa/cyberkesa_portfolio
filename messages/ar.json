@@ -29,7 +29,8 @@
     "title": "تهيئة الاتصال",
     "description": "مستعد لبدء مشروع جديد؟ دعنا نتصل.",
     "email": "contact@cyberkesa.com",
-    "copyright": "© {year} cyberkesa. جميع الحقوق محفوظة."
+    "copyright": "© {year} cyberkesa. جميع الحقوق محفوظة.",
+    "location": "مصمم ومطور في بودولسك (بسخرية)."
   },
   "notFound": {
     "error": "خطأ 404:",

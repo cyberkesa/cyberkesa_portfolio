@@ -29,7 +29,8 @@
     "title": "Инициализировать контакт",
     "description": "Готовы начать новый проект? Давайте свяжемся.",
     "email": "contact@cyberkesa.com",
-    "copyright": "© {year} cyberkesa. Все права защищены."
+    "copyright": "© {year} cyberkesa. Все права защищены.",
+    "location": "Спроектировано и разработано в Подольске (иронично)."
   },
   "notFound": {
     "error": "ОШИБКА 404:",

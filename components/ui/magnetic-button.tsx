@@ -1,11 +1,11 @@
 'use client'
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { useRef, MouseEvent, ButtonHTMLAttributes } from 'react'
+import { motion, useMotionValue, useSpring, HTMLMotionProps } from 'framer-motion'
+import { useRef, MouseEvent } from 'react'
 import { cn } from '@/lib/utils'
 
 export interface MagneticButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<HTMLMotionProps<'button'>, 'onDrag' | 'onDragStart' | 'onDragEnd'> {
   children: React.ReactNode
   variant?: 'default' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'

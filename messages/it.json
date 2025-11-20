@@ -29,7 +29,8 @@
     "title": "Inizializza Contatto",
     "description": "Pronto per iniziare un nuovo progetto? Mettiamoci in contatto.",
     "email": "contact@cyberkesa.com",
-    "copyright": "© {year} cyberkesa. Tutti i diritti riservati."
+    "copyright": "© {year} cyberkesa. Tutti i diritti riservati.",
+    "location": "Progettato e sviluppato a Podolsk (ironicamente)."
   },
   "notFound": {
     "error": "ERRORE 404:",

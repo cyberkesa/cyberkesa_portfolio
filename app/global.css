@@ -11,6 +11,15 @@
   --glow-soft: rgba(0, 255, 255, 0.25);
 }
 
+.light {
+  --background: #fafafa;
+  --foreground: #050505;
+  --accent: #e5e5e5;
+  --accent-hover: #d4d4d4;
+  --glow: #0000ff;
+  --glow-soft: rgba(0, 0, 255, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -29,7 +29,8 @@
     "title": "אתחל יצירת קשר",
     "description": "מוכן להתחיל פרויקט חדש? בואו נתחבר.",
     "email": "contact@cyberkesa.com",
-    "copyright": "© {year} cyberkesa. כל הזכויות שמורות."
+    "copyright": "© {year} cyberkesa. כל הזכויות שמורות.",
+    "location": "עוצב ופותח בפודולסק (באופן אירוני)."
   },
   "notFound": {
     "error": "שגיאה 404:",

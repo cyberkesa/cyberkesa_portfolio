@@ -6,6 +6,7 @@ import { locales } from '@/i18n/config'
 import { metadata } from '../metadata'
 import '../global.css'
 import { LenisProvider } from '@/components/providers/lenis-provider'
+import { ThemeProvider } from '@/components/providers/theme-provider'
 // import FluidBackground from '@/components/visuals/fluid-background' // Temporarily disabled
 
 export { metadata }
@@ -39,7 +40,11 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} dir={locale === 'ar' || locale === 'he' ? 'rtl' : 'ltr'}>
+    <html
+      lang={locale}
+      dir={locale === 'ar' || locale === 'he' ? 'rtl' : 'ltr'}
+      suppressHydrationWarning
+    >
       <body className={geistMono.variable}>
         {/* Background Layer (Z-0): R3F Canvas with shaders */}
         {/* Temporarily disabled - uncomment when R3F is working */}
@@ -47,9 +52,11 @@ export default async function LocaleLayout({
 
         {/* Content Layer (Z-20): HTML/DOM elements */}
         <div className="relative z-20">
-          <NextIntlClientProvider messages={messages}>
-            <LenisProvider>{children}</LenisProvider>
-          </NextIntlClientProvider>
+          <ThemeProvider>
+            <NextIntlClientProvider messages={messages}>
+              <LenisProvider>{children}</LenisProvider>
+            </NextIntlClientProvider>
+          </ThemeProvider>
         </div>
       </body>
     </html>
