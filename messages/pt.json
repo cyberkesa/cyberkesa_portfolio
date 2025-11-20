@@ -4,10 +4,13 @@
     "description": "Portfólio Full-stack Developer - Estética de luxo premium com performance perfeita"
   },
   "nav": {
-    "home": "Início",
-    "projects": "Projetos",
-    "stack": "Stack",
-    "contact": "Contato"
+    "home": "início",
+    "about": "sobre",
+    "projects": "projetos",
+    "stack": "stack",
+    "access": "acesso",
+    "log": "log",
+    "contact": "contato"
   },
   "hero": {
     "initializing": "Inicializando...",

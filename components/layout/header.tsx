@@ -36,7 +36,7 @@ export function Header() {
             href="#about"
             className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
           >
-            about
+            {t('about')}
           </a>
           <a
             href="#projects"
@@ -48,13 +48,13 @@ export function Header() {
             href="#services"
             className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
           >
-            access
+            {t('access')}
           </a>
           <Link
             href={`/${locale}/log`}
             className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
           >
-            log
+            {t('log')}
           </Link>
           <a
             href="#contact"

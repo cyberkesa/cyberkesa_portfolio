@@ -5,8 +5,11 @@
   },
   "nav": {
     "home": "ホーム",
+    "about": "について",
     "projects": "プロジェクト",
     "stack": "技術スタック",
+    "access": "アクセス",
+    "log": "ログ",
     "contact": "お問い合わせ"
   },
   "hero": {

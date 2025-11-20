@@ -4,10 +4,13 @@
     "description": "Full-stack Developer Portfolio - Premium luxury aesthetics with perfect performance"
   },
   "nav": {
-    "home": "Home",
-    "projects": "Projects",
-    "stack": "Stack",
-    "contact": "Contact"
+    "home": "home",
+    "about": "about",
+    "projects": "projects",
+    "stack": "stack",
+    "access": "access",
+    "log": "log",
+    "contact": "contact"
   },
   "hero": {
     "initializing": "Initializing...",

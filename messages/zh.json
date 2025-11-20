@@ -5,8 +5,11 @@
   },
   "nav": {
     "home": "首页",
+    "about": "关于",
     "projects": "项目",
     "stack": "技术栈",
+    "access": "访问",
+    "log": "日志",
     "contact": "联系"
   },
   "hero": {

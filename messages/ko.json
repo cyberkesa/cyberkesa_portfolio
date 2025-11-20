@@ -5,8 +5,11 @@
   },
   "nav": {
     "home": "홈",
+    "about": "소개",
     "projects": "프로젝트",
     "stack": "기술 스택",
+    "access": "접근",
+    "log": "로그",
     "contact": "연락처"
   },
   "hero": {

@@ -4,10 +4,13 @@
     "description": "Full-stack Developer Portfolio - Premium Luxus-Ästhetik mit perfekter Leistung"
   },
   "nav": {
-    "home": "Startseite",
-    "projects": "Projekte",
-    "stack": "Technologie-Stack",
-    "contact": "Kontakt"
+    "home": "startseite",
+    "about": "über mich",
+    "projects": "projekte",
+    "stack": "technologie-stack",
+    "access": "zugriff",
+    "log": "log",
+    "contact": "kontakt"
   },
   "hero": {
     "initializing": "Initialisiere...",
