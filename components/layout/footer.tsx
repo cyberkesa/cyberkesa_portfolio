@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { fadeIn } from '@/lib/animations'
 import { ContactForm } from '@/components/ui/contact-form'
+import { Mail, MessageCircle } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export function Footer() {
   const t = useTranslations('footer')
@@ -29,6 +31,22 @@ export function Footer() {
 
         {/* Contact Form with Budget Filter */}
         <ContactForm />
+
+        {/* Direct Contact Links */}
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          <a href="mailto:cyberkesa@mail.ru">
+            <Button variant="outline" size="lg" className="inline-flex items-center gap-2">
+              <Mail className="h-4 w-4" />
+              cyberkesa@mail.ru
+            </Button>
+          </a>
+          <a href="https://t.me/st3qt" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg" className="inline-flex items-center gap-2">
+              <MessageCircle className="h-4 w-4" />
+              Telegram
+            </Button>
+          </a>
+        </div>
 
         <div className="mt-16 border-t border-accent pt-8 text-center">
           <p className="font-mono text-sm text-foreground/50">
