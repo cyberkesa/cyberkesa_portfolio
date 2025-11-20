@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const easterEggMessages = [
@@ -14,8 +14,22 @@ const easterEggMessages = [
 export function EasterEgg() {
   const [isTriggered, setIsTriggered] = useState(false)
   const [message, setMessage] = useState('')
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   const handleTrigger = () => {
+    // Clear existing timeout if any
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+
     const randomMessage =
       easterEggMessages[
         Math.floor(Math.random() * easterEggMessages.length)
@@ -24,8 +38,9 @@ export function EasterEgg() {
     setIsTriggered(true)
 
     // Reset after 3 seconds
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setIsTriggered(false)
+      timeoutRef.current = null
     }, 3000)
   }
 

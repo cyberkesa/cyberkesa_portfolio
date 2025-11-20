@@ -13,6 +13,8 @@ export function CustomCursor() {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     // Only show on desktop
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 768)

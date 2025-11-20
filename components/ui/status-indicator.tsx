@@ -21,7 +21,7 @@ export function StatusIndicator() {
     return () => clearInterval(interval)
   }, [currentStatus])
 
-  const status = statusMessages.find((s) => s.status === currentStatus)!
+  const status = statusMessages.find((s) => s.status === currentStatus) || statusMessages[0]
 
   return (
     <motion.div

@@ -28,14 +28,16 @@ function FluidPlane() {
 
   // Update colors based on theme
   useEffect(() => {
-    if (mesh.current) {
+    if (mesh.current && mesh.current.material) {
       const material = mesh.current.material as THREE.ShaderMaterial
-      if (theme === 'light') {
-        material.uniforms.uColor1.value = new THREE.Color('#fafafa')
-        material.uniforms.uColor2.value = new THREE.Color('#0000ff')
-      } else {
-        material.uniforms.uColor1.value = new THREE.Color('#050505')
-        material.uniforms.uColor2.value = new THREE.Color('#00ffff')
+      if (material && material.uniforms) {
+        if (theme === 'light') {
+          material.uniforms.uColor1.value = new THREE.Color('#fafafa')
+          material.uniforms.uColor2.value = new THREE.Color('#0000ff')
+        } else {
+          material.uniforms.uColor1.value = new THREE.Color('#050505')
+          material.uniforms.uColor2.value = new THREE.Color('#00ffff')
+        }
       }
     }
   }, [theme])

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface DeviceOrientation {
   beta: number | null // X-axis rotation (left/right tilt)
@@ -18,6 +18,7 @@ export function useDeviceOrientation(): DeviceOrientation {
     gamma: null,
     alpha: null,
   })
+  const isListenerAddedRef = useRef(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -30,8 +31,6 @@ export function useDeviceOrientation(): DeviceOrientation {
       })
     }
 
-    let isListenerAdded = false
-
     // Request permission for iOS 13+
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
       ;(DeviceOrientationEvent as any)
@@ -39,7 +38,7 @@ export function useDeviceOrientation(): DeviceOrientation {
         .then((response: string) => {
           if (response === 'granted') {
             window.addEventListener('deviceorientation', handleOrientation, true)
-            isListenerAdded = true
+            isListenerAddedRef.current = true
           }
         })
         .catch(() => {
@@ -48,12 +47,13 @@ export function useDeviceOrientation(): DeviceOrientation {
     } else {
       // Android or older iOS
       window.addEventListener('deviceorientation', handleOrientation, true)
-      isListenerAdded = true
+      isListenerAddedRef.current = true
     }
 
     return () => {
-      if (isListenerAdded) {
+      if (isListenerAddedRef.current) {
         window.removeEventListener('deviceorientation', handleOrientation, true)
+        isListenerAddedRef.current = false
       }
     }
   }, [])

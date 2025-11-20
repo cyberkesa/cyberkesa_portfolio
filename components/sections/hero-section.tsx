@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Terminal } from '@/components/ui/terminal'
@@ -13,6 +13,7 @@ export function HeroSection() {
   const [displayText, setDisplayText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
+  const nestedTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const typewriterText = [
     t('initializing'),
@@ -22,13 +23,19 @@ export function HeroSection() {
   ]
 
   useEffect(() => {
+    // Clear nested timeout on unmount or dependency change
+    if (nestedTimeoutRef.current) {
+      clearTimeout(nestedTimeoutRef.current)
+      nestedTimeoutRef.current = null
+    }
+
     const currentText = typewriterText[currentIndex]
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         if (displayText.length < currentText.length) {
           setDisplayText(currentText.slice(0, displayText.length + 1))
         } else {
-          setTimeout(() => setIsDeleting(true), 2000)
+          nestedTimeoutRef.current = setTimeout(() => setIsDeleting(true), 2000)
         }
       } else {
         if (displayText.length > 0) {
@@ -40,7 +47,13 @@ export function HeroSection() {
       }
     }, isDeleting ? 50 : 100)
 
-    return () => clearTimeout(timeout)
+    return () => {
+      clearTimeout(timeout)
+      if (nestedTimeoutRef.current) {
+        clearTimeout(nestedTimeoutRef.current)
+        nestedTimeoutRef.current = null
+      }
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayText, currentIndex, isDeleting])
 

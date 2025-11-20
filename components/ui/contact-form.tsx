@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { BudgetFilter } from './budget-filter'
@@ -19,8 +19,18 @@ export function ContactForm() {
   const [isLowBudget, setIsLowBudget] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const LOW_BUDGET_THRESHOLD = 1000
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   const handleBudgetChange = (value: number) => {
     setFormData((prev) => ({ ...prev, budget: value }))
@@ -30,6 +40,7 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
     try {
       const response = await fetch('/api/contact', {
@@ -52,10 +63,14 @@ export function ContactForm() {
       setIsSubmitted(true)
 
       // Reset form after 3 seconds
-      setTimeout(() => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      timeoutRef.current = setTimeout(() => {
         setIsSubmitted(false)
         setFormData({ name: '', email: '', message: '', budget: 5000 })
         setIsLowBudget(false)
+        timeoutRef.current = null
       }, 3000)
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -64,7 +79,7 @@ export function ContactForm() {
       const errorMessage = error instanceof Error 
         ? error.message 
         : 'Network error. Please check your connection and try again.'
-      alert(`Failed to send message: ${errorMessage}`)
+      setError(errorMessage)
     }
   }
 
@@ -160,6 +175,18 @@ export function ContactForm() {
                 placeholder={t('messagePlaceholder')}
               />
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 flex items-center gap-2 font-mono text-xs text-red-500"
+              >
+                <X className="h-4 w-4" />
+                <span>{error}</span>
+              </motion.div>
+            )}
 
             {/* Submit Button */}
             <motion.div

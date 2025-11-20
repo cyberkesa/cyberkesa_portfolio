@@ -45,8 +45,7 @@ export function BudgetFilter({
     if (isHighBudget && value >= HIGH_THRESHOLD) {
       mediumTap()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isHighBudget, value])
+  }, [isHighBudget, value, mediumTap])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(e.target.value, 10)

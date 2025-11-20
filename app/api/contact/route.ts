@@ -15,22 +15,37 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      )
+    }
+
+    // Sanitize inputs (basic XSS prevention)
+    const sanitizedName = String(name).trim().substring(0, 200)
+    const sanitizedEmail = String(email).trim().substring(0, 200)
+    const sanitizedMessage = String(message).trim().substring(0, 5000)
+    const sanitizedBudget = Math.max(0, Math.min(Number(budget) || 0, 1000000))
+
     // Format budget for display
-    const formattedBudget = budget >= 1000 
-      ? `$${(budget / 1000).toFixed(budget % 1000 === 0 ? 0 : 1)}k`
-      : `$${budget}`
+    const formattedBudget = sanitizedBudget >= 1000 
+      ? `$${(sanitizedBudget / 1000).toFixed(sanitizedBudget % 1000 === 0 ? 0 : 1)}k`
+      : `$${sanitizedBudget}`
 
     // Email content
-    const emailSubject = `New Contact Request from ${name}`
+    const emailSubject = `New Contact Request from ${sanitizedName}`
     const emailBody = `
 New contact form submission from cyberkesa portfolio:
 
-Name: ${name}
-Email: ${email}
+Name: ${sanitizedName}
+Email: ${sanitizedEmail}
 Budget: ${formattedBudget}
 
 Message:
-${message}
+${sanitizedMessage}
 
 ---
 Sent from cyberkesa portfolio contact form
@@ -66,7 +81,7 @@ Sent from cyberkesa portfolio contact form
       body: JSON.stringify({
         from: 'Portfolio <onboarding@resend.dev>', // Change this to your verified domain
         to: [TO_EMAIL],
-        reply_to: email,
+        reply_to: sanitizedEmail,
         subject: emailSubject,
         text: emailBody,
         html: `
@@ -75,13 +90,13 @@ Sent from cyberkesa portfolio contact form
               New Contact Request
             </h2>
             <div style="margin: 20px 0;">
-              <p><strong>Name:</strong> ${name}</p>
-              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Name:</strong> ${sanitizedName.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+              <p><strong>Email:</strong> ${sanitizedEmail.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
               <p><strong>Budget:</strong> ${formattedBudget}</p>
             </div>
             <div style="margin: 20px 0; padding: 15px; background: #1a1a1a; border-left: 3px solid #00ffff;">
               <p style="margin: 0;"><strong>Message:</strong></p>
-              <p style="margin: 10px 0 0 0; white-space: pre-wrap;">${message}</p>
+              <p style="margin: 10px 0 0 0; white-space: pre-wrap;">${sanitizedMessage.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
             </div>
             <hr style="border: none; border-top: 1px solid #333; margin: 20px 0;">
             <p style="color: #666; font-size: 12px;">
