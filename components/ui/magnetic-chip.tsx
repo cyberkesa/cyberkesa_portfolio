@@ -115,10 +115,10 @@ export function MagneticChip({
       style={{
         x: xSpring,
         y: ySpring,
-        ...(themeColor
+        ...(isHovered && themeColor
           ? {
-              borderColor: isHovered ? `${themeColor}60` : `${themeColor}20`,
-              boxShadow: isHovered ? `0 0 20px ${themeColor}30` : `0 0 10px ${themeColor}10`,
+              borderColor: `${themeColor}60`,
+              boxShadow: `0 0 20px ${themeColor}30`,
             }
           : {}),
       }}
@@ -131,24 +131,28 @@ export function MagneticChip({
         'px-4 py-2.5 font-mono text-xs',
         'transition-all duration-300',
         'hover:border-foreground/30 hover:bg-accent/60',
-        isHovered && 'scale-110 shadow-lg'
+        isHovered && 'scale-110 shadow-lg',
+        'will-change-transform' // Optimize for transforms
       )}
     >
-      {/* Category label */}
-      <div className="mb-1 text-[10px] text-foreground/40 uppercase tracking-wider">
-        {categoryLabels[category]}
-      </div>
+      {/* Content wrapper - prevents text blur during transform */}
+      <div className="relative z-10" style={{ transform: 'translateZ(0)' }}>
+        {/* Category label */}
+        <div className="mb-1 text-[10px] text-foreground/40 uppercase tracking-wider">
+          {categoryLabels[category]}
+        </div>
 
-      {/* Tech name */}
-      <div
-        className={cn(
-          'transition-colors',
-          themeColor ? 'text-foreground/90' : 'text-foreground/80',
-          isHovered && 'text-foreground'
-        )}
-        style={themeColor ? { color: isHovered ? themeColor : `${themeColor}CC` } : {}}
-      >
-        {name}
+        {/* Tech name */}
+        <div
+          className={cn(
+            'transition-colors',
+            'text-foreground/80',
+            isHovered && 'text-foreground'
+          )}
+          style={isHovered && themeColor ? { color: themeColor } : {}}
+        >
+          {name}
+        </div>
       </div>
 
       {/* Glow effect on hover */}
