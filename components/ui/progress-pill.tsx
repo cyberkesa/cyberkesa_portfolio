@@ -126,10 +126,10 @@ export function ProgressPill() {
   
   return (
     <>
-      {/* Up Arrow Button */}
+      {/* Up Arrow Button - positioned above language switcher */}
       <motion.div
         data-progress-pill
-        className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2"
+        className="fixed bottom-24 right-6 z-40"
         drag="y"
         dragConstraints={{ top: -200, bottom: 0 }}
         dragElastic={0.2}
@@ -148,13 +148,14 @@ export function ProgressPill() {
           onClick={handleScrollToTop}
           className={cn(
             'flex h-12 w-12 items-center justify-center rounded-full',
-            'border border-foreground/10 bg-accent/80 backdrop-blur-xl',
-            'text-foreground/80 transition-all duration-300',
-            'hover:border-foreground/20 hover:bg-accent hover:text-foreground',
+            'border border-accent bg-accent/80 backdrop-blur-sm',
+            'text-foreground/70 transition-all',
+            'hover:border-glow-soft hover:bg-accent hover:text-foreground',
             isDragging && 'scale-105',
             isMenuOpen && 'pointer-events-none'
           )}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
           {isMenuOpen ? (
             <X className="h-5 w-5" />
