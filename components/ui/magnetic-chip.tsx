@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useRef, useEffect, useState, MouseEvent } from 'react'
+import { useTheme } from 'next-themes'
 import { cn } from '@/lib/utils'
 
 export interface MagneticChipProps {
@@ -35,7 +36,29 @@ export function MagneticChip({
   onHover,
 }: MagneticChipProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const { theme } = useTheme()
   const [isHovered, setIsHovered] = useState(false)
+  
+  // Get theme-appropriate color
+  const getThemeColor = () => {
+    if (!color) return null
+    
+    // For light theme, adjust very light colors to be more visible
+    if (theme === 'light') {
+      // White colors become dark gray on light theme
+      if (color === '#FFFFFF' || color === '#ffffff') {
+        return '#1a1a1a'
+      }
+      // Very dark colors become lighter
+      if (color === '#000000' || color === '#0B0D0E') {
+        return '#4a5568'
+      }
+    }
+    
+    return color
+  }
+  
+  const themeColor = getThemeColor()
 
   // Position values
   const x = useMotionValue(0)
@@ -92,10 +115,10 @@ export function MagneticChip({
       style={{
         x: xSpring,
         y: ySpring,
-        ...(isHovered && color
+        ...(themeColor
           ? {
-              borderColor: `${color}40`,
-              boxShadow: `0 0 20px ${color}20`,
+              borderColor: isHovered ? `${themeColor}60` : `${themeColor}20`,
+              boxShadow: isHovered ? `0 0 20px ${themeColor}30` : `0 0 10px ${themeColor}10`,
             }
           : {}),
       }}
@@ -103,11 +126,11 @@ export function MagneticChip({
       onMouseLeave={handleMouseLeave}
       className={cn(
         'relative cursor-pointer select-none',
-        'rounded-md border border-white/10',
-        'bg-black/40 backdrop-blur-md',
+        'rounded-md border border-foreground/10',
+        'bg-accent/40 backdrop-blur-md',
         'px-4 py-2.5 font-mono text-xs',
         'transition-all duration-300',
-        'hover:border-white/30 hover:bg-black/60',
+        'hover:border-foreground/30 hover:bg-accent/60',
         isHovered && 'scale-110 shadow-lg'
       )}
     >
@@ -119,19 +142,20 @@ export function MagneticChip({
       {/* Tech name */}
       <div
         className={cn(
-          'text-foreground/80 transition-colors',
+          'transition-colors',
+          themeColor ? 'text-foreground/90' : 'text-foreground/80',
           isHovered && 'text-foreground'
         )}
-        style={isHovered && color ? { color } : {}}
+        style={themeColor ? { color: isHovered ? themeColor : `${themeColor}CC` } : {}}
       >
         {name}
       </div>
 
       {/* Glow effect on hover */}
-      {isHovered && color && (
+      {isHovered && themeColor && (
         <motion.div
           className="absolute inset-0 rounded-md opacity-20 blur-md"
-          style={{ backgroundColor: color }}
+          style={{ backgroundColor: themeColor }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.2 }}
           exit={{ opacity: 0 }}

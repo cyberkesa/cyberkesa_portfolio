@@ -7,7 +7,7 @@ export interface TechStackItem {
 
 export const STACK: TechStackItem[] = [
   // Core (Фундамент)
-  { name: 'Next.js 15', category: 'core', color: '#000000' },
+  { name: 'Next.js 15', category: 'core', color: '#FFFFFF' }, // Белый для Next.js (их бренд)
   { name: 'TypeScript', category: 'core', color: '#3178C6' },
   { name: 'Go', category: 'core', color: '#00ADD8' },
   
@@ -20,8 +20,8 @@ export const STACK: TechStackItem[] = [
   // Infrastructure (Инфраструктура)
   { name: 'Docker', category: 'infrastructure', color: '#2496ED' },
   { name: 'PostgreSQL', category: 'infrastructure', color: '#336791' },
-  { name: 'Vercel', category: 'infrastructure', color: '#000000' },
-  { name: 'Railway', category: 'infrastructure', color: '#0B0D0E' },
+  { name: 'Vercel', category: 'infrastructure', color: '#FFFFFF' }, // Белый для Vercel
+  { name: 'Railway', category: 'infrastructure', color: '#0EA5E9' }, // Яркий синий вместо черного
   
   // Intelligence (Мозги)
   { name: 'AI Agents', category: 'intelligence', color: '#10B981' },

@@ -14,7 +14,7 @@ export default function NotFound() {
       <div className="container mx-auto max-w-2xl">
         <Terminal title="error">
           <div className="space-y-4">
-            <div className="text-red-400">
+            <div className="text-red-500 dark:text-red-400">
               <span className="font-bold">{t('error')}</span> {t('message')}
             </div>
             <div className="text-foreground/70">
