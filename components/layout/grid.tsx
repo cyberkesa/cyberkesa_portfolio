@@ -11,7 +11,8 @@ export function Grid({ className, children, ...props }: GridProps) {
   return (
     <div
       className={cn(
-        'grid grid-cols-1 gap-4 auto-rows-[300px] md:grid-cols-3',
+        'grid grid-cols-1 gap-4 md:grid-cols-3',
+        'auto-rows-[minmax(300px,auto)]',
         className
       )}
       {...props}

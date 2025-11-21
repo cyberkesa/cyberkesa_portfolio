@@ -31,15 +31,16 @@ export function Card({
   const [hasImageError, setHasImageError] = useState(false)
 
   const gridSizes = {
-    small: 'col-span-1 row-span-1',
-    medium: 'col-span-1 md:col-span-2 row-span-1',
-    large: 'col-span-1 md:col-span-2 row-span-2',
+    small: 'col-span-1 row-span-1 min-h-[300px]',
+    medium: 'col-span-1 md:col-span-2 row-span-1 min-h-[300px]',
+    large: 'col-span-1 md:col-span-2 row-span-2 min-h-[300px] md:min-h-[624px]',
   }
 
   const content = (
     <motion.div
       className={cn(
         'group relative overflow-hidden rounded-lg border border-accent bg-accent/50 backdrop-blur-sm',
+        'flex flex-col',
         gridSizes[gridSize],
         className
       )}
@@ -49,7 +50,7 @@ export function Card({
       {...props}
     >
       {/* Media */}
-      <div className="group/media relative h-full w-full">
+      <div className="group/media relative h-full w-full flex-shrink-0">
         {videoUrl && !hasVideoError ? (
           <video
             src={videoUrl}
