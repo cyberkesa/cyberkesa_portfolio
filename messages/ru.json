@@ -27,10 +27,10 @@
   },
   "stack": {
     "title": "Технологический стек",
-    "categoryCore": "Core",
-    "categoryVisuals": "Visuals",
-    "categoryInfrastructure": "Infrastructure",
-    "categoryIntelligence": "Intelligence",
+    "categoryCore": "Ядро",
+    "categoryVisuals": "Визуал",
+    "categoryInfrastructure": "Инфраструктура",
+    "categoryIntelligence": "Интеллект",
     "mobileHint": "Наклони устройство, чтобы двигать чипы"
   },
   "projects": {
@@ -90,7 +90,7 @@
     "budgetHighMessage": "Вот это уже деловой разговор."
   },
   "log": {
-    "title": "Thought Log",
+    "title": "Журнал Мыслей",
     "subtitle": "Архив мыслей. Записи манифеста. Случайные тирады.",
     "backToHome": "← Вернуться на главную"
   },
