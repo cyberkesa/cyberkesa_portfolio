@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
@@ -12,6 +12,8 @@ interface IdCardProps {
 
 export function IdCard({ imageSrc, className }: IdCardProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const [hasImageError, setHasImageError] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   // Mouse position tracking
   const x = useMotionValue(0)
@@ -76,18 +78,18 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
         {/* === LAYER 1: PHOTO === */}
         <div className="absolute inset-0 z-0">
           {/* Try Next.js Image first, fallback to img for HEIC */}
-          {imageSrc.toLowerCase().includes('.heic') ? (
+          {!hasImageError && imageSrc.toLowerCase().includes('.heic') ? (
             <img
               src={imageSrc}
               alt="ID Card"
               className="h-full w-full object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-              onError={(e) => {
-                // Fallback if HEIC doesn't load
-                const target = e.currentTarget
-                target.style.display = 'none'
+              onLoad={() => setImageLoaded(true)}
+              onError={() => {
+                // HEIC not supported or file missing
+                setHasImageError(true)
               }}
             />
-          ) : (
+          ) : !hasImageError ? (
             <Image
               src={imageSrc}
               alt="ID Card"
@@ -95,10 +97,23 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
               className="object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
               priority
               sizes="320px"
+              onLoad={() => setImageLoaded(true)}
               onError={() => {
-                // Image error handled by Next.js Image component
+                setHasImageError(true)
               }}
             />
+          ) : (
+            // Fallback placeholder when image fails to load
+            <div className="h-full w-full bg-gradient-to-br from-accent/60 via-accent/40 to-accent/20 flex items-center justify-center">
+              <div className="text-center">
+                <div className="mb-4 text-5xl font-mono text-foreground/30 select-none">
+                  [ID]
+                </div>
+                <div className="font-mono text-xs text-foreground/50 uppercase tracking-widest">
+                  Photo
+                </div>
+              </div>
+            </div>
           )}
 
           {/* Noise overlay for style */}
