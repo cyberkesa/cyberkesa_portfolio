@@ -104,23 +104,23 @@ export function Card({
           <div className="media-fallback flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/40 via-accent/20 to-accent/10 relative overflow-hidden">
             {/* Animated grid pattern */}
             <div 
-              className="absolute inset-0 opacity-10"
+              className="absolute inset-0 opacity-10 z-0"
               style={{
                 backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
                 backgroundSize: '20px 20px'
               }}
             />
             
-            {/* Content */}
-            <div className="text-center relative z-10">
-              <div className="mb-4 text-6xl font-mono text-foreground/30 select-none">
+            {/* Placeholder content - positioned to not overlap with text */}
+            <div className="text-center relative z-0 pointer-events-none">
+              <div className="mb-4 text-6xl font-mono text-foreground/20 select-none">
                 {'{ }'}
               </div>
               <div className="space-y-1">
-                <span className="block font-mono text-xs text-foreground/50 uppercase tracking-widest">
+                <span className="block font-mono text-xs text-foreground/40 uppercase tracking-widest">
                   Project Preview
                 </span>
-                <span className="block font-mono text-xs text-foreground/30">
+                <span className="block font-mono text-xs text-foreground/25">
                   Visual content coming soon
                 </span>
               </div>
@@ -129,7 +129,7 @@ export function Card({
         )}
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100 z-20" />
         
         {/* Link indicator */}
         {link && (
@@ -140,8 +140,8 @@ export function Card({
           </div>
         )}
 
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
+        {/* Content - always on top */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
           <motion.h3
             className="mb-2 text-xl font-bold text-foreground"
             variants={fadeInUp}
