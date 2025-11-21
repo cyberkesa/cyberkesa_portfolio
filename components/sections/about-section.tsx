@@ -74,7 +74,7 @@ export function AboutSection() {
             transition={{ delay: 0.2 }}
             className="flex-1 flex justify-center md:justify-end"
           >
-            <IdCard imageSrc="/images/IMG_6620.HEIC" />
+            <IdCard imageSrc="/images/id-card.jpg" />
           </motion.div>
         </div>
       </motion.div>
