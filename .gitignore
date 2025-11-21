@@ -30,6 +30,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Large image files (HEIC)
+public/images/*.HEIC
+public/images/*.heic
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
