@@ -38,6 +38,9 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
     if (!ref.current) return
 
     const rect = ref.current.getBoundingClientRect()
+    // Prevent division by zero
+    if (rect.width === 0 || rect.height === 0) return
+
     const width = rect.width
     const height = rect.height
     const mouseX = e.clientX - rect.left
@@ -73,11 +76,16 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
         {/* === LAYER 1: PHOTO === */}
         <div className="absolute inset-0 z-0">
           {/* Try Next.js Image first, fallback to img for HEIC */}
-          {imageSrc.endsWith('.HEIC') || imageSrc.endsWith('.heic') ? (
+          {imageSrc.toLowerCase().includes('.heic') ? (
             <img
               src={imageSrc}
               alt="ID Card"
               className="h-full w-full object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              onError={(e) => {
+                // Fallback if HEIC doesn't load
+                const target = e.currentTarget
+                target.style.display = 'none'
+              }}
             />
           ) : (
             <Image
@@ -87,6 +95,9 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
               className="object-cover grayscale contrast-125 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
               priority
               sizes="320px"
+              onError={() => {
+                // Image error handled by Next.js Image component
+              }}
             />
           )}
 

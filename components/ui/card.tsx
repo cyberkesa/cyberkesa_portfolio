@@ -89,15 +89,13 @@ export function Card({
         ) : (
           <div className="media-fallback flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/40 via-accent/20 to-accent/10 relative overflow-hidden">
             {/* Animated grid pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="h-full w-full" style={{
-                backgroundImage: `
-                  linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-                `,
+            <div 
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
                 backgroundSize: '20px 20px'
-              }} />
-            </div>
+              }}
+            />
             
             {/* Content */}
             <div className="text-center relative z-10">
