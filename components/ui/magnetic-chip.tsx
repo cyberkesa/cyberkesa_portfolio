@@ -73,7 +73,7 @@ export function MagneticChip({
   useEffect(() => {
     if (!ref.current) return
 
-    let rafId: number
+    let rafId: number | undefined
 
     const updatePosition = () => {
       if (!ref.current) return
