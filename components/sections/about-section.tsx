@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { IdCard } from '@/components/ui/id-card'
 
 export function AboutSection() {
   const t = useTranslations('about')
@@ -23,47 +24,59 @@ export function AboutSection() {
           {t('headline')}
         </motion.h2>
 
-        <motion.div
-          variants={fadeInUp}
-          className="mx-auto max-w-3xl space-y-8"
-        >
-          {/* Short Bio */}
-          <div className="rounded-lg border border-accent bg-accent/30 p-8 backdrop-blur-sm">
-            <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed text-foreground/90">
-              {t('bioShort')}
-            </pre>
-          </div>
-
-          {/* Long Bio */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-glow">
-                {t('backgroundLabel')}
-              </h3>
-              <p className="font-mono text-sm text-foreground/70">
-                {t('background')}
-              </p>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 lg:gap-16">
+          {/* Left column: Text content */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex-1 space-y-8 max-w-2xl"
+          >
+            {/* Short Bio */}
+            <div className="rounded-lg border border-accent bg-accent/30 p-8 backdrop-blur-sm">
+              <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed text-foreground/90">
+                {t('bioShort')}
+              </pre>
             </div>
 
-            <div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-glow">
-                {t('philosophyLabel')}
-              </h3>
-              <p className="font-mono text-sm text-foreground/70">
-                {t('philosophy')}
-              </p>
-            </div>
+            {/* Long Bio */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="mb-2 font-mono text-lg font-bold text-glow">
+                  {t('backgroundLabel')}
+                </h3>
+                <p className="font-mono text-sm text-foreground/70">
+                  {t('background')}
+                </p>
+              </div>
 
-            <div>
-              <h3 className="mb-2 font-mono text-lg font-bold text-glow">
-                {t('currentStatusLabel')}
-              </h3>
-              <p className="font-mono text-sm text-foreground/70">
-                {t('currentStatus')}
-              </p>
+              <div>
+                <h3 className="mb-2 font-mono text-lg font-bold text-glow">
+                  {t('philosophyLabel')}
+                </h3>
+                <p className="font-mono text-sm text-foreground/70">
+                  {t('philosophy')}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="mb-2 font-mono text-lg font-bold text-glow">
+                  {t('currentStatusLabel')}
+                </h3>
+                <p className="font-mono text-sm text-foreground/70">
+                  {t('currentStatus')}
+                </p>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Right column: ID Card */}
+          <motion.div
+            variants={fadeInUp}
+            transition={{ delay: 0.2 }}
+            className="flex-1 flex justify-center md:justify-end"
+          >
+            <IdCard imageSrc="/images/IMG_6620.HEIC" />
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   )

@@ -48,6 +48,9 @@ const config: Config = {
           },
         },
       },
+      perspective: {
+        '1000': '1000px',
+      },
     },
   },
   plugins: [],
