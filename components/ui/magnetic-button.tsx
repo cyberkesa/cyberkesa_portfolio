@@ -39,7 +39,12 @@ export function MagneticButton({
     if (!ref.current) return
 
     const { clientX, clientY } = e
-    const { height, width, left, top } = ref.current.getBoundingClientRect()
+    const rect = ref.current.getBoundingClientRect()
+    
+    // Prevent division by zero
+    if (rect.width === 0 || rect.height === 0) return
+
+    const { height, width, left, top } = rect
 
     // Calculate offset from center
     const centerX = left + width / 2
