@@ -59,9 +59,9 @@
     "background": "Начала с графического дизайна (2016). Эволюционировала в C/C++ (School 21). Нашла дзен в современном вебе (Next.js + AI).",
     "philosophy": "Я верю, что \"достаточно хорошо\" — это оскорбление. Я использую AI агентов для автоматизации скучных задач, чтобы сосредоточиться на важном: Физика, Типографика и Вайб.",
     "currentStatus": "Одержима R3F шейдерами, создаю свой бэкенд на Go и строго избегаю посредственности.",
-    "backgroundLabel": "Background:",
-    "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:"
+    "backgroundLabel": "Предыстория:",
+    "philosophyLabel": "Философия:",
+    "currentStatusLabel": "Текущий статус:"
   },
   "services": {
     "title": "Уровни Доступа",
