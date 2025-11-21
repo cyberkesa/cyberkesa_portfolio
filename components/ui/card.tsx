@@ -38,15 +38,29 @@ export function Card({
 
   const content = (
     <motion.div
+      role="article"
+      aria-label={`Project: ${title}`}
+      tabIndex={link ? 0 : -1}
       className={cn(
         'group relative overflow-hidden rounded-lg border border-accent bg-accent/50 backdrop-blur-sm',
         'flex flex-col',
+        'transition-all duration-300',
+        link && 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-glow focus:ring-offset-2 focus:ring-offset-background',
+        !link && 'cursor-default',
         gridSizes[gridSize],
         className
       )}
       variants={hoverGlow}
       initial="rest"
       whileHover="hover"
+      whileFocus="hover"
+      whileTap={link ? { scale: 0.98 } : {}}
+      onKeyDown={(e) => {
+        if (link && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault()
+          window.open(link, '_blank', 'noopener,noreferrer')
+        }
+      }}
       {...props}
     >
       {/* Media */}
@@ -115,7 +129,16 @@ export function Card({
         )}
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100" />
+        
+        {/* Link indicator */}
+        {link && (
+          <div className="absolute top-4 right-4 z-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <div className="rounded-full bg-glow/20 backdrop-blur-sm border border-glow/30 px-3 py-1.5">
+              <span className="font-mono text-xs text-glow">View →</span>
+            </div>
+          </div>
+        )}
 
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -152,7 +175,8 @@ export function Card({
               {tech.map((techItem: string) => (
                 <span
                   key={techItem}
-                  className="rounded border border-foreground/10 bg-foreground/5 px-2 py-0.5 font-mono text-xs text-foreground/60"
+                  className="rounded border border-foreground/10 bg-foreground/5 px-2.5 py-1 font-mono text-xs text-foreground/70 hover:text-foreground transition-colors"
+                  aria-label={`Technology: ${techItem}`}
                 >
                   {techItem}
                 </span>
@@ -166,7 +190,13 @@ export function Card({
 
   if (link) {
     return (
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label={`View project: ${title} (opens in new tab)`}
+        className="block focus:outline-none"
+      >
         {content}
       </a>
     )
