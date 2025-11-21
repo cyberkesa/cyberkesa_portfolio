@@ -32,6 +32,7 @@ export function ProjectsSection() {
               <Card
                 title={project.title}
                 description={project.description}
+                tech={project.tech}
                 videoUrl={project.videoUrl}
                 imageUrl={project.imageUrl}
                 gridSize={project.gridSize}

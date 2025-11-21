@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     tech: ['Next.js', 'Framer Motion', 'TypeScript'],
     videoUrl: '/videos/seabattle.mp4',
     gridSize: 'large',
-    link: 'https://example.com',
+    // link: 'https://example.com', // Add real link when available
   },
   {
     id: 'portfolio',
