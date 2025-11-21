@@ -86,12 +86,31 @@ export function Card({
             }}
           />
         ) : (
-          <div className="media-fallback flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/30 to-accent/10">
-            <div className="text-center">
-              <div className="mb-2 text-4xl font-mono text-foreground/20">[ ]</div>
-              <span className="font-mono text-xs text-foreground/40">
-                {videoUrl || imageUrl ? 'Media not found' : 'No media'}
-              </span>
+          <div className="media-fallback flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/40 via-accent/20 to-accent/10 relative overflow-hidden">
+            {/* Animated grid pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="h-full w-full" style={{
+                backgroundImage: `
+                  linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                `,
+                backgroundSize: '20px 20px'
+              }} />
+            </div>
+            
+            {/* Content */}
+            <div className="text-center relative z-10">
+              <div className="mb-4 text-6xl font-mono text-foreground/30 select-none">
+                {'{ }'}
+              </div>
+              <div className="space-y-1">
+                <span className="block font-mono text-xs text-foreground/50 uppercase tracking-widest">
+                  Project Preview
+                </span>
+                <span className="block font-mono text-xs text-foreground/30">
+                  Visual content coming soon
+                </span>
+              </div>
             </div>
           </div>
         )}
