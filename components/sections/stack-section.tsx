@@ -35,8 +35,12 @@ export function StackSection() {
     // Convert orientation to screen coordinates
     // beta: -180 to 180 (left/right tilt)
     // gamma: -90 to 90 (front/back tilt)
-    const tiltX = (orientation.gamma / 90) * 50 // Max 50px movement
-    const tiltY = (orientation.beta / 180) * 50
+    // Prevent division by zero (though beta/gamma should never be exactly 0 for division)
+    const gamma = orientation.gamma
+    const beta = orientation.beta
+    
+    const tiltX = (gamma / 90) * 50 // Max 50px movement
+    const tiltY = (beta / 180) * 50
 
     // Add some randomness per chip for natural feel
     const randomOffset = Math.sin(index) * 10

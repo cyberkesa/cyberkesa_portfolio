@@ -79,6 +79,12 @@ export function MagneticChip({
       if (!ref.current) return
 
       const rect = ref.current.getBoundingClientRect()
+      // Prevent division by zero
+      if (rect.width === 0 || rect.height === 0) {
+        rafId = requestAnimationFrame(updatePosition)
+        return
+      }
+
       const centerX = rect.left + rect.width / 2
       const centerY = rect.top + rect.height / 2
 
@@ -107,9 +113,11 @@ export function MagneticChip({
     rafId = requestAnimationFrame(updatePosition)
 
     return () => {
-      if (rafId) cancelAnimationFrame(rafId)
+      if (rafId !== undefined) {
+        cancelAnimationFrame(rafId)
+      }
     }
-  }, [mouseX, mouseY, x, y])
+  }, [mouseX, mouseY]) // x and y are motion values, don't need to be in deps
 
   const handleMouseEnter = () => {
     setIsHovered(true)
