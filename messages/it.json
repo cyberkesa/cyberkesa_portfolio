@@ -7,7 +7,7 @@
     "home": "home",
     "about": "chi sono",
     "projects": "progetti",
-    "stack": "stack",
+    "stack": "tecnologie",
     "access": "accesso",
     "log": "log",
     "contact": "contatto"
@@ -26,10 +26,10 @@
     "terminalCursor": "|"
   },
   "stack": {
-    "categoryCore": "Core",
-    "categoryVisuals": "Visuals",
-    "categoryInfrastructure": "Infrastructure",
-    "categoryIntelligence": "Intelligence",
+    "categoryCore": "Nucleo",
+    "categoryVisuals": "Visivi",
+    "categoryInfrastructure": "Infrastruttura",
+    "categoryIntelligence": "Intelligenza",
     "mobileHint": "Inclina il dispositivo per spostare i chip",
     "title": "Stack Tecnologico"
   },
@@ -54,9 +54,9 @@
     "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
-    "backgroundLabel": "Background:",
-    "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:",
+    "backgroundLabel": "Sfondo:",
+    "philosophyLabel": "Filosofia:",
+    "currentStatusLabel": "Stato Attuale:",
     "headline": "Ingegneria dell'Estetica Digitale.",
     "bioShort": "Non costruisco siti web; progetto proprietà digitali.\nSviluppatrice Full-stack e perfezionista visiva.\nIl mio codice è più pulito della tua coscienza.",
     "background": "Iniziata nel Graphic Design (2016). Evoluta in C/C++ (School 21). Trovato il mio zen nel Web Moderno (Next.js + AI).",
@@ -90,35 +90,35 @@
     "budgetHighMessage": "Ora stiamo parlando di affari."
   },
   "log": {
-    "title": "Thought Log",
+    "title": "Registro dei Pensieri",
     "subtitle": "Archivio di pensieri. Voci del manifesto. Tirate casuali.",
     "backToHome": "← Torna alla home"
   },
   "language": {
-    "changeLanguage": "Change language",
-    "selectRegion": "SELECT REGION",
+    "changeLanguage": "Cambia lingua",
+    "selectRegion": "SELEZIONA REGIONE",
     "amer": "AMER",
     "emea": "EMEA",
     "apac": "APAC",
     "mena": "MENA",
-    "pressHint": "Press",
-    "or": "or",
-    "toClose": "to close"
+    "pressHint": "Premi",
+    "or": "o",
+    "toClose": "per chiudere"
   },
   "easterEgg": {
-    "doNotPress": "Do not press",
+    "doNotPress": "Non premere",
     "messages": {
-      "systemOverload": "System Overload. Too much style.",
-      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
-      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
-      "vibecodingProgress": "Critical: Vibecoding in progress...",
-      "codeQualityHigh": "Alert: Code quality too high."
+      "systemOverload": "Sovraccarico del sistema. Troppo stile.",
+      "aestheticExceeded": "Errore: Livelli estetici superati.",
+      "perfectionismDetected": "Avviso: Perfezionismo eccessivo rilevato.",
+      "vibecodingProgress": "Critico: Vibecoding in corso...",
+      "codeQualityHigh": "Allerta: Qualità del codice troppo alta."
     }
   },
   "mobileNav": {
-    "close": "Close",
+    "close": "Chiudi",
     "menu": "Menu",
-    "navigation": "Navigation",
-    "scrollToTop": "Scroll to Top"
+    "navigation": "Navigazione",
+    "scrollToTop": "Scorri in alto"
   }
 }

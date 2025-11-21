@@ -26,10 +26,10 @@
     "terminalCursor": "|"
   },
   "stack": {
-    "categoryCore": "Core",
-    "categoryVisuals": "Visuals",
-    "categoryInfrastructure": "Infrastructure",
-    "categoryIntelligence": "Intelligence",
+    "categoryCore": "核心",
+    "categoryVisuals": "视觉",
+    "categoryInfrastructure": "基础设施",
+    "categoryIntelligence": "智能",
     "mobileHint": "倾斜设备移动芯片",
     "title": "技术栈"
   },
@@ -54,9 +54,9 @@
     "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
-    "backgroundLabel": "Background:",
-    "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:",
+    "backgroundLabel": "背景：",
+    "philosophyLabel": "哲学：",
+    "currentStatusLabel": "当前状态：",
     "headline": "工程化数字美学。",
     "bioShort": "我不建网站；我设计数字资产。\n全栈开发者与视觉完美主义者。\n我的代码比你的良心更干净。",
     "background": "从平面设计开始（2016）。进化为 C/C++（School 21）。在现代 Web（Next.js + AI）中找到禅意。",
@@ -90,35 +90,35 @@
     "budgetHighMessage": "这才是谈生意的样子。"
   },
   "log": {
-    "title": "Thought Log",
+    "title": "思想日志",
     "subtitle": "思想档案。宣言条目。随机咆哮。",
     "backToHome": "← 返回首页"
   },
   "language": {
-    "changeLanguage": "Change language",
-    "selectRegion": "SELECT REGION",
+    "changeLanguage": "更改语言",
+    "selectRegion": "选择区域",
     "amer": "AMER",
     "emea": "EMEA",
     "apac": "APAC",
     "mena": "MENA",
-    "pressHint": "Press",
-    "or": "or",
-    "toClose": "to close"
+    "pressHint": "按",
+    "or": "或",
+    "toClose": "关闭"
   },
   "easterEgg": {
-    "doNotPress": "Do not press",
+    "doNotPress": "请勿按下",
     "messages": {
-      "systemOverload": "System Overload. Too much style.",
-      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
-      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
-      "vibecodingProgress": "Critical: Vibecoding in progress...",
-      "codeQualityHigh": "Alert: Code quality too high."
+      "systemOverload": "系统过载。风格过多。",
+      "aestheticExceeded": "错误：美学水平超出。",
+      "perfectionismDetected": "警告：检测到过度完美主义。",
+      "vibecodingProgress": "关键：Vibecoding 进行中...",
+      "codeQualityHigh": "警报：代码质量过高。"
     }
   },
   "mobileNav": {
-    "close": "Close",
-    "menu": "Menu",
-    "navigation": "Navigation",
-    "scrollToTop": "Scroll to Top"
+    "close": "关闭",
+    "menu": "菜单",
+    "navigation": "导航",
+    "scrollToTop": "滚动到顶部"
   }
 }

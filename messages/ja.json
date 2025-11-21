@@ -26,10 +26,10 @@
     "terminalCursor": "|"
   },
   "stack": {
-    "categoryCore": "Core",
-    "categoryVisuals": "Visuals",
-    "categoryInfrastructure": "Infrastructure",
-    "categoryIntelligence": "Intelligence",
+    "categoryCore": "コア",
+    "categoryVisuals": "ビジュアル",
+    "categoryInfrastructure": "インフラストラクチャ",
+    "categoryIntelligence": "インテリジェンス",
     "mobileHint": "デバイスを傾けてチップを動かす",
     "title": "技術スタック"
   },
@@ -54,9 +54,9 @@
     "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
-    "backgroundLabel": "Background:",
-    "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:",
+    "backgroundLabel": "背景：",
+    "philosophyLabel": "哲学：",
+    "currentStatusLabel": "現在の状態：",
     "headline": "デジタル美学のエンジニアリング。",
     "bioShort": "私はウェブサイトを構築しない；デジタル資産を設計する。\nFull-stack開発者および視覚的完璧主義者。\n私のコードはあなたの良心より清潔。",
     "background": "グラフィックデザインから始めた（2016）。C/C++に進化（School 21）。モダンウェブ（Next.js + AI）で禅を見つけた。",
@@ -90,35 +90,35 @@
     "budgetHighMessage": "これでビジネスの話になります。"
   },
   "log": {
-    "title": "Thought Log",
+    "title": "思考ログ",
     "subtitle": "思考のアーカイブ。マニフェストエントリ。ランダムな暴言。",
     "backToHome": "← ホームに戻る"
   },
   "language": {
-    "changeLanguage": "Change language",
-    "selectRegion": "SELECT REGION",
+    "changeLanguage": "言語を変更",
+    "selectRegion": "地域を選択",
     "amer": "AMER",
     "emea": "EMEA",
     "apac": "APAC",
     "mena": "MENA",
-    "pressHint": "Press",
-    "or": "or",
-    "toClose": "to close"
+    "pressHint": "押す",
+    "or": "または",
+    "toClose": "閉じる"
   },
   "easterEgg": {
-    "doNotPress": "Do not press",
+    "doNotPress": "押さないでください",
     "messages": {
-      "systemOverload": "System Overload. Too much style.",
-      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
-      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
-      "vibecodingProgress": "Critical: Vibecoding in progress...",
-      "codeQualityHigh": "Alert: Code quality too high."
+      "systemOverload": "システム過負荷。スタイルが多すぎます。",
+      "aestheticExceeded": "エラー：美的レベルを超過しました。",
+      "perfectionismDetected": "警告：過度の完璧主義が検出されました。",
+      "vibecodingProgress": "重要：Vibecoding進行中...",
+      "codeQualityHigh": "アラート：コード品質が高すぎます。"
     }
   },
   "mobileNav": {
-    "close": "Close",
-    "menu": "Menu",
-    "navigation": "Navigation",
-    "scrollToTop": "Scroll to Top"
+    "close": "閉じる",
+    "menu": "メニュー",
+    "navigation": "ナビゲーション",
+    "scrollToTop": "トップにスクロール"
   }
 }

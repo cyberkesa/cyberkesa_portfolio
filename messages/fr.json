@@ -7,7 +7,7 @@
     "home": "accueil",
     "about": "à propos",
     "projects": "projets",
-    "stack": "stack",
+    "stack": "technologies",
     "access": "accès",
     "log": "log",
     "contact": "contact"
@@ -26,8 +26,8 @@
     "terminalCursor": "|"
   },
   "stack": {
-    "categoryCore": "Core",
-    "categoryVisuals": "Visuals",
+    "categoryCore": "Noyau",
+    "categoryVisuals": "Visuels",
     "categoryInfrastructure": "Infrastructure",
     "categoryIntelligence": "Intelligence",
     "mobileHint": "Incline ton appareil pour déplacer les puces",
@@ -54,9 +54,9 @@
     "terminalOutput3": "drwxr-xr-x contact"
   },
   "about": {
-    "backgroundLabel": "Background:",
-    "philosophyLabel": "Philosophy:",
-    "currentStatusLabel": "Current Status:",
+    "backgroundLabel": "Contexte :",
+    "philosophyLabel": "Philosophie :",
+    "currentStatusLabel": "Statut Actuel :",
     "headline": "Ingénierie de l'Esthétique Numérique.",
     "bioShort": "Je ne construis pas de sites web ; j'architecte des domaines numériques.\nDéveloppeuse Full-stack et perfectionniste visuelle.\nMon code est plus propre que votre conscience.",
     "background": "Commencé en Design Graphique (2016). Évolué vers C/C++ (School 21). Trouvé mon zen dans le Web Moderne (Next.js + AI).",
@@ -90,35 +90,35 @@
     "budgetHighMessage": "Maintenant, nous parlons affaires."
   },
   "log": {
-    "title": "Thought Log",
+    "title": "Journal de Pensées",
     "subtitle": "Archives de pensées. Entrées du manifeste. Tirades aléatoires.",
     "backToHome": "← Retour à l'accueil"
   },
   "language": {
-    "changeLanguage": "Change language",
-    "selectRegion": "SELECT REGION",
+    "changeLanguage": "Changer la langue",
+    "selectRegion": "SÉLECTIONNER LA RÉGION",
     "amer": "AMER",
     "emea": "EMEA",
     "apac": "APAC",
     "mena": "MENA",
-    "pressHint": "Press",
-    "or": "or",
-    "toClose": "to close"
+    "pressHint": "Appuyez",
+    "or": "ou",
+    "toClose": "pour fermer"
   },
   "easterEgg": {
-    "doNotPress": "Do not press",
+    "doNotPress": "Ne pas appuyer",
     "messages": {
-      "systemOverload": "System Overload. Too much style.",
-      "aestheticExceeded": "Error: Aesthetic levels exceeded.",
-      "perfectionismDetected": "Warning: Excessive perfectionism detected.",
-      "vibecodingProgress": "Critical: Vibecoding in progress...",
-      "codeQualityHigh": "Alert: Code quality too high."
+      "systemOverload": "Surcharge du système. Trop de style.",
+      "aestheticExceeded": "Erreur : Niveaux esthétiques dépassés.",
+      "perfectionismDetected": "Avertissement : Perfectionnisme excessif détecté.",
+      "vibecodingProgress": "Critique : Vibecoding en cours...",
+      "codeQualityHigh": "Alerte : Qualité du code trop élevée."
     }
   },
   "mobileNav": {
-    "close": "Close",
+    "close": "Fermer",
     "menu": "Menu",
     "navigation": "Navigation",
-    "scrollToTop": "Scroll to Top"
+    "scrollToTop": "Défiler vers le haut"
   }
 }
