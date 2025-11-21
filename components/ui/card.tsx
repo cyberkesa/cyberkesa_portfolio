@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, type HTMLMotionProps } from 'framer-motion'
+import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { hoverGlow, fadeInUp } from '@/lib/animations'
 import Image from 'next/image'
@@ -26,6 +27,9 @@ export function Card({
   className,
   ...props
 }: CardProps) {
+  const [hasVideoError, setHasVideoError] = useState(false)
+  const [hasImageError, setHasImageError] = useState(false)
+
   const gridSizes = {
     small: 'col-span-1 row-span-1',
     medium: 'col-span-1 md:col-span-2 row-span-1',
@@ -46,7 +50,7 @@ export function Card({
     >
       {/* Media */}
       <div className="group/media relative h-full w-full">
-        {videoUrl ? (
+        {videoUrl && !hasVideoError ? (
           <video
             src={videoUrl}
             autoPlay
@@ -62,17 +66,12 @@ export function Card({
               // Reset speed
               e.currentTarget.playbackRate = 1
             }}
-            onError={(e) => {
-              // Fallback to placeholder on error
-              const target = e.currentTarget
-              target.style.display = 'none'
-              const fallback = target.parentElement?.querySelector('.media-fallback')
-              if (fallback) {
-                ;(fallback as HTMLElement).style.display = 'flex'
-              }
+            onError={() => {
+              // Video failed to load, show fallback
+              setHasVideoError(true)
             }}
           />
-        ) : imageUrl ? (
+        ) : imageUrl && !hasImageError && !hasVideoError ? (
           <Image
             src={imageUrl}
             alt={title}
@@ -83,17 +82,16 @@ export function Card({
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             onError={() => {
-              // Image error handled by Next.js Image component
+              setHasImageError(true)
             }}
           />
-        ) : null}
-        
-        {/* Fallback for missing media */}
-        {!videoUrl && !imageUrl && (
+        ) : (
           <div className="media-fallback flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/30 to-accent/10">
             <div className="text-center">
               <div className="mb-2 text-4xl font-mono text-foreground/20">[ ]</div>
-              <span className="font-mono text-xs text-foreground/40">No media</span>
+              <span className="font-mono text-xs text-foreground/40">
+                {videoUrl || imageUrl ? 'Media not found' : 'No media'}
+              </span>
             </div>
           </div>
         )}
