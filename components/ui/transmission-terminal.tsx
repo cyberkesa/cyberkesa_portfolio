@@ -16,12 +16,7 @@ interface TransmissionTerminalProps {
   }) => Promise<void>
 }
 
-const BUDGET_MODES = [
-  { min: 0, max: 5000, mode: 'MVP / PROTOTYPE', color: 'text-foreground/30' },
-  { min: 5000, max: 15000, mode: 'PRODUCTION', color: 'text-cyan-400' },
-  { min: 15000, max: 50000, mode: 'HEAVY LUXURY', color: 'text-purple-400' },
-  { min: 50000, max: Infinity, mode: 'WORLD DOMINATION', color: 'text-orange-500' },
-] as const
+// Budget modes will be translated dynamically
 
 const HOLD_DURATION = 1500 // 1.5 seconds
 
@@ -46,21 +41,30 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
   const logIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
-  // Get current budget mode
-  const currentMode = BUDGET_MODES.find(
-    (mode) => formData.budget >= mode.min && formData.budget < mode.max
-  ) || BUDGET_MODES[0]
+  // Get current budget mode (translated)
+  const getBudgetMode = () => {
+    if (formData.budget >= 0 && formData.budget < 5000) {
+      return { mode: t('budgetModeMvp'), color: 'text-foreground/30' }
+    } else if (formData.budget >= 5000 && formData.budget < 15000) {
+      return { mode: t('budgetModeProduction'), color: 'text-cyan-400' }
+    } else if (formData.budget >= 15000 && formData.budget < 50000) {
+      return { mode: t('budgetModeHeavyLuxury'), color: 'text-purple-400' }
+    } else {
+      return { mode: t('budgetModeWorldDomination'), color: 'text-orange-500' }
+    }
+  }
+  const currentMode = getBudgetMode()
 
-  // Generate log entries
+  // Generate log entries (translated)
   useEffect(() => {
     const logs = [
-      '> ENCRYPTION: AES-256',
-      '> NODE: PODOLSK_SERVER',
-      '> UPTIME: 99.99%',
-      '> STATUS: Waiting for payload',
-      formData.name ? `> [LOG] Operator identified: ${formData.name}` : null,
-      formData.budget >= 50000 ? '> [LOG] WORLD DOMINATION MODE ACTIVATED' : null,
-      formData.message ? '> [LOG] Mission objective received' : null,
+      t('logEncryption'),
+      t('logNode'),
+      t('logUptime'),
+      t('logStatusWaiting'),
+      formData.name ? t('logOperatorIdentified', { name: formData.name }) : null,
+      formData.budget >= 50000 ? t('logWorldDominationActivated') : null,
+      formData.message ? t('logMissionObjectiveReceived') : null,
     ].filter(Boolean) as string[]
 
     setLogEntries(logs)
@@ -72,8 +76,9 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
     logIntervalRef.current = setInterval(() => {
       setLogEntries((prev) => {
         const newLogs = [...prev]
-        if (formData.name && !newLogs.some((l) => l.includes('Operator identified'))) {
-          newLogs.push(`> [LOG] Operator identified: ${formData.name}`)
+        // Check if operator identified log exists by checking if name is in logs
+        if (formData.name && !newLogs.some((l) => l.includes(formData.name))) {
+          newLogs.push(t('logOperatorIdentified', { name: formData.name }))
         }
         return newLogs.slice(-6) // Keep last 6 logs
       })
@@ -137,7 +142,7 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
         setFormData({ name: '', email: '', message: '', budget: 5000 })
       }, 3000)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Transmission failed')
+      setError(err instanceof Error ? err.message : t('transmissionFailed'))
     } finally {
       setIsSubmitting(false)
     }
@@ -213,13 +218,13 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
                 rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-cyan-400 transition-colors text-xs uppercase tracking-widest"
               >
-                [ DIRECT_LINE ]
+                {t('directLine')}
               </a>
               <a
                 href="mailto:contact@cyberkesa.com"
                 className="text-foreground/60 hover:text-cyan-400 transition-colors text-xs uppercase tracking-widest"
               >
-                [ COMMS_LINK ]
+                {t('commsLinkText')}
               </a>
             </div>
           </div>
@@ -275,7 +280,7 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
                       {t('resourceAllocation')}
                     </span>
                     <span className={cn('font-bold uppercase tracking-widest', currentMode.color)}>
-                      MODE: {currentMode.mode}
+                      {t('budgetModeLabel')} {currentMode.mode}
                     </span>
                   </div>
 

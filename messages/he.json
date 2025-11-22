@@ -76,7 +76,8 @@
     "deploying": "העלאת Production",
     "gym": "מכון כושר (יום רגליים)",
     "recharging": "טעינה (לא להפריע)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "סטטוס:"
   },
   "contact": {
     "name": "שם",
@@ -102,7 +103,22 @@
     "holdToSend": "החזק כדי לשלוח",
     "transmitting": "משדר...",
     "transmissionSuccess": "שידור הצליח",
-    "transmissionMessage": "נתונים התקבלו. הערוץ מאובטח."
+    "transmissionMessage": "נתונים התקבלו. הערוץ מאובטח.",
+    "directLine": "[ קו_ישיר ]",
+    "commsLinkText": "[ קישור_תקשורת ]",
+    "budgetModeMvp": "MVP / אבטיפוס",
+    "budgetModeProduction": "ייצור",
+    "budgetModeHeavyLuxury": "יוקרה כבדה",
+    "budgetModeWorldDomination": "שליטה עולמית",
+    "budgetModeLabel": "מצב:",
+    "transmissionFailed": "השידור נכשל",
+    "logEncryption": "> הצפנה: AES-256",
+    "logNode": "> צומת: PODOLSK_SERVER",
+    "logUptime": "> זמן_פעילות: 99.99%",
+    "logStatusWaiting": "> סטטוס: ממתין לנתונים",
+    "logOperatorIdentified": "> [יומן] מפעיל מזוהה: {name}",
+    "logWorldDominationActivated": "> [יומן] מצב שליטה עולמית הופעל",
+    "logMissionObjectiveReceived": "> [יומן] מטרת המשימה התקבלה"
   },
   "log": {
     "title": "יומן מחשבות",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "מפרט מערכת",
     "subtitle": "מטריצת יכולות"
+  },
+  "idCard": {
+    "idLabel": "מזהה",
+    "idValue": "001",
+    "classLabel": "מחלקה",
+    "classValue": "אדריכל",
+    "statusLabel": "סטטוס",
+    "statusValue": "מחובר",
+    "locLabel": "מיקום",
+    "locValue": "[מוסתר]",
+    "photo": "תמונה",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "פונקציה מרכזית",
+    "noDescription": "אין תיאור",
+    "algorithmLabel": "אלגוריתם:",
+    "databaseLabel": "מסד נתונים:",
+    "statusLabel": "סטטוס:",
+    "stackTrace": "מעקב_מחסנית",
+    "metrics": "מדדים",
+    "performanceLabel": "ביצועים:",
+    "latencyLabel": "זמן השהייה:",
+    "metricsNotAvailable": "אין מדדים",
+    "projectPrefix": "פרויקט_"
   }
 }

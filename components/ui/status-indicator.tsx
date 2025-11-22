@@ -40,7 +40,7 @@ export function StatusIndicator() {
           transition={{ duration: 0.3 }}
         >
           <span>{status.emoji}</span>
-          <span className="text-foreground/70">Status:</span>
+          <span className="text-foreground/70">{t('statusLabel')}</span>
           <span className="text-foreground">{t(status.status)}</span>
         </motion.div>
       </AnimatePresence>

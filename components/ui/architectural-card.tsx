@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { useHapticFeedback } from '@/hooks/use-haptic-feedback'
 import { cn } from '@/lib/utils'
 
@@ -34,6 +35,7 @@ export function ArchitecturalCard({
   metrics,
   link,
 }: ArchitecturalCardProps) {
+  const t = useTranslations('projectCard')
   const [hovered, setHovered] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const ref = useRef(null)
@@ -161,7 +163,7 @@ export function ArchitecturalCard({
         {/* Header Row - use this ref for mobile detection (stable reference point) */}
         <div ref={headerRef} className="flex justify-between items-baseline gap-4">
           <span className="font-mono text-xs text-foreground/50 uppercase tracking-widest flex-shrink-0">
-            PROJECT_{String(id).padStart(2, '0')}
+            {t('projectPrefix')}{String(id).padStart(2, '0')}
           </span>
 
           <h3
@@ -200,12 +202,12 @@ export function ArchitecturalCard({
                 {/* Column 1: Core Function / Description */}
                 <div className="border-l border-foreground/20 pl-4">
                   <p className="uppercase tracking-widest text-xs text-foreground/50 mb-3">
-                    CORE FUNCTION
+                    {t('coreFunction')}
                   </p>
                   {description ? (
                     <p className="text-foreground/70 leading-relaxed">{description}</p>
                   ) : (
-                    <p className="text-foreground/40 italic">No description available</p>
+                    <p className="text-foreground/40 italic">{t('noDescription')}</p>
                   )}
 
                   {/* Algorithm / Database / Status */}
@@ -213,19 +215,19 @@ export function ArchitecturalCard({
                     <div className="mt-6 space-y-2 text-xs">
                       {algorithm && (
                         <div className="flex justify-between">
-                          <span className="text-foreground/50">ALGORITHM:</span>
+                          <span className="text-foreground/50">{t('algorithmLabel')}</span>
                           <span className="text-cyan-400">{algorithm}</span>
                         </div>
                       )}
                       {database && (
                         <div className="flex justify-between">
-                          <span className="text-foreground/50">DATABASE:</span>
+                          <span className="text-foreground/50">{t('databaseLabel')}</span>
                           <span className="text-cyan-400">{database}</span>
                         </div>
                       )}
                       {status && (
                         <div className="flex justify-between">
-                          <span className="text-foreground/50">STATUS:</span>
+                          <span className="text-foreground/50">{t('statusLabel')}</span>
                           <span className="text-cyan-400">{status}</span>
                         </div>
                       )}
@@ -236,7 +238,7 @@ export function ArchitecturalCard({
                 {/* Column 2: Stack Trace */}
                 <div className="border-l border-foreground/20 pl-4">
                   <p className="uppercase tracking-widest text-xs text-foreground/50 mb-3">
-                    STACK_TRACE
+                    {t('stackTrace')}
                   </p>
                   <ul className="space-y-2 text-foreground/70">
                     {tech.map((item, idx) => (
@@ -251,18 +253,18 @@ export function ArchitecturalCard({
                 {/* Column 3: Metrics */}
                 <div className="border-l border-foreground/20 pl-4">
                   <p className="uppercase tracking-widest text-xs text-foreground/50 mb-3">
-                    METRICS
+                    {t('metrics')}
                   </p>
                   <div className="space-y-3 text-foreground/70">
                     {metrics?.performance && (
                       <div className="flex justify-between items-center">
-                        <span className="text-foreground/50">Performance:</span>
+                        <span className="text-foreground/50">{t('performanceLabel')}</span>
                         <span className="text-cyan-400 font-bold">{metrics.performance}</span>
                       </div>
                     )}
                     {metrics?.latency && (
                       <div className="flex justify-between items-center">
-                        <span className="text-foreground/50">Latency:</span>
+                        <span className="text-foreground/50">{t('latencyLabel')}</span>
                         <span className="text-cyan-400 font-bold">{metrics.latency}</span>
                       </div>
                     )}
@@ -275,7 +277,7 @@ export function ArchitecturalCard({
                         </div>
                       ))}
                     {(!metrics || Object.keys(metrics).length === 0) && (
-                      <p className="text-foreground/40 italic text-xs">Metrics not available</p>
+                      <p className="text-foreground/40 italic text-xs">{t('metricsNotAvailable')}</p>
                     )}
                   </div>
                 </div>

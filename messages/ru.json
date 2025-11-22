@@ -76,7 +76,8 @@
     "deploying": "Деплой Production",
     "gym": "Тренажерный зал (День ног)",
     "recharging": "Перезарядка (Не беспокоить)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "Статус:"
   },
   "contact": {
     "name": "Имя",
@@ -102,7 +103,22 @@
     "holdToSend": "УДЕРЖИВАЙТЕ ДЛЯ ОТПРАВКИ",
     "transmitting": "ПЕРЕДАЧА...",
     "transmissionSuccess": "ПЕРЕДАЧА УСПЕШНА",
-    "transmissionMessage": "Данные получены. Канал защищен."
+    "transmissionMessage": "Данные получены. Канал защищен.",
+    "directLine": "[ ПРЯМАЯ_ЛИНИЯ ]",
+    "commsLinkText": "[ СВЯЗЬ ]",
+    "budgetModeMvp": "MVP / ПРОТОТИП",
+    "budgetModeProduction": "PRODUCTION",
+    "budgetModeHeavyLuxury": "ПРЕМИУМ ЛЮКС",
+    "budgetModeWorldDomination": "МИРОВОЕ ГОСПОДСТВО",
+    "budgetModeLabel": "РЕЖИМ:",
+    "transmissionFailed": "Передача не удалась",
+    "logEncryption": "> ШИФРОВАНИЕ: AES-256",
+    "logNode": "> УЗЕЛ: PODOLSK_SERVER",
+    "logUptime": "> ВРЕМЯ РАБОТЫ: 99.99%",
+    "logStatusWaiting": "> СТАТУС: Ожидание данных",
+    "logOperatorIdentified": "> [ЛОГ] Оператор идентифицирован: {name}",
+    "logWorldDominationActivated": "> [ЛОГ] РЕЖИМ МИРОВОГО ГОСПОДСТВА АКТИВИРОВАН",
+    "logMissionObjectiveReceived": "> [ЛОГ] Цель миссии получена"
   },
   "log": {
     "title": "Журнал Мыслей",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "СПЕЦИФИКАЦИЯ СИСТЕМЫ",
     "subtitle": "Матрица Возможностей"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "КЛАСС",
+    "classValue": "АРХИТЕКТОР",
+    "statusLabel": "СТАТУС",
+    "statusValue": "ОНЛАЙН",
+    "locLabel": "МЕСТО",
+    "locValue": "[СКРЫТО]",
+    "photo": "Фото",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "ОСНОВНАЯ ФУНКЦИЯ",
+    "noDescription": "Описание недоступно",
+    "algorithmLabel": "АЛГОРИТМ:",
+    "databaseLabel": "БАЗА ДАННЫХ:",
+    "statusLabel": "СТАТУС:",
+    "stackTrace": "СТЕК_ТРЕЙС",
+    "metrics": "МЕТРИКИ",
+    "performanceLabel": "Производительность:",
+    "latencyLabel": "Задержка:",
+    "metricsNotAvailable": "Метрики недоступны",
+    "projectPrefix": "ПРОЕКТ_"
   }
 }

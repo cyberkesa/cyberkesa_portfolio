@@ -76,7 +76,8 @@
     "deploying": "프로덕션 배포 중",
     "gym": "체육관 (다리 운동)",
     "recharging": "충전 중 (방해 금지)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "상태:"
   },
   "contact": {
     "name": "이름",
@@ -102,7 +103,22 @@
     "holdToSend": "길게 눌러 전송",
     "transmitting": "전송 중...",
     "transmissionSuccess": "전송 성공",
-    "transmissionMessage": "데이터 수신됨. 채널 보호됨."
+    "transmissionMessage": "데이터 수신됨. 채널 보호됨.",
+    "directLine": "[ 직접_라인 ]",
+    "commsLinkText": "[ 통신_링크 ]",
+    "budgetModeMvp": "MVP / 프로토타입",
+    "budgetModeProduction": "프로덕션",
+    "budgetModeHeavyLuxury": "헤비 럭셔리",
+    "budgetModeWorldDomination": "세계 지배",
+    "budgetModeLabel": "모드:",
+    "transmissionFailed": "전송 실패",
+    "logEncryption": "> 암호화: AES-256",
+    "logNode": "> 노드: PODOLSK_SERVER",
+    "logUptime": "> 가동시간: 99.99%",
+    "logStatusWaiting": "> 상태: 데이터 대기 중",
+    "logOperatorIdentified": "> [로그] 운영자 식별됨: {name}",
+    "logWorldDominationActivated": "> [로그] 세계 지배 모드 활성화",
+    "logMissionObjectiveReceived": "> [로그] 미션 목표 수신됨"
   },
   "log": {
     "title": "생각 로그",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "시스템 사양",
     "subtitle": "능력 매트릭스"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "클래스",
+    "classValue": "아키텍트",
+    "statusLabel": "상태",
+    "statusValue": "온라인",
+    "locLabel": "위치",
+    "locValue": "[숨김]",
+    "photo": "사진",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "핵심 기능",
+    "noDescription": "설명 없음",
+    "algorithmLabel": "알고리즘:",
+    "databaseLabel": "데이터베이스:",
+    "statusLabel": "상태:",
+    "stackTrace": "스택_트레이스",
+    "metrics": "메트릭",
+    "performanceLabel": "성능:",
+    "latencyLabel": "지연 시간:",
+    "metricsNotAvailable": "메트릭 없음",
+    "projectPrefix": "프로젝트_"
   }
 }

@@ -76,7 +76,8 @@
     "deploying": "Distribuzione Produzione",
     "gym": "Palestra (Giorno Gambe)",
     "recharging": "Ricarica (Non disturbare)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "Stato:"
   },
   "contact": {
     "name": "Nome",
@@ -102,7 +103,22 @@
     "holdToSend": "TENERE PREMUTO",
     "transmitting": "TRASMISSIONE...",
     "transmissionSuccess": "TRASMISSIONE RIUSCITA",
-    "transmissionMessage": "Dati ricevuti. Canale protetto."
+    "transmissionMessage": "Dati ricevuti. Canale protetto.",
+    "directLine": "[ LINEA_DIRETTA ]",
+    "commsLinkText": "[ LINK_COM ]",
+    "budgetModeMvp": "MVP / PROTOTIPO",
+    "budgetModeProduction": "PRODUZIONE",
+    "budgetModeHeavyLuxury": "LUSSO PESANTE",
+    "budgetModeWorldDomination": "DOMINIO MONDIALE",
+    "budgetModeLabel": "MODO:",
+    "transmissionFailed": "Trasmissione fallita",
+    "logEncryption": "> CRITTOGRAFIA: AES-256",
+    "logNode": "> NODO: PODOLSK_SERVER",
+    "logUptime": "> TEMPO_ATTIVO: 99.99%",
+    "logStatusWaiting": "> STATO: In attesa di dati",
+    "logOperatorIdentified": "> [LOG] Operatore identificato: {name}",
+    "logWorldDominationActivated": "> [LOG] MODO DOMINIO MONDIALE ATTIVATO",
+    "logMissionObjectiveReceived": "> [LOG] Obiettivo della missione ricevuto"
   },
   "log": {
     "title": "Registro dei Pensieri",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "SPECIFICHE DI SISTEMA",
     "subtitle": "Matrice delle Capacità"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "CLASSE",
+    "classValue": "ARCHITETTO",
+    "statusLabel": "STATO",
+    "statusValue": "ONLINE",
+    "locLabel": "POSIZIONE",
+    "locValue": "[CENSURATO]",
+    "photo": "Foto",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "FUNZIONE PRINCIPALE",
+    "noDescription": "Nessuna descrizione disponibile",
+    "algorithmLabel": "ALGORITMO:",
+    "databaseLabel": "DATABASE:",
+    "statusLabel": "STATO:",
+    "stackTrace": "STACK_TRACE",
+    "metrics": "METRICHE",
+    "performanceLabel": "Prestazioni:",
+    "latencyLabel": "Latenza:",
+    "metricsNotAvailable": "Metriche non disponibili",
+    "projectPrefix": "PROGETTO_"
   }
 }

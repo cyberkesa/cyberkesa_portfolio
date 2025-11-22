@@ -76,7 +76,8 @@
     "deploying": "Produktion deployen",
     "gym": "Fitnessstudio (Beintag)",
     "recharging": "Aufladen (Nicht stören)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "Status:"
   },
   "contact": {
     "name": "Name",
@@ -102,7 +103,22 @@
     "holdToSend": "GEDRÜCKT HALTEN",
     "transmitting": "ÜBERTRAGUNG...",
     "transmissionSuccess": "ÜBERTRAGUNG ERFOLGREICH",
-    "transmissionMessage": "Daten empfangen. Kanal gesichert."
+    "transmissionMessage": "Daten empfangen. Kanal gesichert.",
+    "directLine": "[ DIREKTE_LEITUNG ]",
+    "commsLinkText": "[ KOMMUNIKATIONSLINK ]",
+    "budgetModeMvp": "MVP / PROTOTYP",
+    "budgetModeProduction": "PRODUKTION",
+    "budgetModeHeavyLuxury": "HEAVY LUXURY",
+    "budgetModeWorldDomination": "WELTHERRSCHAFT",
+    "budgetModeLabel": "MODUS:",
+    "transmissionFailed": "Übertragung fehlgeschlagen",
+    "logEncryption": "> VERSCHLÜSSELUNG: AES-256",
+    "logNode": "> KNOTEN: PODOLSK_SERVER",
+    "logUptime": "> BETRIEBSZEIT: 99.99%",
+    "logStatusWaiting": "> STATUS: Warte auf Daten",
+    "logOperatorIdentified": "> [LOG] Bediener identifiziert: {name}",
+    "logWorldDominationActivated": "> [LOG] WELTHERRSCHAFTS-MODUS AKTIVIERT",
+    "logMissionObjectiveReceived": "> [LOG] Missionsziel erhalten"
   },
   "log": {
     "title": "Gedankenprotokoll",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "SYSTEMSPEZIFIKATIONEN",
     "subtitle": "Fähigkeitsmatrix"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "KLASSE",
+    "classValue": "ARCHITEKT",
+    "statusLabel": "STATUS",
+    "statusValue": "ONLINE",
+    "locLabel": "ORT",
+    "locValue": "[ZENSURT]",
+    "photo": "Foto",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "KERNFUNKTION",
+    "noDescription": "Keine Beschreibung verfügbar",
+    "algorithmLabel": "ALGORITHMUS:",
+    "databaseLabel": "DATENBANK:",
+    "statusLabel": "STATUS:",
+    "stackTrace": "STACK_TRACE",
+    "metrics": "METRIKEN",
+    "performanceLabel": "Leistung:",
+    "latencyLabel": "Latenz:",
+    "metricsNotAvailable": "Metriken nicht verfügbar",
+    "projectPrefix": "PROJEKT_"
   }
 }

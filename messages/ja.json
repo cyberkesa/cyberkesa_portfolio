@@ -76,7 +76,8 @@
     "deploying": "本番環境をデプロイ中",
     "gym": "ジム（脚の日）",
     "recharging": "充電中（邪魔しないで）",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "ステータス:"
   },
   "contact": {
     "name": "名前",
@@ -102,7 +103,22 @@
     "holdToSend": "長押しで送信",
     "transmitting": "送信中...",
     "transmissionSuccess": "送信成功",
-    "transmissionMessage": "データ受信済み。チャネル保護済み。"
+    "transmissionMessage": "データ受信済み。チャネル保護済み。",
+    "directLine": "[ 直接回線 ]",
+    "commsLinkText": "[ 通信リンク ]",
+    "budgetModeMvp": "MVP / プロトタイプ",
+    "budgetModeProduction": "プロダクション",
+    "budgetModeHeavyLuxury": "ヘビーラグジュアリー",
+    "budgetModeWorldDomination": "世界制覇",
+    "budgetModeLabel": "モード:",
+    "transmissionFailed": "送信失敗",
+    "logEncryption": "> 暗号化: AES-256",
+    "logNode": "> ノード: PODOLSK_SERVER",
+    "logUptime": "> 稼働時間: 99.99%",
+    "logStatusWaiting": "> ステータス: データ待機中",
+    "logOperatorIdentified": "> [ログ] オペレーター識別済み: {name}",
+    "logWorldDominationActivated": "> [ログ] 世界制覇モード起動",
+    "logMissionObjectiveReceived": "> [ログ] ミッション目標受信済み"
   },
   "log": {
     "title": "思考ログ",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "システム仕様",
     "subtitle": "能力マトリックス"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "クラス",
+    "classValue": "アーキテクト",
+    "statusLabel": "ステータス",
+    "statusValue": "オンライン",
+    "locLabel": "場所",
+    "locValue": "[非表示]",
+    "photo": "写真",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "コア機能",
+    "noDescription": "説明なし",
+    "algorithmLabel": "アルゴリズム:",
+    "databaseLabel": "データベース:",
+    "statusLabel": "ステータス:",
+    "stackTrace": "スタックトレース",
+    "metrics": "メトリクス",
+    "performanceLabel": "パフォーマンス:",
+    "latencyLabel": "レイテンシ:",
+    "metricsNotAvailable": "メトリクスなし",
+    "projectPrefix": "プロジェクト_"
   }
 }

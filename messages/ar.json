@@ -76,7 +76,8 @@
     "deploying": "نشر الإنتاج",
     "gym": "صالة الألعاب (يوم الساقين)",
     "recharging": "إعادة الشحن (لا تزعج)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "الحالة:"
   },
   "contact": {
     "name": "الاسم",
@@ -102,7 +103,22 @@
     "holdToSend": "اضغط للاستمرار",
     "transmitting": "جاري النقل...",
     "transmissionSuccess": "نقل ناجح",
-    "transmissionMessage": "تم استلام البيانات. القناة آمنة."
+    "transmissionMessage": "تم استلام البيانات. القناة آمنة.",
+    "directLine": "[ خط_مباشر ]",
+    "commsLinkText": "[ رابط_الاتصال ]",
+    "budgetModeMvp": "MVP / نموذج",
+    "budgetModeProduction": "إنتاج",
+    "budgetModeHeavyLuxury": "رفاهية ثقيلة",
+    "budgetModeWorldDomination": "سيطرة عالمية",
+    "budgetModeLabel": "الوضع:",
+    "transmissionFailed": "فشل الإرسال",
+    "logEncryption": "> التشفير: AES-256",
+    "logNode": "> العقدة: PODOLSK_SERVER",
+    "logUptime": "> وقت التشغيل: 99.99%",
+    "logStatusWaiting": "> الحالة: في انتظار البيانات",
+    "logOperatorIdentified": "> [سجل] تم تحديد المشغل: {name}",
+    "logWorldDominationActivated": "> [سجل] تم تفعيل وضع السيطرة العالمية",
+    "logMissionObjectiveReceived": "> [سجل] تم استلام هدف المهمة"
   },
   "log": {
     "title": "سجل الأفكار",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "مواصفات النظام",
     "subtitle": "مصفوفة القدرات"
+  },
+  "idCard": {
+    "idLabel": "المعرف",
+    "idValue": "001",
+    "classLabel": "الفئة",
+    "classValue": "المهندس المعماري",
+    "statusLabel": "الحالة",
+    "statusValue": "متصل",
+    "locLabel": "الموقع",
+    "locValue": "[مخفى]",
+    "photo": "صورة",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "الوظيفة الأساسية",
+    "noDescription": "لا يوجد وصف",
+    "algorithmLabel": "الخوارزمية:",
+    "databaseLabel": "قاعدة البيانات:",
+    "statusLabel": "الحالة:",
+    "stackTrace": "تتبع_المكدس",
+    "metrics": "المقاييس",
+    "performanceLabel": "الأداء:",
+    "latencyLabel": "الكمون:",
+    "metricsNotAvailable": "لا توجد مقاييس",
+    "projectPrefix": "مشروع_"
   }
 }

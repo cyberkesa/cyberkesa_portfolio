@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 
 interface IdCardProps {
@@ -11,6 +12,7 @@ interface IdCardProps {
 }
 
 export function IdCard({ imageSrc, className }: IdCardProps) {
+  const t = useTranslations('idCard')
   const ref = useRef<HTMLDivElement>(null)
   const [hasImageError, setHasImageError] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -108,10 +110,10 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
             <div className="h-full w-full bg-gradient-to-br from-accent/60 via-accent/40 to-accent/20 flex items-center justify-center">
               <div className="text-center">
                 <div className="mb-4 text-5xl font-mono text-foreground/30 select-none">
-                  [ID]
+                  {t('idPlaceholder')}
                 </div>
                 <div className="font-mono text-xs text-foreground/50 uppercase tracking-widest">
-                  Photo
+                  {t('photo')}
                 </div>
               </div>
             </div>
@@ -132,8 +134,8 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
           {/* Top block */}
           <div className="flex justify-between items-start border-b border-white/20 pb-4">
             <div className="flex flex-col gap-1">
-              <span className="text-white/40">ID</span>
-              <span className="font-bold">001</span>
+              <span className="text-white/40">{t('idLabel')}</span>
+              <span className="font-bold">{t('idValue')}</span>
             </div>
             {/* Chip icon */}
             <div className="w-8 h-6 border border-white/30 rounded-sm bg-gradient-to-br from-white/10 to-transparent" />
@@ -143,25 +145,25 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
           <div className="flex flex-col gap-4 border-t border-white/20 pt-4 bg-black/40 backdrop-blur-sm -mx-6 -mb-6 p-6">
             <div className="flex justify-between">
               <div className="flex flex-col gap-1">
-                <span className="text-white/40">CLASS</span>
-                <span className="font-bold text-cyan-400/90">ARCHITECT</span>
+                <span className="text-white/40">{t('classLabel')}</span>
+                <span className="font-bold text-cyan-400/90">{t('classValue')}</span>
               </div>
               <div className="flex flex-col gap-1 text-right">
-                <span className="text-white/40">STATUS</span>
+                <span className="text-white/40">{t('statusLabel')}</span>
                 <div className="flex items-center gap-2 justify-end">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                   </span>
-                  <span className="font-bold">ONLINE</span>
+                  <span className="font-bold">{t('statusValue')}</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-white/40">LOC</span>
+              <span className="text-white/40">{t('locLabel')}</span>
               <span className="font-bold blur-[2px] hover:blur-none transition-all duration-300">
-                [REDACTED]
+                {t('locValue')}
               </span>
             </div>
           </div>

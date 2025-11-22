@@ -80,7 +80,8 @@
     "deploying": "Deploying Production",
     "gym": "Gym (Leg Day)",
     "recharging": "Recharging (Do not disturb)",
-    "vibecoding": "Vibecoding"
+    "vibecoding": "Vibecoding",
+    "statusLabel": "Status:"
   },
   "contact": {
     "terminalTitle": "SECURE CHANNEL",
@@ -106,7 +107,22 @@
     "successMessage": "I'll get back to you soon.",
     "budgetLabel": "Budget Range",
     "budgetLowMessage": "For this budget, I recommend a No-Code builder.",
-    "budgetHighMessage": "Now we are talking business."
+    "budgetHighMessage": "Now we are talking business.",
+    "directLine": "[ DIRECT_LINE ]",
+    "commsLinkText": "[ COMMS_LINK ]",
+    "budgetModeMvp": "MVP / PROTOTYPE",
+    "budgetModeProduction": "PRODUCTION",
+    "budgetModeHeavyLuxury": "HEAVY LUXURY",
+    "budgetModeWorldDomination": "WORLD DOMINATION",
+    "budgetModeLabel": "MODE:",
+    "transmissionFailed": "Transmission failed",
+    "logEncryption": "> ENCRYPTION: AES-256",
+    "logNode": "> NODE: PODOLSK_SERVER",
+    "logUptime": "> UPTIME: 99.99%",
+    "logStatusWaiting": "> STATUS: Waiting for payload",
+    "logOperatorIdentified": "> [LOG] Operator identified: {name}",
+    "logWorldDominationActivated": "> [LOG] WORLD DOMINATION MODE ACTIVATED",
+    "logMissionObjectiveReceived": "> [LOG] Mission objective received"
   },
   "log": {
     "title": "Thought Log",
@@ -140,6 +156,31 @@
     "navigation": "Navigation",
     "scrollToTop": "Scroll to Top",
     "swipeHint": "[ ACCESS ]"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "CLASS",
+    "classValue": "ARCHITECT",
+    "statusLabel": "STATUS",
+    "statusValue": "ONLINE",
+    "locLabel": "LOC",
+    "locValue": "[REDACTED]",
+    "photo": "Photo",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "CORE FUNCTION",
+    "noDescription": "No description available",
+    "algorithmLabel": "ALGORITHM:",
+    "databaseLabel": "DATABASE:",
+    "statusLabel": "STATUS:",
+    "stackTrace": "STACK_TRACE",
+    "metrics": "METRICS",
+    "performanceLabel": "Performance:",
+    "latencyLabel": "Latency:",
+    "metricsNotAvailable": "Metrics not available",
+    "projectPrefix": "PROJECT_"
   }
 }
 

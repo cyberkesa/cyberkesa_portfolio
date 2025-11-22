@@ -76,7 +76,8 @@
     "deploying": "部署生产环境",
     "gym": "健身房（腿部日）",
     "recharging": "充电中（请勿打扰）",
-    "vibecoding": "氛围编码中"
+    "vibecoding": "氛围编码中",
+    "statusLabel": "状态:"
   },
   "contact": {
     "name": "姓名",
@@ -102,7 +103,22 @@
     "holdToSend": "按住发送",
     "transmitting": "传输中...",
     "transmissionSuccess": "传输成功",
-    "transmissionMessage": "数据已接收。通道已保护。"
+    "transmissionMessage": "数据已接收。通道已保护。",
+    "directLine": "[ 直接线路 ]",
+    "commsLinkText": "[ 通信链接 ]",
+    "budgetModeMvp": "MVP / 原型",
+    "budgetModeProduction": "生产",
+    "budgetModeHeavyLuxury": "重奢",
+    "budgetModeWorldDomination": "世界统治",
+    "budgetModeLabel": "模式:",
+    "transmissionFailed": "传输失败",
+    "logEncryption": "> 加密: AES-256",
+    "logNode": "> 节点: PODOLSK_SERVER",
+    "logUptime": "> 运行时间: 99.99%",
+    "logStatusWaiting": "> 状态: 等待数据",
+    "logOperatorIdentified": "> [日志] 操作员已识别: {name}",
+    "logWorldDominationActivated": "> [日志] 世界统治模式已激活",
+    "logMissionObjectiveReceived": "> [日志] 任务目标已接收"
   },
   "log": {
     "title": "思想日志",
@@ -140,5 +156,30 @@
   "capabilities": {
     "title": "系统规格",
     "subtitle": "能力矩阵"
+  },
+  "idCard": {
+    "idLabel": "ID",
+    "idValue": "001",
+    "classLabel": "类别",
+    "classValue": "架构师",
+    "statusLabel": "状态",
+    "statusValue": "在线",
+    "locLabel": "位置",
+    "locValue": "[已隐藏]",
+    "photo": "照片",
+    "idPlaceholder": "[ID]"
+  },
+  "projectCard": {
+    "coreFunction": "核心功能",
+    "noDescription": "无描述",
+    "algorithmLabel": "算法:",
+    "databaseLabel": "数据库:",
+    "statusLabel": "状态:",
+    "stackTrace": "堆栈跟踪",
+    "metrics": "指标",
+    "performanceLabel": "性能:",
+    "latencyLabel": "延迟:",
+    "metricsNotAvailable": "无指标",
+    "projectPrefix": "项目_"
   }
 }
