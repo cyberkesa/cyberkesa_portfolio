@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
-import { Card } from '@/components/ui/card'
-import { Grid } from '@/components/layout/grid'
+import { ArchitecturalCard } from '@/components/ui/architectural-card'
 import { PROJECTS } from '@/config/projects'
 
 export function ProjectsSection() {
@@ -26,21 +25,29 @@ export function ProjectsSection() {
           {t('title')}
         </motion.h2>
 
-        <Grid>
-          {PROJECTS.map((project) => (
-            <motion.div key={project.id} variants={fadeInUp}>
-              <Card
+        {/* Industrial List Layout */}
+        <div className="max-w-6xl mx-auto space-y-0">
+          {PROJECTS.map((project, index) => (
+            <motion.div
+              key={project.id}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+            >
+              <ArchitecturalCard
+                id={project.id}
                 title={project.title}
+                category={project.category}
                 description={project.description}
                 tech={project.tech}
-                videoUrl={project.videoUrl}
-                imageUrl={project.imageUrl}
-                gridSize={project.gridSize}
+                algorithm={project.algorithm}
+                database={project.database}
+                status={project.status}
+                metrics={project.metrics}
                 link={project.link}
               />
             </motion.div>
           ))}
-        </Grid>
+        </div>
       </motion.div>
     </section>
   )
