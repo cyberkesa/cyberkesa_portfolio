@@ -182,46 +182,41 @@ input[type='range'].slider-thumb:disabled {
   cursor: not-allowed;
 }
 
-/* RGB SHIFT ANIMATION - Signal Loss Effect (Text Only) */
+/* RGB SHIFT ANIMATION - Signal Loss Effect (Text Only, Smooth) */
 @keyframes rgb-tear-text {
   0% {
     text-shadow: none;
-    filter: blur(0);
+    filter: none;
   }
 
-  10% {
-    /* Начало расслоения текста */
-    text-shadow: -6px 0 #ff00c1, 6px 0 #00fff9, 3px 0 #ffff00;
-    filter: blur(0.5px);
+  15% {
+    /* Плавное начало расслоения текста */
+    text-shadow: -8px 0 #ff00c1, 8px 0 #00fff9, 4px 0 #ffff00;
+    filter: none;
   }
 
-  20% {
+  30% {
     /* Усиление расслоения текста */
-    text-shadow: -10px 0 #ff00c1, 10px 0 #00fff9, -5px 0 #ffff00;
-    filter: blur(1px);
-  }
-
-  35% {
-    /* Максимальное искажение текста */
-    text-shadow: 12px 0 #ff00c1, -12px 0 #00fff9, 6px 0 #ffff00, -3px 0 #00ff00;
-    filter: blur(2px);
+    text-shadow: -12px 0 #ff00c1, 12px 0 #00fff9, -6px 0 #ffff00, 6px 0 #00ff00;
+    filter: none;
   }
 
   50% {
-    /* Пик — смена темы происходит здесь */
-    text-shadow: -15px 0 #ff00c1, 15px 0 #00fff9, -8px 0 #ffff00, 8px 0 #00ff00;
-    filter: invert(1) blur(3px); /* Инверсия + сильный blur */
+    /* Пик — смена темы происходит здесь, максимальное расслоение */
+    text-shadow: -18px 0 #ff00c1, 18px 0 #00fff9, -9px 0 #ffff00, 9px 0 #00ff00, -4px 0 #ff00ff;
+    filter: invert(1);
   }
 
   65% {
-    /* Откат расслоения текста */
-    text-shadow: 8px 0 #ff00c1, -8px 0 #00fff9, 4px 0 #ffff00;
-    filter: blur(1.5px);
+    /* Плавный откат расслоения текста */
+    text-shadow: 12px 0 #ff00c1, -12px 0 #00fff9, 6px 0 #ffff00, -6px 0 #00ff00;
+    filter: invert(0.3);
   }
 
   80% {
-    text-shadow: -4px 0 #ff00c1, 4px 0 #00fff9;
-    filter: blur(0.5px);
+    /* Дальнейший откат */
+    text-shadow: -6px 0 #ff00c1, 6px 0 #00fff9, 3px 0 #ffff00;
+    filter: none;
   }
 
   100% {
@@ -232,8 +227,8 @@ input[type='range'].slider-thumb:disabled {
 
 /* Применяем эффект только к тексту - text-shadow работает только на тексте */
 .rgb-transition * {
-  animation: rgb-tear-text 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-  will-change: filter, text-shadow; /* Оптимизация производительности */
+  animation: rgb-tear-text 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: text-shadow; /* Оптимизация производительности */
 }
 
 /* Отключаем фильтр на нетекстовых элементах для лучшей производительности */
