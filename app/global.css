@@ -181,3 +181,48 @@ input[type='range'].slider-thumb:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* RGB SHIFT ANIMATION - Signal Loss Effect */
+@keyframes rgb-tear {
+  0% {
+    text-shadow: none;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+
+  20% {
+    /* Разрыв каналов */
+    text-shadow: -4px 0 #ff00c1, 4px 0 #00fff9;
+    transform: translate(-2px, 1px) skewX(5deg);
+  }
+
+  40% {
+    /* Сильный глитч */
+    text-shadow: 4px 0 #ff00c1, -4px 0 #00fff9;
+    transform: translate(2px, -1px) skewX(-5deg);
+    filter: blur(1px);
+  }
+
+  50% {
+    /* Пик — смена темы происходит здесь */
+    text-shadow: -6px 0 #ff00c1, 6px 0 #00fff9;
+    transform: translate(0, 2px);
+    filter: invert(1); /* Инверсия на долю секунды */
+  }
+
+  60% {
+    text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+    transform: translate(0, 0);
+    filter: none;
+  }
+
+  100% {
+    text-shadow: none;
+    transform: none;
+  }
+}
+
+.rgb-transition {
+  animation: rgb-tear 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  overflow-x: hidden; /* Чтобы сайт не дергался по ширине */
+}

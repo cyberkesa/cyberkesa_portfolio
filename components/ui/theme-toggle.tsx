@@ -1,19 +1,17 @@
 'use client'
 
-import { useTheme } from 'next-themes'
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { ThemeMeltdownContext } from '@/components/visuals/theme-meltdown-context'
+import { useChaosTheme } from '@/hooks/use-chaos-theme'
+import { ThemeMeltdown } from '@/components/visuals/theme-meltdown'
+import { useTheme } from 'next-themes'
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
+  const { triggerThemeSwitch, isMelting, setIsMelting } = useChaosTheme()
   const [mounted, setMounted] = useState(false)
-
-  // Получаем триггер эффекта из контекста (с fallback на прямое переключение)
-  const meltdownContext = useContext(ThemeMeltdownContext)
-  const triggerMeltdown = meltdownContext?.triggerMeltdown
 
   useEffect(() => {
     setMounted(true)
@@ -27,18 +25,13 @@ export function ThemeToggle() {
 
   const isDark = theme === 'dark'
 
-  // Обработчик клика: используем эффект, если доступен, иначе просто меняем тему
-  const handleClick = () => {
-    if (triggerMeltdown) {
-      triggerMeltdown()
-    } else {
-      setTheme(isDark ? 'light' : 'dark')
-    }
-  }
-
   return (
-    <motion.button
-      onClick={handleClick}
+    <>
+      {/* Canvas для эффекта Melt управляется через isActive */}
+      <ThemeMeltdown isActive={isMelting} onComplete={() => setIsMelting(false)} />
+
+      <motion.button
+        onClick={triggerThemeSwitch}
       className={cn(
         'relative h-8 w-8 rounded-full border border-accent bg-background p-1.5',
         'transition-colors hover:bg-accent',
@@ -64,6 +57,7 @@ export function ThemeToggle() {
         )}
       </motion.div>
     </motion.button>
+    </>
   )
 }
 

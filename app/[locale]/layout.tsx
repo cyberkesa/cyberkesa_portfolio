@@ -7,7 +7,6 @@ import { metadata } from '../metadata'
 import '../global.css'
 import { LenisProvider } from '@/components/providers/lenis-provider'
 import { ThemeProvider } from '@/components/providers/theme-provider'
-import { ThemeMeltdown } from '@/components/visuals/theme-meltdown'
 // import FluidBackground from '@/components/visuals/fluid-background' // Temporarily disabled
 
 export { metadata }
@@ -54,11 +53,9 @@ export default async function LocaleLayout({
         {/* Content Layer (Z-20): HTML/DOM elements */}
         <div className="relative z-20">
           <ThemeProvider>
-            <ThemeMeltdown>
-              <NextIntlClientProvider messages={messages}>
-                <LenisProvider>{children}</LenisProvider>
-              </NextIntlClientProvider>
-            </ThemeMeltdown>
+            <NextIntlClientProvider messages={messages}>
+              <LenisProvider>{children}</LenisProvider>
+            </NextIntlClientProvider>
           </ThemeProvider>
         </div>
       </body>
