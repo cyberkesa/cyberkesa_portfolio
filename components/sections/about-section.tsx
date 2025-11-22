@@ -72,7 +72,7 @@ export function AboutSection() {
             {/* Block 1: Manifesto */}
             <div className="mb-12 pb-8 border-b border-foreground/10">
               <span className="font-mono text-xs text-foreground/40 mb-2 block tracking-widest uppercase">
-                // SYSTEM_MANIFESTO
+                {'// SYSTEM_MANIFESTO'}
               </span>
               <p className="text-lg font-medium leading-relaxed max-w-xl font-mono">
                 {t('bioShort').split('\n').map((line, idx) => (
