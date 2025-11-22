@@ -262,18 +262,6 @@ export function ProgressPill() {
                   )
                 })}
               </div>
-              
-              {/* Scroll to top button */}
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                onClick={handleScrollToTop}
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border border-foreground/10 bg-foreground/5 px-6 py-4 font-mono text-sm text-foreground/70 transition-all hover:border-glow hover:bg-glow/10 hover:text-glow"
-              >
-                <ChevronUp className="h-4 w-4" />
-                <span>{tMobile('scrollToTop')}</span>
-              </motion.button>
             </motion.div>
           </>
         )}
