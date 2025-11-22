@@ -70,7 +70,47 @@
     "subtitle": "No es una lista de precios. Esto es un mercado.",
     "buttonInitiate": "INICIAR ESCANEO",
     "buttonStart": "INICIAR MOTOR",
-    "buttonBuild": "CONSTRUIR IMPERIO"
+    "buttonBuild": "CONSTRUIR IMPERIO",
+    "buttonContact": "CONTACTO",
+    "levels": {
+      "audit": {
+        "title": "LA AUDITORÍA",
+        "subtitle": "Análisis Forense",
+        "description": "Realizo una autopsia de su producto actual. Identificando cuellos de botella, deuda técnica y asesinos de conversión. Solo honestidad brutal.",
+        "features": [
+          "Autopsia del Código",
+          "Cirugía de Rendimiento (Objetivo 100/100)",
+          "Análisis de Fricción UX",
+          "Forensia de Vulnerabilidades",
+          "Priorización Despiadada",
+          "Hoja de Ruta de Recuperación"
+        ]
+      },
+      "mvp": {
+        "title": "EL MVP",
+        "subtitle": "Lanzamiento Rápido",
+        "description": "Transformando ideas en activos listos para el mercado en tiempo récord usando mi pipeline orquestado por IA. Fundación escalable desde el Día 1.",
+        "features": [
+          "Next.js 15 / React Server Components",
+          "Arquitectura de Agentes IA",
+          "Interfaz de Alta Conversión",
+          "Fundación Cero Legado",
+          "Despliegue Instantáneo a Producción"
+        ]
+      },
+      "architect": {
+        "title": "EL ARQUITECTO",
+        "subtitle": "Patrimonio Digital",
+        "description": "Ingeniería a medida para ambiciones de alta carga. Ciclo de desarrollo completo sin compromisos. Caro. Deliberado. Impecable.",
+        "features": [
+          "Arquitectura Microservicio / Monolito",
+          "Backend de Alto Rendimiento (Go)",
+          "WebGL / R3F Physics Inmersivo",
+          "Sistema de Diseño Propietario",
+          "Gestión del Ciclo de Vida"
+        ]
+      }
+    }
   },
   "status": {
     "deploying": "Desplegando Producción",

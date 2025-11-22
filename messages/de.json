@@ -70,7 +70,47 @@
     "subtitle": "Keine Preisliste. Das ist ein Markt.",
     "buttonInitiate": "SCAN STARTEN",
     "buttonStart": "MOTOR STARTEN",
-    "buttonBuild": "IMPERIUM BAUEN"
+    "buttonBuild": "IMPERIUM BAUEN",
+    "buttonContact": "KONTAKT",
+    "levels": {
+      "audit": {
+        "title": "DIE PRÜFUNG",
+        "subtitle": "Forensische Analyse",
+        "description": "Ich führe eine Autopsie Ihres aktuellen Produkts durch. Identifizierung von Engpässen, technischen Schulden und Conversion-Killern. Nur schonungslose Ehrlichkeit.",
+        "features": [
+          "Codebasis-Autopsie",
+          "Performance-Chirurgie (100/100 Ziel)",
+          "UX-Reibungsanalyse",
+          "Schwachstellen-Forensik",
+          "Erbarmungslose Priorisierung",
+          "Erholungs-Roadmap"
+        ]
+      },
+      "mvp": {
+        "title": "DAS MVP",
+        "subtitle": "Velocity Launch",
+        "description": "Ideen in marktreife Assets in Rekordzeit verwandeln mit meiner KI-orchestrierten Pipeline. Skalierbare Grundlage ab Tag 1.",
+        "features": [
+          "Next.js 15 / React Server Components",
+          "KI-Agent-Architektur",
+          "Hochkonvertierendes Interface",
+          "Null-Legacy-Fundament",
+          "Sofortiges Production Deploy"
+        ]
+      },
+      "architect": {
+        "title": "DER ARCHITEKT",
+        "subtitle": "Digitales Vermögen",
+        "description": "Maßgeschneiderte Ingenieurskunst für High-Load-Ambitionen. Vollständiger Entwicklungszyklus ohne Kompromisse. Teuer. Absichtlich. Fehlerfrei.",
+        "features": [
+          "Microservice / Monolith Architektur",
+          "Hochleistungs-Backend (Go)",
+          "Immersives WebGL / R3F Physics",
+          "Proprietäres Design System",
+          "Lebenszyklus-Management"
+        ]
+      }
+    }
   },
   "status": {
     "deploying": "Produktion deployen",

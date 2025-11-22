@@ -70,7 +70,47 @@
     "subtitle": "Não é uma lista de preços. Isso é um mercado.",
     "buttonInitiate": "INICIAR VARREdura",
     "buttonStart": "INICIAR MOTOR",
-    "buttonBuild": "CONSTRUIR IMPÉRIO"
+    "buttonBuild": "CONSTRUIR IMPÉRIO",
+    "buttonContact": "CONTATO",
+    "levels": {
+      "audit": {
+        "title": "A AUDITORIA",
+        "subtitle": "Análise Forense",
+        "description": "Realizo uma autópsia do seu produto atual. Identificando gargalos, dívida técnica e assassinos de conversão. Apenas honestidade brutal.",
+        "features": [
+          "Autópsia do Código",
+          "Cirurgia de Performance (Meta 100/100)",
+          "Análise de Fricção UX",
+          "Forense de Vulnerabilidades",
+          "Priorização Implacável",
+          "Roteiro de Recuperação"
+        ]
+      },
+      "mvp": {
+        "title": "O MVP",
+        "subtitle": "Lançamento Rápido",
+        "description": "Transformando ideias em ativos prontos para o mercado em tempo recorde usando meu pipeline orquestrado por IA. Fundação escalável desde o Dia 1.",
+        "features": [
+          "Next.js 15 / React Server Components",
+          "Arquitetura de Agentes IA",
+          "Interface de Alta Conversão",
+          "Fundação Zero Legacy",
+          "Deploy Instantâneo em Produção"
+        ]
+      },
+      "architect": {
+        "title": "O ARQUITETO",
+        "subtitle": "Patrimônio Digital",
+        "description": "Engenharia sob medida para ambições de alta carga. Ciclo de desenvolvimento completo sem compromissos. Caro. Deliberado. Impecável.",
+        "features": [
+          "Arquitetura Microserviço / Monólito",
+          "Backend de Alto Desempenho (Go)",
+          "WebGL / R3F Physics Imersivo",
+          "Sistema de Design Proprietário",
+          "Gestão do Ciclo de Vida"
+        ]
+      }
+    }
   },
   "status": {
     "deploying": "Implantando Produção",

@@ -110,20 +110,20 @@ export function ServicesSection() {
 
                 {/* Title */}
                 <h3 className="mb-2 font-mono text-2xl font-bold uppercase tracking-wider">
-                  {level.title}
+                  {t(`levels.${level.id}.title`)}
                 </h3>
                 <p className="mb-4 font-mono text-sm text-cyan-400 uppercase tracking-widest">
-                  {level.subtitle}
+                  {t(`levels.${level.id}.subtitle`)}
                 </p>
 
                 {/* Description */}
                 <p className="mb-6 font-mono text-sm text-foreground/70 leading-relaxed">
-                  {level.description}
+                  {t(`levels.${level.id}.description`)}
                 </p>
 
                 {/* Features */}
                 <ul className="mb-6 space-y-2">
-                  {level.features.map((feature, idx) => (
+                  {t.raw(`levels.${level.id}.features`).map((feature: string, idx: number) => (
                     <li
                       key={idx}
                       className="flex items-start gap-2 font-mono text-xs text-foreground/60"

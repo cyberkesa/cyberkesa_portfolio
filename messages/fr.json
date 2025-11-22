@@ -70,7 +70,47 @@
     "subtitle": "Pas une liste de prix. C'est un marché.",
     "buttonInitiate": "LANCER LE SCAN",
     "buttonStart": "DÉMARRER LE MOTEUR",
-    "buttonBuild": "CONSTRUIRE L'EMPIRE"
+    "buttonBuild": "CONSTRUIRE L'EMPIRE",
+    "buttonContact": "CONTACT",
+    "levels": {
+      "audit": {
+        "title": "L'AUDIT",
+        "subtitle": "Analyse Forensique",
+        "description": "Je pratique une autopsie de votre produit actuel. Identification des goulots d'étranglement, dette technique et tueurs de conversion. Honnêteté brutale uniquement.",
+        "features": [
+          "Autopsie du Code",
+          "Chirurgie de Performance (Objectif 100/100)",
+          "Analyse des Frictions UX",
+          "Forensique des Vulnérabilités",
+          "Priorisation Impitoyable",
+          "Feuille de Route de Récupération"
+        ]
+      },
+      "mvp": {
+        "title": "LE MVP",
+        "subtitle": "Lancement Rapide",
+        "description": "Transformer les idées en actifs prêts pour le marché en un temps record en utilisant mon pipeline orchestré par IA. Fondation scalable dès le Jour 1.",
+        "features": [
+          "Next.js 15 / React Server Components",
+          "Architecture d'Agents IA",
+          "Interface à Haute Conversion",
+          "Fondation Zéro Legacy",
+          "Déploiement Instantané en Production"
+        ]
+      },
+      "architect": {
+        "title": "L'ARCHITECTE",
+        "subtitle": "Patrimoine Numérique",
+        "description": "Ingénierie sur mesure pour ambitions à haute charge. Cycle de développement complet sans compromis. Cher. Déliberé. Impeccable.",
+        "features": [
+          "Architecture Microservice / Monolithe",
+          "Backend Haute Performance (Go)",
+          "WebGL / R3F Physics Immersif",
+          "Système de Design Propriétaire",
+          "Gestion du Cycle de Vie"
+        ]
+      }
+    }
   },
   "status": {
     "deploying": "Déploiement Production",

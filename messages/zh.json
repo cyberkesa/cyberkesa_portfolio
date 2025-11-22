@@ -70,7 +70,47 @@
     "subtitle": "不是价格表。这是市场。",
     "buttonInitiate": "启动扫描",
     "buttonStart": "启动引擎",
-    "buttonBuild": "建立帝国"
+    "buttonBuild": "建立帝国",
+    "buttonContact": "联系",
+    "levels": {
+      "audit": {
+        "title": "审计",
+        "subtitle": "法医分析",
+        "description": "我对您当前的产品进行解剖。识别瓶颈、技术债务和转化杀手。只提供残酷的诚实。",
+        "features": [
+          "代码库解剖",
+          "性能手术 (目标100/100)",
+          "UX摩擦分析",
+          "漏洞取证",
+          "无情优先排序",
+          "恢复路线图"
+        ]
+      },
+      "mvp": {
+        "title": "MVP",
+        "subtitle": "快速启动",
+        "description": "使用我的AI编排管道，在创纪录的时间内将想法转化为市场就绪的资产。从第一天起就是可扩展的基础。",
+        "features": [
+          "Next.js 15 / React Server Components",
+          "AI代理架构",
+          "高转化界面",
+          "零遗留基础",
+          "即时生产部署"
+        ]
+      },
+      "architect": {
+        "title": "架构师",
+        "subtitle": "数字资产",
+        "description": "为高负载雄心定制工程。无妥协的完整开发周期。昂贵。精心。完美。",
+        "features": [
+          "微服务 / 单体架构",
+          "高性能后端 (Go)",
+          "沉浸式WebGL / R3F Physics",
+          "专有设计系统",
+          "生命周期管理"
+        ]
+      }
+    }
   },
   "status": {
     "deploying": "部署生产环境",

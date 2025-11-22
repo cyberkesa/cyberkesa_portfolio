@@ -70,7 +70,47 @@
     "subtitle": "Non una lista prezzi. Questo è un mercato.",
     "buttonInitiate": "AVVIA SCANSIONE",
     "buttonStart": "AVVIA MOTORE",
-    "buttonBuild": "COSTRUISCI IMPERO"
+    "buttonBuild": "COSTRUISCI IMPERO",
+    "buttonContact": "CONTATTO",
+    "levels": {
+      "audit": {
+        "title": "L'AUDIT",
+        "subtitle": "Analisi Forense",
+        "description": "Eseguo un'autopsia del tuo prodotto attuale. Identificando colli di bottiglia, debito tecnico e killer della conversione. Solo onestà brutale.",
+        "features": [
+          "Autopsia del Codebase",
+          "Chirurgia delle Prestazioni (Obiettivo 100/100)",
+          "Analisi dell'Attrito UX",
+          "Forensics delle Vulnerabilità",
+          "Priorizzazione Spietata",
+          "Roadmap di Recupero"
+        ]
+      },
+      "mvp": {
+        "title": "IL MVP",
+        "subtitle": "Lancio Rapido",
+        "description": "Trasformare idee in asset pronti per il mercato in tempo record usando la mia pipeline orchestrata dall'IA. Fondazione scalabile dal Giorno 1.",
+        "features": [
+          "Next.js 15 / React Server Components",
+          "Architettura Agente IA",
+          "Interfaccia ad Alta Conversione",
+          "Fondazione Zero Legacy",
+          "Deploy Istantaneo in Produzione"
+        ]
+      },
+      "architect": {
+        "title": "L'ARCHITETTO",
+        "subtitle": "Patrimonio Digitale",
+        "description": "Ingegneria su misura per ambizioni ad alto carico. Ciclo di sviluppo completo senza compromessi. Costoso. Deliberato. Impeccabile.",
+        "features": [
+          "Architettura Microservizio / Monolite",
+          "Backend ad Alto Rendimento (Go)",
+          "WebGL / R3F Physics Immersivo",
+          "Sistema di Design Proprietario",
+          "Gestione del Ciclo di Vita"
+        ]
+      }
+    }
   },
   "status": {
     "deploying": "Distribuzione Produzione",
