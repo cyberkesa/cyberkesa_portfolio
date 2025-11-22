@@ -60,7 +60,7 @@ export function HeroSection() {
   return (
     <section className="flex min-h-screen items-center justify-center px-6 pt-32">
       <motion.div
-        className="container mx-auto max-w-4xl"
+        className="container mx-auto max-w-6xl px-6"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -93,7 +93,7 @@ export function HeroSection() {
           <h1 className="mb-4 font-mono text-4xl font-bold md:text-6xl">
             {t('title')}
           </h1>
-          <p className="mx-auto max-w-2xl font-mono text-lg text-foreground/70">
+          <p className="mx-auto max-w-3xl font-mono text-lg text-foreground/70">
             {t('subtitle')}
           </p>
         </motion.div>

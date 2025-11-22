@@ -13,7 +13,7 @@ export function LogSection() {
   return (
     <section className="min-h-screen py-24">
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 max-w-6xl"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -32,7 +32,7 @@ export function LogSection() {
           {t('subtitle')}
         </motion.p>
 
-        <div className="mx-auto max-w-3xl space-y-8">
+        <div className="mx-auto max-w-6xl space-y-8">
           {logEntries.map((entry, index) => (
             <motion.article
               key={entry.id}

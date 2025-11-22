@@ -11,7 +11,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-24">
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 max-w-6xl"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -24,11 +24,11 @@ export function AboutSection() {
           {t('headline')}
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 lg:gap-16">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 lg:gap-16 max-w-6xl mx-auto">
           {/* Left column: Text content */}
           <motion.div
             variants={fadeInUp}
-            className="flex-1 space-y-8 max-w-2xl"
+            className="flex-1 space-y-8"
           >
             {/* Short Bio */}
             <div className="rounded-lg border border-accent bg-accent/30 p-8 backdrop-blur-sm">

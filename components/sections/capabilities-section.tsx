@@ -574,7 +574,7 @@ export function CapabilitiesSection() {
   return (
     <section id="capabilities" className="py-24">
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 max-w-6xl"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

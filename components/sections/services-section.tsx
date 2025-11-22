@@ -45,7 +45,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-24">
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 max-w-6xl"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -141,6 +141,7 @@ export function ServicesSection() {
                 >
                   <Button
                     variant="outline"
+                    size="md"
                     className="w-full font-mono text-xs uppercase tracking-widest border-foreground/20 hover:border-cyan-400 hover:text-cyan-400"
                     onClick={() => {
                       const element = document.querySelector('#contact')

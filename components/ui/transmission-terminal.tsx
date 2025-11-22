@@ -175,7 +175,7 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
       id="contact"
       className="border-t border-foreground/10 bg-accent/30 font-mono text-sm"
     >
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-16 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* LEFT: STATUS LOG */}
           <div className="flex flex-col justify-between space-y-12">
@@ -388,9 +388,10 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
                     !formData.message
                   }
                   className={cn(
-                    'relative w-full py-6 border-2 border-foreground/20 text-foreground hover:border-cyan-400 hover:text-cyan-400 transition-all uppercase tracking-widest font-bold overflow-hidden',
+                    'relative w-full h-12 px-8 border-2 border-foreground/20 text-foreground hover:border-cyan-400 hover:text-cyan-400 transition-all uppercase tracking-widest font-bold overflow-hidden',
                     'disabled:opacity-50 disabled:cursor-not-allowed',
-                    isHolding && 'border-cyan-400 text-cyan-400'
+                    isHolding && 'border-cyan-400 text-cyan-400',
+                    'flex items-center justify-center'
                   )}
                   animate={
                     formData.budget >= 50000 && isHolding

@@ -12,7 +12,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-24">
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 max-w-6xl"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -26,7 +26,7 @@ export function ProjectsSection() {
         </motion.h2>
 
         {/* Industrial List Layout */}
-        <div className="max-w-6xl mx-auto space-y-0">
+        <div className="max-w-6xl mx-auto space-y-0 px-6">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}

@@ -54,7 +54,7 @@ export function StackSection() {
   return (
     <section id="stack" className="relative py-24 min-h-[60vh]">
       <motion.div
-        className="container mx-auto px-6"
+        className="container mx-auto px-6 max-w-6xl"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
