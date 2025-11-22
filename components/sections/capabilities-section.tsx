@@ -399,19 +399,22 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
       {/* Mobile: Scan Line List with Decryption */}
       <div className="md:hidden relative z-10">
         {block.items.map((item, i) => {
-          const ref = useRef(null)
-          const isInView = useInView(ref, { margin: '-45% 0px -45% 0px', once: false })
-          const { lightTap } = useHapticFeedback()
-          const isDecrypted = decryptedItems.has(i) || isInView
+          const NeuralScanItem = () => {
+            const ref = useRef(null)
+            const isInView = useInView(ref, { margin: '-45% 0px -45% 0px', once: false })
+            const { lightTap } = useHapticFeedback()
+            const isDecrypted = decryptedItems.has(i) || isInView
+            const hasDecryptedRef = useRef(false)
 
-          // Trigger haptic and mark as decrypted when in view
-          if (isInView && !decryptedItems.has(i)) {
-            // Use setTimeout to avoid calling setState during render
-            setTimeout(() => {
-              lightTap()
-              setDecryptedItems((prev) => new Set([...prev, i]))
-            }, 0)
-          }
+            useEffect(() => {
+              if (isInView && !hasDecryptedRef.current) {
+                lightTap()
+                setDecryptedItems((prev) => new Set([...prev, i]))
+                hasDecryptedRef.current = true
+              } else if (!isInView) {
+                hasDecryptedRef.current = false
+              }
+            }, [isInView, i, lightTap])
 
           return (
             <motion.div
@@ -471,8 +474,11 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
                   background: 'radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%)',
                 }}
               />
-            </motion.div>
-          )
+              </motion.div>
+            )
+          }
+
+          return <NeuralScanItem key={item.id} />
         })}
       </div>
 
