@@ -176,8 +176,8 @@ export function ProgressPill() {
           className={cn(
             'flex h-12 w-12 items-center justify-center rounded-full',
             'border border-accent bg-accent/80 backdrop-blur-sm',
-            'text-foreground/70 transition-all',
-            'hover:border-glow-soft hover:bg-accent hover:text-foreground',
+            'text-foreground transition-all',
+            'hover:border-glow-soft hover:bg-accent',
             isDragging && 'scale-105',
             isMenuOpen && 'pointer-events-none'
           )}
