@@ -37,8 +37,10 @@ export function ArchitecturalCard({
   const [hovered, setHovered] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const ref = useRef(null)
+  const headerRef = useRef<HTMLDivElement>(null) // Ref for header only (stable reference)
   const { lightTap } = useHapticFeedback()
   const hasActivatedRef = useRef(false)
+  const isClosingRef = useRef(false) // Prevent rapid open/close cycles
   
   // Detect mobile on mount and resize
   useEffect(() => {
@@ -53,38 +55,55 @@ export function ArchitecturalCard({
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
   
-  // Mobile: Detect when card is in center of viewport
-  const isInView = useInView(ref, { 
-    margin: '-30% 0px -30% 0px', 
+  // Mobile: Detect when card HEADER (not full card) is in viewport
+  // This prevents issues when long cards expand and change page height
+  const isHeaderInView = useInView(headerRef, { 
+    margin: '-20% 0px -20% 0px', 
     once: false,
-    amount: 0.5 // Require at least 50% visible for activation
+    amount: 0.3 // Only need header to be visible
   })
   
-  // Mobile: Auto-open on scroll with debounce to prevent jumping
+  // Mobile: Auto-open on scroll with improved debounce for long cards
   useEffect(() => {
     if (!isMobile) return
     
     let timeoutId: NodeJS.Timeout
     
-    if (isInView && !hasActivatedRef.current) {
-      // Small delay to prevent rapid toggling
+    // Only open if header is in view and card is not currently closing
+    if (isHeaderInView && !hasActivatedRef.current && !isClosingRef.current) {
+      // Longer delay to prevent rapid toggling with long cards
       timeoutId = setTimeout(() => {
-        lightTap()
-        setHovered(true)
-        hasActivatedRef.current = true
-      }, 100)
-    } else if (!isInView && hasActivatedRef.current) {
-      // Delay closing to prevent flickering when scrolling
+        if (!isClosingRef.current) {
+          lightTap()
+          setHovered(true)
+          hasActivatedRef.current = true
+          isClosingRef.current = false
+        }
+      }, 150)
+    } 
+    // Only close if header is completely out of view (not just scrolled past)
+    else if (!isHeaderInView && hasActivatedRef.current && !isClosingRef.current) {
+      // Longer delay for closing to prevent flickering with long cards
+      isClosingRef.current = true
       timeoutId = setTimeout(() => {
-        setHovered(false)
-        hasActivatedRef.current = false
-      }, 200)
+        // Double-check header is still out of view before closing
+        if (headerRef.current) {
+          const rect = headerRef.current.getBoundingClientRect()
+          const isStillOutOfView = rect.bottom < 0 || rect.top > window.innerHeight
+          
+          if (isStillOutOfView) {
+            setHovered(false)
+            hasActivatedRef.current = false
+          }
+        }
+        isClosingRef.current = false
+      }, 300)
     }
     
     return () => {
       if (timeoutId) clearTimeout(timeoutId)
     }
-  }, [isInView, isMobile, lightTap])
+  }, [isHeaderInView, isMobile, lightTap])
   
   // Desktop: Hover behavior
   const handleHoverStart = () => {
@@ -139,8 +158,8 @@ export function ArchitecturalCard({
       </AnimatePresence>
 
       <div className="relative z-10 flex flex-col py-8 md:py-12 px-4 md:px-12">
-        {/* Header Row */}
-        <div className="flex justify-between items-baseline gap-4">
+        {/* Header Row - use this ref for mobile detection (stable reference point) */}
+        <div ref={headerRef} className="flex justify-between items-baseline gap-4">
           <span className="font-mono text-xs text-foreground/50 uppercase tracking-widest flex-shrink-0">
             PROJECT_{String(id).padStart(2, '0')}
           </span>
