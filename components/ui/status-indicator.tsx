@@ -12,14 +12,16 @@ export function StatusIndicator() {
   // Rotate status every 15 seconds (можно заменить на API или WebSocket)
   useEffect(() => {
     const interval = setInterval(() => {
-      const statuses = statusMessages.map((s) => s.status)
-      const currentIndex = statuses.indexOf(currentStatus)
-      const nextIndex = (currentIndex + 1) % statuses.length
-      setCurrentStatus(statuses[nextIndex] as StatusType)
+      setCurrentStatus((prevStatus) => {
+        const statuses = statusMessages.map((s) => s.status)
+        const currentIndex = statuses.indexOf(prevStatus)
+        const nextIndex = (currentIndex + 1) % statuses.length
+        return statuses[nextIndex] as StatusType
+      })
     }, 15000)
 
     return () => clearInterval(interval)
-  }, [currentStatus])
+  }, []) // Убрали currentStatus из зависимостей, используем функциональное обновление
 
   const status = statusMessages.find((s) => s.status === currentStatus) || statusMessages[0]
 

@@ -143,7 +143,7 @@ export function ProgressPill() {
       document.addEventListener('mousedown', handleClickOutside)
       return () => document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isMenuOpen])
+  }, [isMenuOpen, y])
   
   if (!isMobile) return null
   

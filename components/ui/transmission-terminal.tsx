@@ -39,6 +39,7 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
   const holdTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const logIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const submitTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   // Get current budget mode (translated)
@@ -89,7 +90,7 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
         clearInterval(logIntervalRef.current)
       }
     }
-  }, [formData.name, formData.budget, formData.message])
+  }, [formData.name, formData.budget, formData.message, t])
 
   // Handle hold to send
   const handleMouseDown = () => {
@@ -137,9 +138,16 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
     try {
       await onSubmit(formData)
       setIsSubmitted(true)
-      setTimeout(() => {
+      
+      // Очищаем предыдущий таймер, если он есть
+      if (submitTimeoutRef.current) {
+        clearTimeout(submitTimeoutRef.current)
+      }
+      
+      submitTimeoutRef.current = setTimeout(() => {
         setIsSubmitted(false)
         setFormData({ name: '', email: '', message: '', budget: 5000 })
+        submitTimeoutRef.current = null
       }, 3000)
     } catch (err) {
       setError(err instanceof Error ? err.message : t('transmissionFailed'))
@@ -150,13 +158,17 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
 
   // Cleanup
   useEffect(() => {
+    // Копируем значения refs в переменные для cleanup функции (исправляет предупреждение линтера)
+    const holdTimeout = holdTimeoutRef.current
+    const progressInterval = progressIntervalRef.current
+    const logInterval = logIntervalRef.current
+    const submitTimeout = submitTimeoutRef.current
+    
     return () => {
-      const holdTimeout = holdTimeoutRef.current
-      const progressInterval = progressIntervalRef.current
-      const logInterval = logIntervalRef.current
       if (holdTimeout) clearTimeout(holdTimeout)
       if (progressInterval) clearInterval(progressInterval)
       if (logInterval) clearInterval(logInterval)
+      if (submitTimeout) clearTimeout(submitTimeout)
     }
   }, [])
 
