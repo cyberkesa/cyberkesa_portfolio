@@ -21,11 +21,6 @@ export function SwipeHint({ isMenuOpen }: { isMenuOpen: boolean }) {
       return
     }
 
-    // Reset visibility when menu closes
-    if (!isMenuOpen) {
-      setIsVisible(true)
-    }
-
     // 1. Disappear after 5 seconds automatically
     const timer = setTimeout(() => {
       setIsVisible(false)
@@ -86,7 +81,7 @@ export function SwipeHint({ isMenuOpen }: { isMenuOpen: boolean }) {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="text-white/80 flex items-center justify-center"
+            className="text-white/80"
           >
             <ChevronUp size={20} strokeWidth={1.5} />
           </motion.div>

@@ -152,7 +152,7 @@ export function ProgressPill() {
       {/* Up Arrow Button - positioned above language switcher */}
       <motion.div
         data-progress-pill
-        className="fixed bottom-24 right-6 z-40 relative"
+        className="fixed bottom-24 right-6 z-40 relative flex flex-col items-center"
         drag="y"
         dragConstraints={{ top: -200, bottom: 0 }}
         dragElastic={0.2}
