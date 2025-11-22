@@ -34,25 +34,13 @@ export function ArchitecturalCard({
   link,
 }: ArchitecturalCardProps) {
   const [hovered, setHovered] = useState(false)
-  const [scanProgress, setScanProgress] = useState(0)
 
-  // Scan animation on hover
   const handleHoverStart = () => {
     setHovered(true)
-    // Simulate scanning progress
-    let progress = 0
-    const interval = setInterval(() => {
-      progress += 2
-      setScanProgress(progress)
-      if (progress >= 100) {
-        clearInterval(interval)
-      }
-    }, 20)
   }
 
   const handleHoverEnd = () => {
     setHovered(false)
-    setScanProgress(0)
   }
 
   const content = (
