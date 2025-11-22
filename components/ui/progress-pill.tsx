@@ -168,7 +168,9 @@ export function ProgressPill() {
         whileTap={{ scale: 0.95 }}
       >
         {/* Swipe Hint - Ghost Signal */}
-        <SwipeHint isMenuOpen={isMenuOpen} />
+        <div className="relative w-12 flex justify-center">
+          <SwipeHint isMenuOpen={isMenuOpen} />
+        </div>
         <motion.button
           onClick={handleScrollToTop}
           className={cn(
