@@ -14,12 +14,14 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
   return (
     <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest">
       {/* Header */}
-      <div className="border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center">
-        <span>DIRECTORY: /ROOT/{block.id.toUpperCase()}</span>
+      <div className="border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
+        <span className="text-[10px] break-words flex-1 min-w-0">
+          DIRECTORY: /ROOT/{block.id.toUpperCase()}
+        </span>
         <motion.span
           animate={{ opacity: [1, 0.5, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-cyan-400"
+          className="text-cyan-400 flex-shrink-0"
         >
           ● REC
         </motion.span>
@@ -46,8 +48,8 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
               className="absolute inset-0 bg-white/5 z-0"
             />
 
-            <div className="relative z-10 flex items-center justify-between">
-              <span className="text-foreground/40 group-hover:text-foreground transition-colors duration-300">
+            <div className="relative z-10 flex items-center justify-between gap-2">
+              <span className="text-foreground/40 group-hover:text-foreground transition-colors duration-300 text-[10px] break-words flex-1 min-w-0">
                 {`0${i + 1}__${item.name}`}
               </span>
 
@@ -57,7 +59,7 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
                   initial: { opacity: 0, x: -10 },
                   hover: { opacity: 1, x: 0 },
                 }}
-                className="text-cyan-400"
+                className="text-cyan-400 text-[10px] flex-shrink-0"
               >
                 [EXECUTE]
               </motion.span>
@@ -89,7 +91,10 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
           <div className="mb-2">TOOLS:</div>
           <div className="flex flex-wrap gap-2">
             {block.tools.map((tool) => (
-              <span key={tool} className="px-2 py-1 border border-white/10">
+              <span
+                key={tool}
+                className="px-2 py-1 border border-white/10 break-words text-[9px]"
+              >
                 {tool}
               </span>
             ))}
@@ -114,17 +119,21 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
   return (
     <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest relative overflow-hidden">
       {/* Header */}
-      <div className="border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center">
-        <span>SCHEMATIC: {block.title}</span>
-        <span className="text-cyan-400 animate-pulse">● ACTIVE</span>
+      <div className="border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
+        <span className="text-[10px] break-words flex-1 min-w-0">
+          SCHEMATIC: {block.title}
+        </span>
+        <span className="text-cyan-400 animate-pulse text-[10px] flex-shrink-0">
+          ● ACTIVE
+        </span>
       </div>
 
       {/* Mobile: Horizontal Marquee */}
-      <div className="md:hidden py-8 overflow-hidden">
+      <div className="md:hidden py-8 overflow-hidden relative">
         <motion.div
-          animate={{ x: ['-100%', '0%'] }}
+          animate={{ x: ['-100%', '100%'] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          className="text-foreground/40 whitespace-nowrap"
+          className="text-foreground/40 whitespace-nowrap text-[10px]"
         >
           <span className="mr-8">
             import {'{'} {coreNodes.map((n) => n.name).join(', ')} {'}'} from
@@ -225,7 +234,10 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
           <div className="mb-2">STACK:</div>
           <div className="flex flex-wrap gap-2">
             {block.tools.map((tool) => (
-              <span key={tool} className="px-2 py-1 border border-white/10">
+              <span
+                key={tool}
+                className="px-2 py-1 border border-white/10 break-words text-[9px]"
+              >
                 {tool}
               </span>
             ))}
@@ -268,12 +280,14 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
       />
 
       {/* Header */}
-      <div className="relative z-10 border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center">
-        <span>NEURAL_ACTIVITY: {block.title}</span>
+      <div className="relative z-10 border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
+        <span className="text-[10px] break-words flex-1 min-w-0">
+          NEURAL_ACTIVITY: {block.title}
+        </span>
         <motion.span
           animate={{ opacity: [1, 0.3, 1] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="text-cyan-400"
+          className="text-cyan-400 text-[10px] flex-shrink-0"
         >
           ● LIVE
         </motion.span>
@@ -295,14 +309,14 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
                   opacity: isHovered ? 1 : 0.4,
                 }}
                 transition={{ duration: 0.3 }}
-                className="flex items-center justify-between"
+                className="flex items-center justify-between gap-2"
               >
                 <motion.span
                   key={isHovered ? 'decrypted' : 'encrypted'}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
-                  className="text-foreground/40 group-hover:text-cyan-400 transition-colors duration-300"
+                  className="text-foreground/40 group-hover:text-cyan-400 transition-colors duration-300 text-[10px] break-words flex-1 min-w-0"
                 >
                   {isHovered ? item.name : encryptedText(item.name)}
                 </motion.span>
@@ -314,7 +328,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
                   }}
                   initial="initial"
                   animate={isHovered ? 'hover' : 'initial'}
-                  className="text-cyan-400 text-[10px]"
+                  className="text-cyan-400 text-[10px] flex-shrink-0"
                 >
                   [DECRYPTED]
                 </motion.span>
@@ -386,11 +400,16 @@ export function CapabilitiesSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {CAPABILITIES.map((block, index) => (
-            <motion.div key={block.id} variants={fadeInUp} transition={{ delay: index * 0.1 }}>
-              <div className="mb-2 font-mono text-sm text-foreground/50">
+            <motion.div
+              key={block.id}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+              className="min-w-0"
+            >
+              <div className="mb-2 font-mono text-sm text-foreground/50 break-words">
                 {block.title}
               </div>
-              <div className="mb-4 font-mono text-xs text-foreground/30">
+              <div className="mb-4 font-mono text-xs text-foreground/30 break-words">
                 {block.subtitle}
               </div>
               {renderBlock(block)}
