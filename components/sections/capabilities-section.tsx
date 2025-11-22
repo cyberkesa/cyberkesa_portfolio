@@ -70,7 +70,7 @@ function MobileScanItem({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             className="relative z-10 mt-4 px-4"
           >
             <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
@@ -425,7 +425,7 @@ function MobileNeuralScanItem({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             className="relative z-10 mt-4 px-4"
           >
             <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">

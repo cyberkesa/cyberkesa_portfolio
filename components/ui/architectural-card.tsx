@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { useHapticFeedback } from '@/hooks/use-haptic-feedback'
 import { cn } from '@/lib/utils'
 
 export interface ArchitecturalCardProps {
@@ -34,7 +35,29 @@ export function ArchitecturalCard({
   link,
 }: ArchitecturalCardProps) {
   const [hovered, setHovered] = useState(false)
-
+  const ref = useRef(null)
+  const { lightTap } = useHapticFeedback()
+  const hasActivatedRef = useRef(false)
+  
+  // Mobile: Detect when card is in center of viewport
+  const isInView = useInView(ref, { 
+    margin: '-40% 0px -40% 0px', 
+    once: false,
+    amount: 0.3
+  })
+  
+  // Mobile: Auto-open on scroll
+  useEffect(() => {
+    if (isInView && !hasActivatedRef.current) {
+      lightTap()
+      setHovered(true)
+      hasActivatedRef.current = true
+    } else if (!isInView) {
+      hasActivatedRef.current = false
+    }
+  }, [isInView, lightTap])
+  
+  // Desktop: Hover behavior
   const handleHoverStart = () => {
     setHovered(true)
   }
@@ -42,15 +65,19 @@ export function ArchitecturalCard({
   const handleHoverEnd = () => {
     setHovered(false)
   }
+  
+  // Combined state: hovered on desktop OR inView on mobile
+  const isExpanded = hovered || (typeof window !== 'undefined' && window.innerWidth < 768 && isInView)
 
   const content = (
     <motion.div
+      ref={ref}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
       onMouseLeave={handleHoverEnd}
       className={cn(
         'relative w-full border-b border-foreground/10 bg-accent/30 group cursor-pointer overflow-hidden',
-        'transition-all duration-500'
+        'transition-all duration-700 ease-out'
       )}
       role="article"
       aria-label={`Project: ${title}`}
@@ -66,12 +93,12 @@ export function ArchitecturalCard({
 
       {/* Scanning Line Effect */}
       <AnimatePresence>
-        {hovered && (
+        {isExpanded && (
           <motion.div
             initial={{ x: '-100%' }}
             animate={{ x: '100%' }}
             exit={{ x: '100%' }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
             className="absolute top-0 bottom-0 w-1 bg-cyan-400/50 shadow-[0_0_20px_rgba(6,182,212,0.5)] z-10 pointer-events-none"
           />
         )}
@@ -104,12 +131,12 @@ export function ArchitecturalCard({
 
         {/* Expandable Content */}
         <AnimatePresence>
-          {hovered && (
+          {isExpanded && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
               className="overflow-hidden"
             >
               <div className="pt-8 grid grid-cols-1 md:grid-cols-3 gap-8 font-mono text-sm">
@@ -205,8 +232,8 @@ export function ArchitecturalCard({
       <motion.div
         className="absolute bottom-0 left-0 h-[1px] bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.5)]"
         initial={{ width: 0 }}
-        animate={{ width: hovered ? '100%' : 0 }}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
+        animate={{ width: isExpanded ? '100%' : 0 }}
+        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
       />
     </motion.div>
   )
