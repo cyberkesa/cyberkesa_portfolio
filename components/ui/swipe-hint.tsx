@@ -58,7 +58,7 @@ export function SwipeHint({ isMenuOpen }: { isMenuOpen: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10, filter: 'blur(10px)' }}
           transition={{ duration: 0.5 }}
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 flex flex-col items-center gap-2 pointer-events-none z-50"
+          className="absolute bottom-[120%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-40"
         >
           {/* Hint text (Technical style) */}
           <motion.span

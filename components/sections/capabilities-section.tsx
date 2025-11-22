@@ -265,9 +265,8 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
         {coreNodes.map((node, i) => {
           const angle = (i / coreNodes.length) * Math.PI * 2
           const radius = 150
-          // Round to avoid floating point precision issues between SSR and client
-          const x = Math.round(Math.cos(angle) * radius * 100) / 100
-          const y = Math.round(Math.sin(angle) * radius * 100) / 100
+          const x = Math.cos(angle) * radius
+          const y = Math.sin(angle) * radius
           const centerX = 50
           const centerY = 50
 
@@ -366,7 +365,7 @@ function MobileNeuralScanItem({
   index: number
   decryptedItems: Set<number>
   setDecryptedItems: React.Dispatch<React.SetStateAction<Set<number>>>
-  encryptedText: (text: string, index: number) => string
+  encryptedText: (text: string) => string
 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { 
@@ -406,7 +405,7 @@ function MobileNeuralScanItem({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
         >
-          {isDecrypted ? item.name : encryptedText(item.name, index)}
+          {isDecrypted ? item.name : encryptedText(item.name)}
         </motion.span>
 
         <motion.div
@@ -455,29 +454,14 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [decryptedItems, setDecryptedItems] = useState<Set<number>>(new Set())
 
-  // Deterministic encryption based on text content and index
-  // This ensures SSR and client render the same encrypted text
-  const encryptedText = (text: string, index: number = 0) => {
-    // Simple hash function for deterministic randomness
-    const hash = (str: string, seed: number) => {
-      let hash = seed
-      for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i)
-        hash = ((hash << 5) - hash) + char
-        hash = hash & hash // Convert to 32bit integer
-      }
-      return Math.abs(hash)
-    }
-    
+  const encryptedText = (text: string) => {
     return text
       .split('')
-      .map((char, charIndex) => {
+      .map((char) => {
         if (char === '_') return '_'
         if (char === ' ') return ' '
         const symbols = ['X', '#', '@', '$', '%', '&', '*']
-        // Use deterministic seed based on text, index, and char position
-        const seed = hash(text + index.toString(), charIndex)
-        return symbols[seed % symbols.length]
+        return symbols[Math.floor(Math.random() * symbols.length)]
       })
       .join('')
   }
