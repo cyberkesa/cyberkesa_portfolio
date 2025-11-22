@@ -5,12 +5,11 @@ import { Moon, Sun } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { useChaosTheme } from '@/hooks/use-chaos-theme'
-import { ThemeMeltdown } from '@/components/visuals/theme-meltdown'
 import { useTheme } from 'next-themes'
 
 export function ThemeToggle() {
   const { theme } = useTheme()
-  const { triggerThemeSwitch, isMelting, setIsMelting } = useChaosTheme()
+  const { triggerThemeSwitch } = useChaosTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -26,12 +25,8 @@ export function ThemeToggle() {
   const isDark = theme === 'dark'
 
   return (
-    <>
-      {/* Canvas для эффекта Melt управляется через isActive */}
-      <ThemeMeltdown isActive={isMelting} onComplete={() => setIsMelting(false)} />
-
-      <motion.button
-        onClick={triggerThemeSwitch}
+    <motion.button
+      onClick={triggerThemeSwitch}
       className={cn(
         'relative h-8 w-8 rounded-full border border-accent bg-background p-1.5',
         'transition-colors hover:bg-accent',
@@ -57,7 +52,6 @@ export function ThemeToggle() {
         )}
       </motion.div>
     </motion.button>
-    </>
   )
 }
 
