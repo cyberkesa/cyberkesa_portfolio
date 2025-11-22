@@ -157,7 +157,7 @@ export function ArchitecturalCard({
         )}
       </AnimatePresence>
 
-      <div className="relative z-10 flex flex-col py-8 md:py-12 px-4 md:px-12">
+      <div className="relative z-10 flex flex-col py-8 md:py-12 px-6">
         {/* Header Row - use this ref for mobile detection (stable reference point) */}
         <div ref={headerRef} className="flex justify-between items-baseline gap-4">
           <span className="font-mono text-xs text-foreground/50 uppercase tracking-widest flex-shrink-0">

@@ -26,7 +26,7 @@ export function ProjectsSection() {
         </motion.h2>
 
         {/* Industrial List Layout */}
-        <div className="max-w-6xl mx-auto space-y-0 px-6">
+        <div className="space-y-0">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.id}
