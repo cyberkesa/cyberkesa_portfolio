@@ -55,23 +55,34 @@ export function ArchitecturalCard({
   
   // Mobile: Detect when card is in center of viewport
   const isInView = useInView(ref, { 
-    margin: '-40% 0px -40% 0px', 
+    margin: '-30% 0px -30% 0px', 
     once: false,
-    amount: 0.3
+    amount: 0.5 // Require at least 50% visible for activation
   })
   
-  // Mobile: Auto-open on scroll, reset when out of view
+  // Mobile: Auto-open on scroll with debounce to prevent jumping
   useEffect(() => {
-    if (isMobile) {
-      if (isInView && !hasActivatedRef.current) {
+    if (!isMobile) return
+    
+    let timeoutId: NodeJS.Timeout
+    
+    if (isInView && !hasActivatedRef.current) {
+      // Small delay to prevent rapid toggling
+      timeoutId = setTimeout(() => {
         lightTap()
         setHovered(true)
         hasActivatedRef.current = true
-      } else if (!isInView && hasActivatedRef.current) {
-        // Reset when element leaves viewport on mobile
+      }, 100)
+    } else if (!isInView && hasActivatedRef.current) {
+      // Delay closing to prevent flickering when scrolling
+      timeoutId = setTimeout(() => {
         setHovered(false)
         hasActivatedRef.current = false
-      }
+      }, 200)
+    }
+    
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId)
     }
   }, [isInView, isMobile, lightTap])
   
@@ -88,8 +99,9 @@ export function ArchitecturalCard({
     }
   }
   
-  // Combined state: hovered on desktop OR inView on mobile
-  const isExpanded = hovered || (isMobile && isInView)
+  // Combined state: hovered on desktop OR hovered on mobile (which is set by isInView)
+  // Use hovered state instead of direct isInView to prevent jumping
+  const isExpanded = hovered
 
   const content = (
     <motion.div
@@ -158,7 +170,11 @@ export function ArchitecturalCard({
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ 
+                duration: 0.6, 
+                ease: [0.4, 0, 0.2, 1],
+                opacity: { duration: 0.4 }
+              }}
               className="overflow-hidden"
             >
               <div className="pt-8 grid grid-cols-1 md:grid-cols-3 gap-8 font-mono text-sm">
