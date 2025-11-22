@@ -70,7 +70,10 @@
   "services": {
     "title": "Access Levels",
     "subtitle": "Not a price list. This is a market.",
-    "levelLabel": "LEVEL"
+    "levelLabel": "LEVEL",
+    "buttonInitiate": "INITIATE SCAN",
+    "buttonStart": "START ENGINE",
+    "buttonBuild": "BUILD EMPIRE"
   },
   "status": {
     "deploying": "Deploying Production",

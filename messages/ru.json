@@ -66,7 +66,10 @@
   "services": {
     "title": "Уровни Доступа",
     "subtitle": "Не прайс-лист. Это рынок.",
-    "levelLabel": "УРОВЕНЬ"
+    "levelLabel": "УРОВЕНЬ",
+    "buttonInitiate": "ИНИЦИИРОВАТЬ СКАНИРОВАНИЕ",
+    "buttonStart": "ЗАПУСТИТЬ ДВИЖОК",
+    "buttonBuild": "ПОСТРОИТЬ ИМПЕРИЮ"
   },
   "status": {
     "deploying": "Деплой Production",

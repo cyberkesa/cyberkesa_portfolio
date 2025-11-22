@@ -66,7 +66,10 @@
   "services": {
     "levelLabel": "레벨",
     "title": "액세스 레벨",
-    "subtitle": "가격표가 아니다. 이것은 시장이다."
+    "subtitle": "가격표가 아니다. 이것은 시장이다.",
+    "buttonInitiate": "스캔 시작",
+    "buttonStart": "엔진 시작",
+    "buttonBuild": "제국 구축"
   },
   "status": {
     "deploying": "프로덕션 배포 중",

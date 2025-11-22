@@ -66,7 +66,10 @@
   "services": {
     "levelLabel": "レベル",
     "title": "アクセスレベル",
-    "subtitle": "価格表ではない。これは市場。"
+    "subtitle": "価格表ではない。これは市場。",
+    "buttonInitiate": "スキャン開始",
+    "buttonStart": "エンジン起動",
+    "buttonBuild": "帝国構築"
   },
   "status": {
     "deploying": "本番環境をデプロイ中",

@@ -66,7 +66,10 @@
   "services": {
     "levelLabel": "LIVELLO",
     "title": "Livelli di Accesso",
-    "subtitle": "Non una lista prezzi. Questo è un mercato."
+    "subtitle": "Non una lista prezzi. Questo è un mercato.",
+    "buttonInitiate": "AVVIA SCANSIONE",
+    "buttonStart": "AVVIA MOTORE",
+    "buttonBuild": "COSTRUISCI IMPERO"
   },
   "status": {
     "deploying": "Distribuzione Produzione",

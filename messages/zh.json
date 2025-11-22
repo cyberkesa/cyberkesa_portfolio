@@ -66,7 +66,10 @@
   "services": {
     "levelLabel": "级别",
     "title": "访问级别",
-    "subtitle": "不是价格表。这是市场。"
+    "subtitle": "不是价格表。这是市场。",
+    "buttonInitiate": "启动扫描",
+    "buttonStart": "启动引擎",
+    "buttonBuild": "建立帝国"
   },
   "status": {
     "deploying": "部署生产环境",

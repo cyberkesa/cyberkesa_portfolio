@@ -66,7 +66,10 @@
   "services": {
     "levelLabel": "רמה",
     "title": "רמות גישה",
-    "subtitle": "לא רשימת מחירים. זה שוק."
+    "subtitle": "לא רשימת מחירים. זה שוק.",
+    "buttonInitiate": "התחל סריקה",
+    "buttonStart": "התחל מנוע",
+    "buttonBuild": "בנה אימפריה"
   },
   "status": {
     "deploying": "העלאת Production",

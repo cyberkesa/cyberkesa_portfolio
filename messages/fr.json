@@ -66,7 +66,10 @@
   "services": {
     "levelLabel": "NIVEAU",
     "title": "Niveaux d'Accès",
-    "subtitle": "Pas une liste de prix. C'est un marché."
+    "subtitle": "Pas une liste de prix. C'est un marché.",
+    "buttonInitiate": "LANCER LE SCAN",
+    "buttonStart": "DÉMARRER LE MOTEUR",
+    "buttonBuild": "CONSTRUIRE L'EMPIRE"
   },
   "status": {
     "deploying": "Déploiement Production",
