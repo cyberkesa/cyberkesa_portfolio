@@ -3,19 +3,20 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { useTheme } from 'next-themes'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { accessLevels } from '@/config/services'
 import { Button } from '@/components/ui/button'
 
 export function ServicesSection() {
   const t = useTranslations('services')
+  const { theme } = useTheme()
   const [hoveredLevel, setHoveredLevel] = useState<number | null>(null)
 
+  const isLight = theme === 'light'
+  const baseOpacity = isLight ? 0.15 : 0.1
+
   const getHoverColor = (level: number) => {
-    // Use CSS variables for theme compatibility
-    const isLight = typeof window !== 'undefined' && document.documentElement.classList.contains('light')
-    const baseOpacity = isLight ? 0.15 : 0.1
-    
     switch (level) {
       case 1:
         return `rgba(239, 68, 68, ${baseOpacity})` // Red (Warning/Alert)
