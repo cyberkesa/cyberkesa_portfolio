@@ -113,8 +113,12 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
       <div className="md:hidden">
         {block.items.map((item, i) => {
           const ref = useRef(null)
-          // Triggers when element is in center of viewport (-45% margin from top and bottom)
-          const isInView = useInView(ref, { margin: '-45% 0px -45% 0px', once: false })
+          // Triggers when element is in center of viewport (-40% margin from top and bottom for better mobile detection)
+          const isInView = useInView(ref, { 
+            margin: '-40% 0px -40% 0px', 
+            once: false,
+            amount: 0.3 // At least 30% of element must be visible
+          })
 
           return (
             <div key={item.id} ref={ref}>
@@ -401,7 +405,11 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
         {block.items.map((item, i) => {
           const NeuralScanItem = () => {
             const ref = useRef(null)
-            const isInView = useInView(ref, { margin: '-45% 0px -45% 0px', once: false })
+            const isInView = useInView(ref, { 
+              margin: '-40% 0px -40% 0px', 
+              once: false,
+              amount: 0.3 // At least 30% of element must be visible
+            })
             const { lightTap } = useHapticFeedback()
             const isDecrypted = decryptedItems.has(i) || isInView
             const hasDecryptedRef = useRef(false)
@@ -572,7 +580,10 @@ export function CapabilitiesSection() {
   }
 
   return (
-    <section id="capabilities" className="py-24">
+    <section id="capabilities" className="py-24 relative">
+      {/* Mobile: Scan Line Indicator (visible line in center) */}
+      <div className="fixed left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-cyan-400/50 z-[9999] pointer-events-none md:hidden shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
+
       <motion.div
         className="container mx-auto px-6 max-w-6xl"
         variants={staggerContainer}
@@ -587,7 +598,28 @@ export function CapabilitiesSection() {
           <p className="font-mono text-sm text-foreground/70">{t('subtitle')}</p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Mobile: Single column with scan line */}
+        <div className="md:hidden space-y-12">
+          {CAPABILITIES.map((block, index) => (
+            <motion.div
+              key={block.id}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+              className="min-w-0"
+            >
+              <div className="mb-2 font-mono text-sm text-foreground/50 break-words">
+                {block.title}
+              </div>
+              <div className="mb-4 font-mono text-xs text-foreground/30 break-words">
+                {block.subtitle}
+              </div>
+              {renderBlock(block)}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop: Grid layout */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
           {CAPABILITIES.map((block, index) => (
             <motion.div
               key={block.id}
