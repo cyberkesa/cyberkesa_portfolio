@@ -118,7 +118,12 @@
     "logStatusWaiting": "> סטטוס: ממתין לנתונים",
     "logOperatorIdentified": "> [יומן] מפעיל מזוהה: {name}",
     "logWorldDominationActivated": "> [יומן] מצב שליטה עולמית הופעל",
-    "logMissionObjectiveReceived": "> [יומן] מטרת המשימה התקבלה"
+    "logMissionObjectiveReceived": "> [יומן] מטרת המשימה התקבלה",
+    "budgetMinLabel": "$1k",
+    "budgetMaxLabel": "$50k+",
+    "budgetFormatK": "${value}k",
+    "budgetFormatKPlus": "${value}k+",
+    "budgetFormatValue": "$${value}"
   },
   "log": {
     "title": "יומן מחשבות",
@@ -155,7 +160,8 @@
   },
   "capabilities": {
     "title": "מפרט מערכת",
-    "subtitle": "מטריצת יכולות"
+    "subtitle": "מטריצת יכולות",
+    "categoryCore": "ליבה"
   },
   "idCard": {
     "idLabel": "מזהה",

@@ -118,7 +118,12 @@
     "logStatusWaiting": "> الحالة: في انتظار البيانات",
     "logOperatorIdentified": "> [سجل] تم تحديد المشغل: {name}",
     "logWorldDominationActivated": "> [سجل] تم تفعيل وضع السيطرة العالمية",
-    "logMissionObjectiveReceived": "> [سجل] تم استلام هدف المهمة"
+    "logMissionObjectiveReceived": "> [سجل] تم استلام هدف المهمة",
+    "budgetMinLabel": "$1k",
+    "budgetMaxLabel": "$50k+",
+    "budgetFormatK": "${value}k",
+    "budgetFormatKPlus": "${value}k+",
+    "budgetFormatValue": "$${value}"
   },
   "log": {
     "title": "سجل الأفكار",
@@ -155,7 +160,8 @@
   },
   "capabilities": {
     "title": "مواصفات النظام",
-    "subtitle": "مصفوفة القدرات"
+    "subtitle": "مصفوفة القدرات",
+    "categoryCore": "الأساس"
   },
   "idCard": {
     "idLabel": "المعرف",

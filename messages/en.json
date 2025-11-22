@@ -66,7 +66,8 @@
   },
   "capabilities": {
     "title": "SYSTEM SPECIFICATIONS",
-    "subtitle": "Capabilities Matrix"
+    "subtitle": "Capabilities Matrix",
+    "categoryCore": "CORE"
   },
   "services": {
     "title": "Access Levels",
@@ -122,7 +123,12 @@
     "logStatusWaiting": "> STATUS: Waiting for payload",
     "logOperatorIdentified": "> [LOG] Operator identified: {name}",
     "logWorldDominationActivated": "> [LOG] WORLD DOMINATION MODE ACTIVATED",
-    "logMissionObjectiveReceived": "> [LOG] Mission objective received"
+    "logMissionObjectiveReceived": "> [LOG] Mission objective received",
+    "budgetMinLabel": "$1k",
+    "budgetMaxLabel": "$50k+",
+    "budgetFormatK": "${value}k",
+    "budgetFormatKPlus": "${value}k+",
+    "budgetFormatValue": "${value}"
   },
   "log": {
     "title": "Thought Log",

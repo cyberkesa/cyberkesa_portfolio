@@ -257,7 +257,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
           transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
         >
           <div className="w-24 h-24 border-2 border-cyan-400 bg-background/80 backdrop-blur-sm flex items-center justify-center">
-            <span className="text-cyan-400 text-[10px] font-bold">CORE</span>
+            <span className="text-cyan-400 text-[10px] font-bold">{t('categoryCore')}</span>
           </div>
         </motion.div>
 

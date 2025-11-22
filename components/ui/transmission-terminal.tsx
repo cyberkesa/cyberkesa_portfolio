@@ -169,13 +169,6 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
     setFormData((prev) => ({ ...prev, budget: value }))
   }
 
-  const formatBudget = (val: number) => {
-    if (val >= 1000) {
-      return `$${(val / 1000).toFixed(val % 1000 === 0 ? 0 : 1)}k`
-    }
-    return `$${val}`
-  }
-
   const budgetPercentage = ((formData.budget - 0) / (100000 - 0)) * 100
 
   return (
@@ -295,7 +288,9 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
                         >
                           <div className="h-2 w-px bg-foreground/20" />
                           <span className="mt-1 text-[8px] text-foreground/30">
-                            {mark === 100 ? '100k+' : `${mark}k`}
+                            {mark === 100 
+                              ? t('budgetFormatKPlus', { value: mark })
+                              : t('budgetFormatK', { value: mark })}
                           </span>
                         </div>
                       ))}
@@ -316,8 +311,8 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
                   />
 
                   <div className="flex justify-between text-[10px] text-foreground/30">
-                    <span>$1k</span>
-                    <span>$50k+</span>
+                    <span>{t('budgetMinLabel')}</span>
+                    <span>{t('budgetMaxLabel')}</span>
                   </div>
                 </div>
 

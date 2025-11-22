@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useRef, useEffect, useState, MouseEvent } from 'react'
 import { useTheme } from 'next-themes'
+import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 
 export interface MagneticChipProps {
@@ -13,13 +14,6 @@ export interface MagneticChipProps {
   mouseX: number
   mouseY: number
   onHover?: () => void
-}
-
-const categoryLabels = {
-  core: 'LIB',
-  visuals: 'VIS',
-  infrastructure: 'INF',
-  intelligence: 'AI',
 }
 
 /**
@@ -35,9 +29,26 @@ export function MagneticChip({
   mouseY,
   onHover,
 }: MagneticChipProps) {
+  const t = useTranslations('stack')
   const ref = useRef<HTMLDivElement>(null)
   const { theme } = useTheme()
   const [isHovered, setIsHovered] = useState(false)
+  
+  // Get category label (translated)
+  const getCategoryLabel = () => {
+    switch (category) {
+      case 'core':
+        return t('categoryCore')
+      case 'visuals':
+        return t('categoryVisuals')
+      case 'infrastructure':
+        return t('categoryInfrastructure')
+      case 'intelligence':
+        return t('categoryIntelligence')
+      default:
+        return 'LIB'
+    }
+  }
   
   // Get theme-appropriate color
   const getThemeColor = () => {
@@ -162,7 +173,7 @@ export function MagneticChip({
       <div className="relative z-10" style={{ transform: 'translateZ(0)' }}>
         {/* Category label */}
         <div className="mb-1 text-[10px] text-foreground/40 uppercase tracking-wider">
-          {categoryLabels[category]}
+          {getCategoryLabel()}
         </div>
 
         {/* Tech name */}

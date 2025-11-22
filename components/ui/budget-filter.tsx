@@ -59,12 +59,13 @@ export function BudgetFilter({
     }
   }
 
-  // Format value for display
+  // Format value for display (translated)
   const formatValue = (val: number) => {
     if (val >= 1000) {
-      return `$${(val / 1000).toFixed(val % 1000 === 0 ? 0 : 1)}k`
+      const value = (val / 1000).toFixed(val % 1000 === 0 ? 0 : 1)
+      return t('budgetFormatK', { value: parseFloat(value) })
     }
-    return `$${val}`
+    return t('budgetFormatValue', { value: val })
   }
 
   // Calculate percentage for gradient
@@ -172,8 +173,8 @@ export function BudgetFilter({
 
       {/* Min/Max Labels */}
       <div className="mt-2 flex justify-between font-mono text-xs text-foreground/40">
-        <span>${min}</span>
-        <span>${max / 1000}k+</span>
+        <span>{t('budgetFormatValue', { value: min })}</span>
+        <span>{t('budgetFormatKPlus', { value: max / 1000 })}</span>
       </div>
 
       {/* Status Messages */}

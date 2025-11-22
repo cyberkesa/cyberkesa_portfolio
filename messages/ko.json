@@ -118,7 +118,12 @@
     "logStatusWaiting": "> 상태: 데이터 대기 중",
     "logOperatorIdentified": "> [로그] 운영자 식별됨: {name}",
     "logWorldDominationActivated": "> [로그] 세계 지배 모드 활성화",
-    "logMissionObjectiveReceived": "> [로그] 미션 목표 수신됨"
+    "logMissionObjectiveReceived": "> [로그] 미션 목표 수신됨",
+    "budgetMinLabel": "$1k",
+    "budgetMaxLabel": "$50k+",
+    "budgetFormatK": "${value}k",
+    "budgetFormatKPlus": "${value}k+",
+    "budgetFormatValue": "$${value}"
   },
   "log": {
     "title": "생각 로그",
@@ -155,7 +160,8 @@
   },
   "capabilities": {
     "title": "시스템 사양",
-    "subtitle": "능력 매트릭스"
+    "subtitle": "능력 매트릭스",
+    "categoryCore": "핵심"
   },
   "idCard": {
     "idLabel": "ID",
