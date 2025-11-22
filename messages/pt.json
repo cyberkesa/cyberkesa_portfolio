@@ -58,7 +58,7 @@
     "philosophyLabel": "Filosofia:",
     "currentStatusLabel": "Status Atual:",
     "headline": "Engenharia de Estética Digital.",
-    "bioShort": "Eu não construo sites; arquiteto propriedades digitais.\nDesenvolvedora Full-stack e perfeccionista visual.\nMeu código é mais limpo que sua consciência.",
+    "bioShort": "Especialista híbrido.\nDestruo a fronteira entre designer e desenvolvedor.\nMeu histórico em design gráfico (desde 2016) me permite criar mockups em vez de esperá-los. Minha experiência em C/C++ e Go me permite construir uma base confiável.\nPosso retocar uma foto para a capa da Vogue, fazer o layout no Figma e implantar um site com ela em 20 minutos.\nUma unidade. Ciclo completo.",
     "background": "Comecei em Design Gráfico (2016). Evoluí para C/C++ (School 21). Encontrei meu zen no Web Moderno (Next.js + AI).",
     "philosophy": "Acredito que \"bom o suficiente\" é um insulto. Uso agentes de IA para automatizar o chato e focar no que importa: Física, Tipografia e Vibe.",
     "currentStatus": "Obcecada com shaders R3F, construindo meu próprio backend em Go, e evitando estritamente a mediocridade."
@@ -120,5 +120,9 @@
     "menu": "Menu",
     "navigation": "Navegação",
     "scrollToTop": "Rolar para o topo"
+  },
+  "capabilities": {
+    "title": "ESPECIFICAÇÕES DO SISTEMA",
+    "subtitle": "Matriz de Capacidades"
   }
 }

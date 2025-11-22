@@ -55,13 +55,17 @@
   },
   "about": {
     "headline": "Engineering Digital Aesthetics.",
-    "bioShort": "I don't build websites; I architect digital estates.\nFull-stack developer & Visual perfectionist.\nMy code is cleaner than your conscience.",
+    "bioShort": "Hybrid specialist.\nI destroy the boundary between designer and developer.\nMy background in graphic design (since 2016) allows me to create mockups instead of waiting for them. My experience in C/C++ and Go allows me to build a reliable foundation.\nI can retouch a photo for a Vogue cover, layout it in Figma, and deploy a site with it in 20 minutes.\nOne unit. Full cycle.",
     "background": "Started in Graphic Design (2016). Evolved into C/C++ (School 21). Mastered the Modern Web (Next.js + AI).",
     "philosophy": "I believe that \"good enough\" is an insult. I use AI agents to automate the boring stuff so I can focus on what matters: Physics, Typography, and Vibe.",
     "currentStatus": "Obsessed with R3F shaders, building my own backend in Go, and strictly avoiding mediocrity.",
     "backgroundLabel": "Background:",
     "philosophyLabel": "Philosophy:",
     "currentStatusLabel": "Current Status:"
+  },
+  "capabilities": {
+    "title": "SYSTEM SPECIFICATIONS",
+    "subtitle": "Capabilities Matrix"
   },
   "services": {
     "title": "Access Levels",
