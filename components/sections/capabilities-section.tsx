@@ -265,7 +265,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
   }
 
   return (
-    <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest relative overflow-hidden">
+    <div className="border border-foreground/10 bg-accent/50 font-mono text-xs uppercase tracking-widest relative overflow-hidden">
       {/* Pulsing background */}
       <motion.div
         className="absolute inset-0 opacity-10 bg-cyan-400/10 dark:bg-cyan-400/30"
@@ -280,7 +280,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
       />
 
       {/* Header */}
-      <div className="relative z-10 border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
+      <div className="relative z-10 border-b border-foreground/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
         <span className="text-[10px] break-words flex-1 min-w-0">
           NEURAL_ACTIVITY: {block.title}
         </span>
@@ -357,7 +357,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
 
       {/* Footer */}
       {block.focus && (
-        <div className="relative z-10 border-t border-white/10 p-4 text-foreground/30 text-[10px]">
+        <div className="relative z-10 border-t border-foreground/10 p-4 text-foreground/30 text-[10px]">
           <div className="mb-2">FOCUS:</div>
           <div className="normal-case">{block.focus}</div>
         </div>
