@@ -6,6 +6,7 @@
   "nav": {
     "home": "главная",
     "about": "о себе",
+    "capabilities": "возможности",
     "projects": "проекты",
     "stack": "стек",
     "access": "доступ",
@@ -133,7 +134,8 @@
     "close": "Закрыть",
     "menu": "Меню",
     "navigation": "Навигация",
-    "scrollToTop": "Наверх"
+    "scrollToTop": "Наверх",
+    "swipeHint": "[ ДОСТУП ]"
   },
   "capabilities": {
     "title": "СПЕЦИФИКАЦИЯ СИСТЕМЫ",

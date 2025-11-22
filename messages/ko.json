@@ -6,6 +6,7 @@
   "nav": {
     "home": "홈",
     "about": "소개",
+    "capabilities": "능력",
     "projects": "프로젝트",
     "stack": "기술 스택",
     "access": "접근",
@@ -133,7 +134,8 @@
     "close": "닫기",
     "menu": "메뉴",
     "navigation": "내비게이션",
-    "scrollToTop": "맨 위로 스크롤"
+    "scrollToTop": "맨 위로 스크롤",
+    "swipeHint": "[ 접근 ]"
   },
   "capabilities": {
     "title": "시스템 사양",

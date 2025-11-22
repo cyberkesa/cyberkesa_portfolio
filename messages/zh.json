@@ -6,6 +6,7 @@
   "nav": {
     "home": "首页",
     "about": "关于",
+    "capabilities": "能力",
     "projects": "项目",
     "stack": "技术栈",
     "access": "访问",
@@ -133,7 +134,8 @@
     "close": "关闭",
     "menu": "菜单",
     "navigation": "导航",
-    "scrollToTop": "滚动到顶部"
+    "scrollToTop": "滚动到顶部",
+    "swipeHint": "[ 访问 ]"
   },
   "capabilities": {
     "title": "系统规格",

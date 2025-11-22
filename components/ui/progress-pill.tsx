@@ -7,6 +7,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useHapticFeedback } from '@/hooks/use-haptic-feedback'
 import { cn } from '@/lib/utils'
 import { X, ChevronUp } from 'lucide-react'
+import { SwipeHint } from '@/components/ui/swipe-hint'
 
 /**
  * ProgressPill - Mobile navigation component
@@ -47,6 +48,7 @@ export function ProgressPill() {
   const menuItems = [
     { key: 'home', href: `/${locale}` },
     { key: 'about', href: `/${locale}#about` },
+    { key: 'capabilities', href: `/${locale}#capabilities` },
     { key: 'projects', href: `/${locale}#projects` },
     { key: 'stack', href: `/${locale}#stack` },
     { key: 'access', href: `/${locale}#services` }, // Services section uses id="services"
@@ -58,6 +60,8 @@ export function ProgressPill() {
   const handleScrollToTop = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false)
+      // Smoothly return button to original position
+      y.set(0)
       return
     }
     
@@ -94,6 +98,8 @@ export function ProgressPill() {
   const handleMenuItemClick = (href: string) => {
     lightTap()
     setIsMenuOpen(false)
+    // Smoothly return button to original position
+    y.set(0)
     
     if (href.includes('#')) {
       // Internal anchor link (format: /${locale}#section)
@@ -129,6 +135,8 @@ export function ProgressPill() {
         const target = e.target as HTMLElement
         if (!target.closest('[data-progress-pill]')) {
           setIsMenuOpen(false)
+          // Smoothly return button to original position
+          y.set(0)
         }
       }
       
@@ -159,6 +167,8 @@ export function ProgressPill() {
         style={{ y, opacity }}
         whileTap={{ scale: 0.95 }}
       >
+        {/* Swipe Hint - Ghost Signal */}
+        <SwipeHint isMenuOpen={isMenuOpen} />
         <motion.button
           onClick={handleScrollToTop}
           className={cn(
@@ -202,7 +212,11 @@ export function ProgressPill() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false)
+                // Smoothly return button to original position
+                y.set(0)
+              }}
             />
             
             {/* Menu Panel */}
@@ -222,7 +236,11 @@ export function ProgressPill() {
               <div className="mb-8 flex items-center justify-between">
                 <h2 className="font-mono text-lg font-bold text-foreground">{tMobile('navigation')}</h2>
                 <button
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    // Smoothly return button to original position
+                    y.set(0)
+                  }}
                   className="rounded-full p-2 transition-colors hover:bg-foreground/10"
                 >
                   <X className="h-5 w-5 text-foreground/70" />

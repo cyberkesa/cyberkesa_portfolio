@@ -6,6 +6,7 @@
   "nav": {
     "home": "الرئيسية",
     "about": "عني",
+    "capabilities": "القدرات",
     "projects": "المشاريع",
     "stack": "التقنيات",
     "access": "الوصول",
@@ -133,7 +134,8 @@
     "close": "إغلاق",
     "menu": "القائمة",
     "navigation": "التنقل",
-    "scrollToTop": "التمرير للأعلى"
+    "scrollToTop": "التمرير للأعلى",
+    "swipeHint": "[ الوصول ]"
   },
   "capabilities": {
     "title": "مواصفات النظام",

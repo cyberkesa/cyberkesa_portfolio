@@ -35,9 +35,23 @@ export function ArchitecturalCard({
   link,
 }: ArchitecturalCardProps) {
   const [hovered, setHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const ref = useRef(null)
   const { lightTap } = useHapticFeedback()
   const hasActivatedRef = useRef(false)
+  
+  // Detect mobile on mount and resize
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   // Mobile: Detect when card is in center of viewport
   const isInView = useInView(ref, { 
@@ -46,28 +60,36 @@ export function ArchitecturalCard({
     amount: 0.3
   })
   
-  // Mobile: Auto-open on scroll
+  // Mobile: Auto-open on scroll, reset when out of view
   useEffect(() => {
-    if (isInView && !hasActivatedRef.current) {
-      lightTap()
-      setHovered(true)
-      hasActivatedRef.current = true
-    } else if (!isInView) {
-      hasActivatedRef.current = false
+    if (isMobile) {
+      if (isInView && !hasActivatedRef.current) {
+        lightTap()
+        setHovered(true)
+        hasActivatedRef.current = true
+      } else if (!isInView && hasActivatedRef.current) {
+        // Reset when element leaves viewport on mobile
+        setHovered(false)
+        hasActivatedRef.current = false
+      }
     }
-  }, [isInView, lightTap])
+  }, [isInView, isMobile, lightTap])
   
   // Desktop: Hover behavior
   const handleHoverStart = () => {
-    setHovered(true)
+    if (!isMobile) {
+      setHovered(true)
+    }
   }
 
   const handleHoverEnd = () => {
-    setHovered(false)
+    if (!isMobile) {
+      setHovered(false)
+    }
   }
   
   // Combined state: hovered on desktop OR inView on mobile
-  const isExpanded = hovered || (typeof window !== 'undefined' && window.innerWidth < 768 && isInView)
+  const isExpanded = hovered || (isMobile && isInView)
 
   const content = (
     <motion.div

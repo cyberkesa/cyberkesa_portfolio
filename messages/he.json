@@ -6,6 +6,7 @@
   "nav": {
     "home": "בית",
     "about": "אודות",
+    "capabilities": "יכולות",
     "projects": "פרויקטים",
     "stack": "טכנולוגיות",
     "access": "גישה",
@@ -133,7 +134,8 @@
     "close": "סגור",
     "menu": "תפריט",
     "navigation": "ניווט",
-    "scrollToTop": "גלול למעלה"
+    "scrollToTop": "גלול למעלה",
+    "swipeHint": "[ גישה ]"
   },
   "capabilities": {
     "title": "מפרט מערכת",

@@ -39,10 +39,22 @@ export function Header() {
             {t('about')}
           </a>
           <a
+            href="#capabilities"
+            className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
+          >
+            {t('capabilities')}
+          </a>
+          <a
             href="#projects"
             className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
           >
             {t('projects')}
+          </a>
+          <a
+            href="#stack"
+            className="font-mono text-sm text-foreground/70 transition-colors hover:text-foreground"
+          >
+            {t('stack')}
           </a>
           <a
             href="#services"

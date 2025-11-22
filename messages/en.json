@@ -6,6 +6,7 @@
   "nav": {
     "home": "home",
     "about": "about",
+    "capabilities": "capabilities",
     "projects": "projects",
     "stack": "stack",
     "access": "access",
@@ -137,7 +138,8 @@
     "close": "Close",
     "menu": "Menu",
     "navigation": "Navigation",
-    "scrollToTop": "Scroll to Top"
+    "scrollToTop": "Scroll to Top",
+    "swipeHint": "[ ACCESS ]"
   }
 }
 

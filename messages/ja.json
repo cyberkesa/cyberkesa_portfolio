@@ -6,6 +6,7 @@
   "nav": {
     "home": "ホーム",
     "about": "について",
+    "capabilities": "能力",
     "projects": "プロジェクト",
     "stack": "技術スタック",
     "access": "アクセス",
@@ -133,7 +134,8 @@
     "close": "閉じる",
     "menu": "メニュー",
     "navigation": "ナビゲーション",
-    "scrollToTop": "トップにスクロール"
+    "scrollToTop": "トップにスクロール",
+    "swipeHint": "[ アクセス ]"
   },
   "capabilities": {
     "title": "システム仕様",

@@ -6,6 +6,7 @@
   "nav": {
     "home": "início",
     "about": "sobre",
+    "capabilities": "capacidades",
     "projects": "projetos",
     "stack": "tecnologias",
     "access": "acesso",
@@ -133,7 +134,8 @@
     "close": "Fechar",
     "menu": "Menu",
     "navigation": "Navegação",
-    "scrollToTop": "Rolar para o topo"
+    "scrollToTop": "Rolar para o topo",
+    "swipeHint": "[ ACESSO ]"
   },
   "capabilities": {
     "title": "ESPECIFICAÇÕES DO SISTEMA",
