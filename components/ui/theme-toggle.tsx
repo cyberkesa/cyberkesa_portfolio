@@ -16,6 +16,7 @@ export function ThemeToggle() {
     setMounted(true)
   }, [])
 
+  // Рендерим заглушку (скелетон), чтобы кнопка не прыгала при гидратации
   if (!mounted) {
     return (
       <div className="h-8 w-8 rounded-full border border-accent bg-background" />

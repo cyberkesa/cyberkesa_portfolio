@@ -1,12 +1,36 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { useCallback, useRef, useEffect } from 'react'
+import { useCallback, useRef, useEffect, useState } from 'react'
 
 // Хук для управления RGB Signal Loss эффектом переключения темы
 export function useChaosTheme() {
   const { theme, setTheme } = useTheme()
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([])
+  const [isReducedMotion, setIsReducedMotion] = useState(false)
+
+  // Проверка prefers-reduced-motion для accessibility
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setIsReducedMotion(mediaQuery.matches)
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsReducedMotion(e.matches)
+    }
+
+    // Современные браузеры
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange)
+      return () => mediaQuery.removeEventListener('change', handleChange)
+    }
+    // Fallback для старых браузеров
+    else if (mediaQuery.addListener) {
+      mediaQuery.addListener(handleChange)
+      return () => mediaQuery.removeListener(handleChange)
+    }
+  }, [])
 
   // Очистка таймеров при размонтировании
   useEffect(() => {
@@ -50,13 +74,21 @@ export function useChaosTheme() {
     [setTheme]
   )
 
-  // Главная функция переключения темы - всегда использует RGB эффект
+  // Главная функция переключения темы
   const triggerThemeSwitch = useCallback(
     () => {
       const nextTheme = theme === 'dark' ? 'light' : 'dark'
+
+      // Если юзер отключил анимации в ОС — просто меняем тему без эффектов
+      if (isReducedMotion) {
+        setTheme(nextTheme)
+        return
+      }
+
+      // Иначе запускаем RGB эффект
       triggerRGB(nextTheme)
     },
-    [theme, triggerRGB]
+    [theme, triggerRGB, isReducedMotion, setTheme]
   )
 
   return {

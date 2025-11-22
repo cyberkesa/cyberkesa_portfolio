@@ -265,10 +265,12 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
         {coreNodes.map((node, i) => {
           const angle = (i / coreNodes.length) * Math.PI * 2
           const radius = 150
-          const x = Math.cos(angle) * radius
-          const y = Math.sin(angle) * radius
+          // Round values to avoid floating point precision issues in SSR/CSR
+          const x = Math.round(Math.cos(angle) * radius * 100) / 100
+          const y = Math.round(Math.sin(angle) * radius * 100) / 100
           const centerX = 50
           const centerY = 50
+          const rotationDeg = Math.round((angle * 180) / Math.PI * 100) / 100
 
           return (
             <div key={node.id} className="absolute inset-0">
@@ -281,7 +283,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
                   width: `${radius}px`,
                   height: '1px',
                   transformOrigin: '0 0',
-                  transform: `rotate(${(angle * 180) / Math.PI}deg)`,
+                  transform: `rotate(${rotationDeg}deg)`,
                 }}
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -454,14 +456,33 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [decryptedItems, setDecryptedItems] = useState<Set<number>>(new Set())
 
+  // Deterministic hash function for consistent encryption
+  const hashString = (str: string): number => {
+    let hash = 0
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i)
+      hash = ((hash << 5) - hash) + char
+      hash = hash & hash // Convert to 32bit integer
+    }
+    return Math.abs(hash)
+  }
+
+  // Deterministic pseudo-random based on text content
+  const seededRandom = (seed: number, index: number): number => {
+    const x = Math.sin(seed + index) * 10000
+    return x - Math.floor(x)
+  }
+
   const encryptedText = (text: string) => {
+    const seed = hashString(text)
+    const symbols = ['X', '#', '@', '$', '%', '&', '*']
     return text
       .split('')
-      .map((char) => {
+      .map((char, index) => {
         if (char === '_') return '_'
         if (char === ' ') return ' '
-        const symbols = ['X', '#', '@', '$', '%', '&', '*']
-        return symbols[Math.floor(Math.random() * symbols.length)]
+        const randomIndex = Math.floor(seededRandom(seed, index) * symbols.length)
+        return symbols[randomIndex]
       })
       .join('')
   }
