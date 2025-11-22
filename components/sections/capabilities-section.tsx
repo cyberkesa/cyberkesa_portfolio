@@ -117,7 +117,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
   }))
 
   return (
-    <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest relative overflow-hidden">
+    <div className="border border-foreground/10 bg-accent/50 font-mono text-xs uppercase tracking-widest relative overflow-hidden">
       {/* Header */}
       <div className="border-b border-foreground/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
         <span className="text-[10px] break-words flex-1 min-w-0">
