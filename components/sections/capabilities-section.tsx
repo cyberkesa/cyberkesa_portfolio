@@ -128,7 +128,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
         >
           <span className="mr-8">
             import {'{'} {coreNodes.map((n) => n.name).join(', ')} {'}'} from
-            'cyberkesa_stack';
+            &apos;cyberkesa_stack&apos;;
           </span>
         </motion.div>
       </div>
