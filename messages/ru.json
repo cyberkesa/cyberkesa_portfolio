@@ -90,7 +90,18 @@
     "successMessage": "Я свяжусь с вами в ближайшее время.",
     "budgetLabel": "Диапазон бюджета",
     "budgetLowMessage": "Для этого бюджета рекомендую конструктор.",
-    "budgetHighMessage": "Вот это уже деловой разговор."
+    "budgetHighMessage": "Вот это уже деловой разговор.",
+    "terminalTitle": "ЗАЩИЩЕННЫЙ КАНАЛ",
+    "terminalStatus": "Статус: Ожидание данных.",
+    "operatorId": "OPERATOR_ID",
+    "commsLink": "COMMS_LINK",
+    "resourceAllocation": "РАСПРЕДЕЛЕНИЕ РЕСУРСОВ",
+    "missionObjective": "ЦЕЛЬ_МИССИИ",
+    "transmitData": "ПЕРЕДАТЬ ДАННЫЕ",
+    "holdToSend": "УДЕРЖИВАЙТЕ ДЛЯ ОТПРАВКИ",
+    "transmitting": "ПЕРЕДАЧА...",
+    "transmissionSuccess": "ПЕРЕДАЧА УСПЕШНА",
+    "transmissionMessage": "Данные получены. Канал защищен."
   },
   "log": {
     "title": "Журнал Мыслей",

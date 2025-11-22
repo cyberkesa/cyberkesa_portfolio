@@ -90,7 +90,18 @@
     "successMessage": "곧 답변드리겠습니다.",
     "budgetLabel": "예산 범위",
     "budgetLowMessage": "이 예산에는 노코드 빌더를 추천합니다.",
-    "budgetHighMessage": "이제 비즈니스 이야기를 하고 있네요."
+    "budgetHighMessage": "이제 비즈니스 이야기를 하고 있네요.",
+    "terminalTitle": "보안 채널",
+    "terminalStatus": "상태: 데이터 대기 중.",
+    "operatorId": "운영자_ID",
+    "commsLink": "통신_링크",
+    "resourceAllocation": "리소스_할당",
+    "missionObjective": "미션_목표",
+    "transmitData": "데이터 전송",
+    "holdToSend": "길게 눌러 전송",
+    "transmitting": "전송 중...",
+    "transmissionSuccess": "전송 성공",
+    "transmissionMessage": "데이터 수신됨. 채널 보호됨."
   },
   "log": {
     "title": "생각 로그",

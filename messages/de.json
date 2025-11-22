@@ -90,7 +90,18 @@
     "successMessage": "Ich werde mich bald bei Ihnen melden.",
     "budgetLabel": "Budgetbereich",
     "budgetLowMessage": "Für dieses Budget empfehle ich einen No-Code-Builder.",
-    "budgetHighMessage": "Jetzt reden wir über Geschäfte."
+    "budgetHighMessage": "Jetzt reden wir über Geschäfte.",
+    "terminalTitle": "SICHERER KANAL",
+    "terminalStatus": "Status: Warte auf Daten.",
+    "operatorId": "BEDIENER_ID",
+    "commsLink": "KOMMUNIKATIONSLINK",
+    "resourceAllocation": "RESSOURCENZUWEISUNG",
+    "missionObjective": "MISSIONSZIEL",
+    "transmitData": "DATEN ÜBERTRAGEN",
+    "holdToSend": "GEDRÜCKT HALTEN",
+    "transmitting": "ÜBERTRAGUNG...",
+    "transmissionSuccess": "ÜBERTRAGUNG ERFOLGREICH",
+    "transmissionMessage": "Daten empfangen. Kanal gesichert."
   },
   "log": {
     "title": "Gedankenprotokoll",

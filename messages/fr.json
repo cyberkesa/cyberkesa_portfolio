@@ -90,7 +90,18 @@
     "successMessage": "Je vous répondrai bientôt.",
     "budgetLabel": "Plage de budget",
     "budgetLowMessage": "Pour ce budget, je recommande un constructeur sans code.",
-    "budgetHighMessage": "Maintenant, nous parlons affaires."
+    "budgetHighMessage": "Maintenant, nous parlons affaires.",
+    "terminalTitle": "CANAL SÉCURISÉ",
+    "terminalStatus": "Statut: En attente de données.",
+    "operatorId": "ID_OPÉRATEUR",
+    "commsLink": "LIEN_COMM",
+    "resourceAllocation": "ALLOCATION DES RESSOURCES",
+    "missionObjective": "OBJECTIF_MISSION",
+    "transmitData": "TRANSMETTRE LES DONNÉES",
+    "holdToSend": "MAINTENIR POUR ENVOYER",
+    "transmitting": "TRANSMISSION...",
+    "transmissionSuccess": "TRANSMISSION RÉUSSIE",
+    "transmissionMessage": "Données reçues. Canal sécurisé."
   },
   "log": {
     "title": "Journal de Pensées",

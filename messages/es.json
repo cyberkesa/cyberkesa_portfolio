@@ -90,7 +90,18 @@
     "successMessage": "Te responderé pronto.",
     "budgetLabel": "Rango de presupuesto",
     "budgetLowMessage": "Para este presupuesto, recomiendo un constructor sin código.",
-    "budgetHighMessage": "Ahora sí estamos hablando de negocios."
+    "budgetHighMessage": "Ahora sí estamos hablando de negocios.",
+    "terminalTitle": "CANAL SEGURO",
+    "terminalStatus": "Estado: Esperando datos.",
+    "operatorId": "OPERADOR_ID",
+    "commsLink": "ENLACE_COM",
+    "resourceAllocation": "ASIGNACIÓN DE RECURSOS",
+    "missionObjective": "OBJETIVO_MISIÓN",
+    "transmitData": "TRANSMITIR DATOS",
+    "holdToSend": "MANTENER PARA ENVIAR",
+    "transmitting": "TRANSMITIENDO...",
+    "transmissionSuccess": "TRANSMISIÓN EXITOSA",
+    "transmissionMessage": "Datos recibidos. Canal asegurado."
   },
   "log": {
     "title": "Registro de Pensamientos",

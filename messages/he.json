@@ -90,7 +90,18 @@
     "successMessage": "אחזור אליך בקרוב.",
     "budgetLabel": "טווח תקציב",
     "budgetLowMessage": "לתקציב הזה, אני ממליצה על בונה ללא קוד.",
-    "budgetHighMessage": "עכשיו אנחנו מדברים עסקים."
+    "budgetHighMessage": "עכשיו אנחנו מדברים עסקים.",
+    "terminalTitle": "ערוץ מאובטח",
+    "terminalStatus": "סטטוס: ממתין לנתונים.",
+    "operatorId": "מזהה_מפעיל",
+    "commsLink": "קישור_תקשורת",
+    "resourceAllocation": "הקצאת_משאבים",
+    "missionObjective": "מטרת_משימה",
+    "transmitData": "שלח נתונים",
+    "holdToSend": "החזק כדי לשלוח",
+    "transmitting": "משדר...",
+    "transmissionSuccess": "שידור הצליח",
+    "transmissionMessage": "נתונים התקבלו. הערוץ מאובטח."
   },
   "log": {
     "title": "יומן מחשבות",

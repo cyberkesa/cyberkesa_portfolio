@@ -90,7 +90,18 @@
     "successMessage": "سأعود إليك قريباً.",
     "budgetLabel": "نطاق الميزانية",
     "budgetLowMessage": "لهذه الميزانية، أنصح بمنشئ بدون كود.",
-    "budgetHighMessage": "الآن نحن نتحدث عن الأعمال."
+    "budgetHighMessage": "الآن نحن نتحدث عن الأعمال.",
+    "terminalTitle": "قناة آمنة",
+    "terminalStatus": "الحالة: في انتظار البيانات.",
+    "operatorId": "معرف_المشغل",
+    "commsLink": "رابط_الاتصال",
+    "resourceAllocation": "تخصيص_الموارد",
+    "missionObjective": "هدف_المهمة",
+    "transmitData": "نقل البيانات",
+    "holdToSend": "اضغط للاستمرار",
+    "transmitting": "جاري النقل...",
+    "transmissionSuccess": "نقل ناجح",
+    "transmissionMessage": "تم استلام البيانات. القناة آمنة."
   },
   "log": {
     "title": "سجل الأفكار",

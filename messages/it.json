@@ -90,7 +90,18 @@
     "successMessage": "Ti risponderò presto.",
     "budgetLabel": "Fascia di budget",
     "budgetLowMessage": "Per questo budget, consiglio un costruttore senza codice.",
-    "budgetHighMessage": "Ora stiamo parlando di affari."
+    "budgetHighMessage": "Ora stiamo parlando di affari.",
+    "terminalTitle": "CANALE SICURO",
+    "terminalStatus": "Stato: In attesa di dati.",
+    "operatorId": "ID_OPERATORE",
+    "commsLink": "LINK_COM",
+    "resourceAllocation": "ALLOCAZIONE RISORSE",
+    "missionObjective": "OBIETTIVO_MISSIONE",
+    "transmitData": "TRASMETTI DATI",
+    "holdToSend": "TENERE PREMUTO",
+    "transmitting": "TRASMISSIONE...",
+    "transmissionSuccess": "TRASMISSIONE RIUSCITA",
+    "transmissionMessage": "Dati ricevuti. Canale protetto."
   },
   "log": {
     "title": "Registro dei Pensieri",

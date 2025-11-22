@@ -90,7 +90,18 @@
     "successMessage": "すぐに返信いたします。",
     "budgetLabel": "予算範囲",
     "budgetLowMessage": "この予算には、ノーコードビルダーをお勧めします。",
-    "budgetHighMessage": "これでビジネスの話になります。"
+    "budgetHighMessage": "これでビジネスの話になります。",
+    "terminalTitle": "セキュアチャネル",
+    "terminalStatus": "ステータス: データ待機中。",
+    "operatorId": "オペレーターID",
+    "commsLink": "通信リンク",
+    "resourceAllocation": "リソース割り当て",
+    "missionObjective": "ミッション目標",
+    "transmitData": "データ送信",
+    "holdToSend": "長押しで送信",
+    "transmitting": "送信中...",
+    "transmissionSuccess": "送信成功",
+    "transmissionMessage": "データ受信済み。チャネル保護済み。"
   },
   "log": {
     "title": "思考ログ",

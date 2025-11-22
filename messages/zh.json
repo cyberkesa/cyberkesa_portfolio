@@ -90,7 +90,18 @@
     "successMessage": "我会尽快回复您。",
     "budgetLabel": "预算范围",
     "budgetLowMessage": "对于这个预算，我推荐使用无代码构建器。",
-    "budgetHighMessage": "这才是谈生意的样子。"
+    "budgetHighMessage": "这才是谈生意的样子。",
+    "terminalTitle": "安全通道",
+    "terminalStatus": "状态：等待数据。",
+    "operatorId": "操作员ID",
+    "commsLink": "通信链接",
+    "resourceAllocation": "资源分配",
+    "missionObjective": "任务目标",
+    "transmitData": "传输数据",
+    "holdToSend": "按住发送",
+    "transmitting": "传输中...",
+    "transmissionSuccess": "传输成功",
+    "transmissionMessage": "数据已接收。通道已保护。"
   },
   "log": {
     "title": "思想日志",
