@@ -182,41 +182,41 @@ input[type='range'].slider-thumb:disabled {
   cursor: not-allowed;
 }
 
-/* RGB SHIFT ANIMATION - Signal Loss Effect (Text Only, Smooth) */
+/* RGB SHIFT ANIMATION - Signal Loss Effect (Text Only, Gentle Fade) */
 @keyframes rgb-tear-text {
   0% {
     text-shadow: none;
     filter: none;
   }
 
-  15% {
-    /* Плавное начало расслоения текста */
-    text-shadow: -8px 0 #ff00c1, 8px 0 #00fff9, 4px 0 #ffff00;
+  20% {
+    /* Плавное начало расслоения текста - нежно */
+    text-shadow: -3px 0 rgba(255, 0, 193, 0.6), 3px 0 rgba(0, 255, 249, 0.6);
     filter: none;
   }
 
-  30% {
-    /* Усиление расслоения текста */
-    text-shadow: -12px 0 #ff00c1, 12px 0 #00fff9, -6px 0 #ffff00, 6px 0 #00ff00;
+  35% {
+    /* Мягкое усиление расслоения */
+    text-shadow: -5px 0 rgba(255, 0, 193, 0.7), 5px 0 rgba(0, 255, 249, 0.7), 2px 0 rgba(255, 255, 0, 0.5);
     filter: none;
   }
 
   50% {
-    /* Пик — смена темы происходит здесь, максимальное расслоение */
-    text-shadow: -18px 0 #ff00c1, 18px 0 #00fff9, -9px 0 #ffff00, 9px 0 #00ff00, -4px 0 #ff00ff;
-    filter: invert(1);
-  }
-
-  65% {
-    /* Плавный откат расслоения текста */
-    text-shadow: 12px 0 #ff00c1, -12px 0 #00fff9, 6px 0 #ffff00, -6px 0 #00ff00;
+    /* Пик — смена темы происходит здесь, мягкое максимальное расслоение */
+    text-shadow: -8px 0 rgba(255, 0, 193, 0.8), 8px 0 rgba(0, 255, 249, 0.8), -4px 0 rgba(255, 255, 0, 0.6), 4px 0 rgba(0, 255, 0, 0.5);
     filter: invert(0.3);
   }
 
+  65% {
+    /* Плавный откат расслоения */
+    text-shadow: -5px 0 rgba(255, 0, 193, 0.6), 5px 0 rgba(0, 255, 249, 0.6), 2px 0 rgba(255, 255, 0, 0.4);
+    filter: invert(0.15);
+  }
+
   80% {
-    /* Дальнейший откат */
-    text-shadow: -6px 0 #ff00c1, 6px 0 #00fff9, 3px 0 #ffff00;
-    filter: none;
+    /* Мягкий откат */
+    text-shadow: -2px 0 rgba(255, 0, 193, 0.4), 2px 0 rgba(0, 255, 249, 0.4);
+    filter: invert(0.05);
   }
 
   100% {
@@ -227,7 +227,7 @@ input[type='range'].slider-thumb:disabled {
 
 /* Применяем эффект только к тексту - text-shadow работает только на тексте */
 .rgb-transition * {
-  animation: rgb-tear-text 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: rgb-tear-text 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   will-change: text-shadow; /* Оптимизация производительности */
 }
 

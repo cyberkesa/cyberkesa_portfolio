@@ -147,8 +147,8 @@ export function BudgetFilter({
             'pointer-events-none',
             isHighBudget
               ? 'border-glow bg-glow'
-              : 'border-foreground/30 bg-accent',
-            isLowBudget && 'border-foreground/10 bg-accent/50'
+              : 'border-foreground/60 bg-foreground/20', // Более видимый в темной теме
+            isLowBudget && 'border-foreground/30 bg-foreground/10'
           )}
           style={{
             left: `${percentage}%`,
@@ -161,7 +161,7 @@ export function BudgetFilter({
                   '0 0 25px rgba(0, 255, 255, 0.8)',
                   '0 0 15px rgba(0, 255, 255, 0.6)',
                 ]
-              : '0 2px 8px rgba(0, 0, 0, 0.2)',
+              : '0 2px 8px rgba(0, 0, 0, 0.3)', // Более заметная тень
           }}
           transition={{
             duration: 0.5,

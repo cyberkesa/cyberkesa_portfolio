@@ -32,18 +32,18 @@ export function useChaosTheme() {
           document.documentElement.classList.add('rgb-transition')
         })
 
-        // Меняем тему в момент самого сильного искажения (300ms - 50% анимации, пик эффекта)
+        // Меняем тему в момент самого сильного искажения (400ms - 50% анимации, пик эффекта)
         const timeout1 = setTimeout(() => {
           setTheme(nextTheme)
           timeoutsRef.current = timeoutsRef.current.filter((t) => t !== timeout1)
-        }, 300)
+        }, 400)
         timeoutsRef.current.push(timeout1)
 
-        // Убираем класс после анимации (600ms)
+        // Убираем класс после анимации (800ms)
         const timeout2 = setTimeout(() => {
           document.documentElement.classList.remove('rgb-transition')
           timeoutsRef.current = timeoutsRef.current.filter((t) => t !== timeout2)
-        }, 600)
+        }, 800)
         timeoutsRef.current.push(timeout2)
       }
     },
