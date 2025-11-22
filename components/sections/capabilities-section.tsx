@@ -12,9 +12,9 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest">
+    <div className="border border-foreground/10 bg-accent/50 font-mono text-xs uppercase tracking-widest">
       {/* Header */}
-      <div className="border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
+      <div className="border-b border-foreground/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
         <span className="text-[10px] break-words flex-1 min-w-0">
           DIRECTORY: /ROOT/{block.id.toUpperCase()}
         </span>
@@ -28,7 +28,7 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
       </div>
 
       {/* List */}
-      <div className="divide-y divide-white/10">
+      <div className="divide-y divide-foreground/10">
         {block.items.map((item, i) => (
           <motion.div
             key={item.id}
@@ -45,7 +45,7 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
                 hover: { x: '0%' },
               }}
               transition={{ type: 'tween', ease: 'circOut', duration: 0.5 }}
-              className="absolute inset-0 bg-white/5 z-0"
+              className="absolute inset-0 bg-foreground/5 z-0"
             />
 
             <div className="relative z-10 flex items-center justify-between gap-2">
@@ -73,7 +73,7 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="relative z-10 mt-3 pt-3 border-t border-white/10"
+                  className="relative z-10 mt-3 pt-3 border-t border-foreground/10"
                 >
                   <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
                     {item.description}
@@ -87,13 +87,13 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
 
       {/* Footer with tools */}
       {block.tools && (
-        <div className="border-t border-white/10 p-4 text-foreground/30 text-[10px]">
+        <div className="border-t border-foreground/10 p-4 text-foreground/30 text-[10px]">
           <div className="mb-2">TOOLS:</div>
           <div className="flex flex-wrap gap-2">
             {block.tools.map((tool) => (
               <span
                 key={tool}
-                className="px-2 py-1 border border-white/10 break-words text-[9px]"
+                className="px-2 py-1 border border-foreground/10 break-words text-[9px]"
               >
                 {tool}
               </span>
@@ -119,7 +119,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
   return (
     <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest relative overflow-hidden">
       {/* Header */}
-      <div className="border-b border-white/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
+      <div className="border-b border-foreground/10 p-4 text-foreground/50 flex justify-between items-center gap-2">
         <span className="text-[10px] break-words flex-1 min-w-0">
           SCHEMATIC: {block.title}
         </span>
@@ -151,7 +151,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
           animate={{ scale: 1 }}
           transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
         >
-          <div className="w-24 h-24 border-2 border-cyan-400 bg-black/80 backdrop-blur-sm flex items-center justify-center">
+          <div className="w-24 h-24 border-2 border-cyan-400 bg-background/80 backdrop-blur-sm flex items-center justify-center">
             <span className="text-cyan-400 text-[10px] font-bold">CORE</span>
           </div>
         </motion.div>
@@ -182,7 +182,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
               >
-                <div className="h-full bg-white/10" />
+                <div className="h-full bg-foreground/10" />
               </motion.div>
 
               {/* Node */}
@@ -201,7 +201,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
                 onHoverEnd={() => setSelectedNode(null)}
                 onClick={() => setSelectedNode(node.id)}
               >
-                <div className="w-16 h-16 border border-white/20 bg-black/60 backdrop-blur-sm flex items-center justify-center group">
+                <div className="w-16 h-16 border border-foreground/20 bg-background/60 backdrop-blur-sm flex items-center justify-center group">
                   <span className="text-foreground/60 group-hover:text-cyan-400 text-[8px] text-center px-1 transition-colors">
                     {node.name.split('_')[0]}
                   </span>
@@ -218,7 +218,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="absolute bottom-4 left-4 right-4 p-4 border border-white/10 bg-black/80 backdrop-blur-sm z-40"
+              className="absolute bottom-4 left-4 right-4 p-4 border border-foreground/10 bg-background/80 backdrop-blur-sm z-40"
             >
               <p className="text-foreground/70 text-[10px] leading-relaxed normal-case">
                 {coreNodes.find((n) => n.id === selectedNode)?.description}
@@ -230,13 +230,13 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
 
       {/* Footer */}
       {block.tools && (
-        <div className="border-t border-white/10 p-4 text-foreground/30 text-[10px]">
+        <div className="border-t border-foreground/10 p-4 text-foreground/30 text-[10px]">
           <div className="mb-2">STACK:</div>
           <div className="flex flex-wrap gap-2">
             {block.tools.map((tool) => (
               <span
                 key={tool}
-                className="px-2 py-1 border border-white/10 break-words text-[9px]"
+                className="px-2 py-1 border border-foreground/10 break-words text-[9px]"
               >
                 {tool}
               </span>
@@ -268,14 +268,14 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
     <div className="border border-white/10 bg-black font-mono text-xs uppercase tracking-widest relative overflow-hidden">
       {/* Pulsing background */}
       <motion.div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-10 bg-cyan-400/10 dark:bg-cyan-400/30"
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.05, 0.15, 0.05],
         }}
         transition={{ duration: 4, repeat: Infinity }}
         style={{
-          background: 'radial-gradient(circle, rgba(0,255,255,0.3) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, currentColor 0%, transparent 70%)',
         }}
       />
 
@@ -294,7 +294,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
       </div>
 
       {/* Items with decryption effect */}
-      <div className="relative z-10 divide-y divide-white/10">
+      <div className="relative z-10 divide-y divide-foreground/10">
         {block.items.map((item, i) => {
           const isHovered = hoveredIndex === i
           return (
@@ -342,7 +342,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="mt-3 pt-3 border-t border-white/10"
+                    className="mt-3 pt-3 border-t border-foreground/10"
                   >
                     <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
                       {item.description}

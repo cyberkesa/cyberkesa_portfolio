@@ -12,15 +12,19 @@ export function ServicesSection() {
   const [hoveredLevel, setHoveredLevel] = useState<number | null>(null)
 
   const getHoverColor = (level: number) => {
+    // Use CSS variables for theme compatibility
+    const isLight = typeof window !== 'undefined' && document.documentElement.classList.contains('light')
+    const baseOpacity = isLight ? 0.15 : 0.1
+    
     switch (level) {
       case 1:
-        return 'rgba(239, 68, 68, 0.1)' // Red (Warning/Alert)
+        return `rgba(239, 68, 68, ${baseOpacity})` // Red (Warning/Alert)
       case 2:
-        return 'rgba(6, 182, 212, 0.1)' // Cyan (Speed/Tech)
+        return `rgba(6, 182, 212, ${baseOpacity})` // Cyan (Speed/Tech)
       case 3:
-        return 'rgba(139, 92, 246, 0.1)' // Purple (Luxury)
+        return `rgba(139, 92, 246, ${baseOpacity})` // Purple (Luxury)
       default:
-        return 'rgba(255, 255, 255, 0.05)'
+        return isLight ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.05)'
     }
   }
 
@@ -65,10 +69,10 @@ export function ServicesSection() {
                 borderColor:
                   hoveredLevel === level.level
                     ? level.level === 1
-                      ? 'rgba(239, 68, 68, 0.3)'
+                      ? 'rgba(239, 68, 68, 0.4)'
                       : level.level === 2
-                        ? 'rgba(6, 182, 212, 0.3)'
-                        : 'rgba(139, 92, 246, 0.3)'
+                        ? 'rgba(6, 182, 212, 0.4)'
+                        : 'rgba(139, 92, 246, 0.4)'
                     : undefined,
               }}
             >
