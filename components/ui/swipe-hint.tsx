@@ -58,7 +58,8 @@ export function SwipeHint({ isMenuOpen }: { isMenuOpen: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10, filter: 'blur(10px)' }}
           transition={{ duration: 0.5 }}
-          className="absolute bottom-[120%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-40"
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 flex flex-col items-center gap-2 pointer-events-none z-50"
+          style={{ transform: 'translateX(-50%)' }}
         >
           {/* Hint text (Technical style) */}
           <motion.span
@@ -81,7 +82,7 @@ export function SwipeHint({ isMenuOpen }: { isMenuOpen: boolean }) {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="text-white/80"
+            className="text-white/80 flex items-center justify-center"
           >
             <ChevronUp size={20} strokeWidth={1.5} />
           </motion.div>
