@@ -600,8 +600,8 @@ export function CapabilitiesSection() {
 
   return (
     <section id="capabilities" className="py-24 relative">
-      {/* Mobile: Scan Line Indicator (visible line in center) - More subtle */}
-      <div className="fixed left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-cyan-400/20 z-[9999] pointer-events-none md:hidden" />
+      {/* Mobile: Scan Line Indicator (visible line in center) - Hidden, only logic works */}
+      {/* <div className="fixed left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-cyan-400/20 z-[9999] pointer-events-none md:hidden" /> */}
 
       <motion.div
         className="container mx-auto px-6 max-w-6xl"
