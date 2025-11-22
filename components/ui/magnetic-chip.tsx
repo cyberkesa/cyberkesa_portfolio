@@ -117,7 +117,8 @@ export function MagneticChip({
         cancelAnimationFrame(rafId)
       }
     }
-  }, [mouseX, mouseY]) // x and y are motion values, don't need to be in deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) // mouseX and mouseY are motion values, don't need to be in deps
 
   const handleMouseEnter = () => {
     setIsHovered(true)

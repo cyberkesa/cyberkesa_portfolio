@@ -12,25 +12,36 @@ import type { CapabilityBlock } from '@/config/capabilities'
 function MobileScanItem({
   item,
   index,
-  isInView,
   onScan,
 }: {
   item: { id: string; name: string; description: string }
   index: number
-  isInView: boolean
   onScan: () => void
 }) {
+  const ref = useRef(null)
   const { lightTap } = useHapticFeedback()
+  const hasScanned = useRef(false)
+  
+  // Triggers when element is in center of viewport (-40% margin from top and bottom for better mobile detection)
+  const isInView = useInView(ref, { 
+    margin: '-40% 0px -40% 0px', 
+    once: false,
+    amount: 0.3 // At least 30% of element must be visible
+  })
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasScanned.current) {
       lightTap()
       onScan()
+      hasScanned.current = true
+    } else if (!isInView) {
+      hasScanned.current = false
     }
   }, [isInView, lightTap, onScan])
 
   return (
     <motion.div
+      ref={ref}
       className={`relative py-8 border-b border-foreground/10 transition-colors duration-500 ${
         isInView ? 'bg-foreground/5' : 'bg-transparent'
       }`}
@@ -111,26 +122,14 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
 
       {/* Mobile: Scan Line List */}
       <div className="md:hidden">
-        {block.items.map((item, i) => {
-          const ref = useRef(null)
-          // Triggers when element is in center of viewport (-40% margin from top and bottom for better mobile detection)
-          const isInView = useInView(ref, { 
-            margin: '-40% 0px -40% 0px', 
-            once: false,
-            amount: 0.3 // At least 30% of element must be visible
-          })
-
-          return (
-            <div key={item.id} ref={ref}>
-              <MobileScanItem
-                item={item}
-                index={i}
-                isInView={isInView}
-                onScan={() => handleScan(i)}
-              />
-            </div>
-          )
-        })}
+        {block.items.map((item, i) => (
+          <MobileScanItem
+            key={item.id}
+            item={item}
+            index={i}
+            onScan={() => handleScan(i)}
+          />
+        ))}
       </div>
 
       {/* Desktop: Hover List */}
@@ -354,6 +353,102 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
   )
 }
 
+// Mobile Neural Scan Item Component
+function MobileNeuralScanItem({
+  item,
+  index,
+  decryptedItems,
+  setDecryptedItems,
+  encryptedText,
+}: {
+  item: { id: string; name: string; description: string }
+  index: number
+  decryptedItems: Set<number>
+  setDecryptedItems: React.Dispatch<React.SetStateAction<Set<number>>>
+  encryptedText: (text: string) => string
+}) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { 
+    margin: '-40% 0px -40% 0px', 
+    once: false,
+    amount: 0.3
+  })
+  const { lightTap } = useHapticFeedback()
+  const isDecrypted = decryptedItems.has(index) || isInView
+  const hasDecryptedRef = useRef(false)
+
+  useEffect(() => {
+    if (isInView && !hasDecryptedRef.current) {
+      lightTap()
+      setDecryptedItems((prev) => new Set([...prev, index]))
+      hasDecryptedRef.current = true
+    } else if (!isInView) {
+      hasDecryptedRef.current = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView, lightTap])
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`relative py-8 border-b border-foreground/10 transition-colors duration-500 ${
+        isInView ? 'bg-foreground/5' : 'bg-transparent'
+      }`}
+    >
+      <div className="relative z-20 flex justify-between items-center px-4">
+        <motion.span
+          className={`font-mono text-sm transition-colors duration-300 ${
+            isInView ? 'text-cyan-400' : 'text-foreground/40'
+          }`}
+          key={isDecrypted ? 'decrypted' : 'encrypted'}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          {isDecrypted ? item.name : encryptedText(item.name)}
+        </motion.span>
+
+        <motion.div
+          animate={{ opacity: isInView ? 1 : 0 }}
+          className="flex items-center gap-2"
+        >
+          {isDecrypted && (
+            <span className="text-cyan-400 text-[10px]">[DECRYPTED]</span>
+          )}
+          <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
+        </motion.div>
+      </div>
+
+      <AnimatePresence>
+        {isInView && isDecrypted && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative z-10 mt-4 px-4"
+          >
+            <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
+              {item.description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        className="absolute inset-0 z-0"
+        animate={{
+          opacity: isInView ? 0.1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        style={{
+          background: 'radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%)',
+        }}
+      />
+    </motion.div>
+  )
+}
+
 function NeuralActivity({ block }: { block: CapabilityBlock }) {
   const t = useTranslations('capabilities')
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -378,7 +473,7 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
         className="absolute inset-0 opacity-10 bg-cyan-400/10 dark:bg-cyan-400/30"
         animate={{
           scale: [1, 1.1, 1],
-          opacity: [0.05, 0.15, 0.05],
+          opacity: [0.03, 0.1, 0.03],
         }}
         transition={{ duration: 4, repeat: Infinity }}
         style={{
@@ -402,92 +497,16 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
 
       {/* Mobile: Scan Line List with Decryption */}
       <div className="md:hidden relative z-10">
-        {block.items.map((item, i) => {
-          const NeuralScanItem = () => {
-            const ref = useRef(null)
-            const isInView = useInView(ref, { 
-              margin: '-40% 0px -40% 0px', 
-              once: false,
-              amount: 0.3 // At least 30% of element must be visible
-            })
-            const { lightTap } = useHapticFeedback()
-            const isDecrypted = decryptedItems.has(i) || isInView
-            const hasDecryptedRef = useRef(false)
-
-            useEffect(() => {
-              if (isInView && !hasDecryptedRef.current) {
-                lightTap()
-                setDecryptedItems((prev) => new Set([...prev, i]))
-                hasDecryptedRef.current = true
-              } else if (!isInView) {
-                hasDecryptedRef.current = false
-              }
-            }, [isInView, i, lightTap])
-
-          return (
-            <motion.div
-              key={item.id}
-              ref={ref}
-              className={`relative py-8 border-b border-foreground/10 transition-colors duration-500 ${
-                isInView ? 'bg-foreground/5' : 'bg-transparent'
-              }`}
-            >
-              <div className="relative z-20 flex justify-between items-center px-4">
-                <motion.span
-                  className={`font-mono text-sm transition-colors duration-300 ${
-                    isInView ? 'text-cyan-400' : 'text-foreground/40'
-                  }`}
-                  key={isDecrypted ? 'decrypted' : 'encrypted'}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {isDecrypted ? item.name : encryptedText(item.name)}
-                </motion.span>
-
-                <motion.div
-                  animate={{ opacity: isInView ? 1 : 0 }}
-                  className="flex items-center gap-2"
-                >
-                  {isDecrypted && (
-                    <span className="text-cyan-400 text-[10px]">[DECRYPTED]</span>
-                  )}
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
-                </motion.div>
-              </div>
-
-              <AnimatePresence>
-                {isInView && isDecrypted && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative z-10 mt-4 px-4"
-                  >
-                    <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
-                      {item.description}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              <motion.div
-                className="absolute inset-0 z-0"
-                animate={{
-                  opacity: isInView ? 0.1 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  background: 'radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%)',
-                }}
-              />
-              </motion.div>
-            )
-          }
-
-          return <NeuralScanItem key={item.id} />
-        })}
+        {block.items.map((item, i) => (
+          <MobileNeuralScanItem
+            key={item.id}
+            item={item}
+            index={i}
+            decryptedItems={decryptedItems}
+            setDecryptedItems={setDecryptedItems}
+            encryptedText={encryptedText}
+          />
+        ))}
       </div>
 
       {/* Desktop: Hover List */}
@@ -641,4 +660,3 @@ export function CapabilitiesSection() {
     </section>
   )
 }
-

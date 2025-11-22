@@ -146,9 +146,12 @@ export function TransmissionTerminal({ onSubmit }: TransmissionTerminalProps) {
   // Cleanup
   useEffect(() => {
     return () => {
-      if (holdTimeoutRef.current) clearTimeout(holdTimeoutRef.current)
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current)
-      if (logIntervalRef.current) clearInterval(logIntervalRef.current)
+      const holdTimeout = holdTimeoutRef.current
+      const progressInterval = progressIntervalRef.current
+      const logInterval = logIntervalRef.current
+      if (holdTimeout) clearTimeout(holdTimeout)
+      if (progressInterval) clearInterval(progressInterval)
+      if (logInterval) clearInterval(logInterval)
     }
   }, [])
 

@@ -79,6 +79,7 @@ export function IdCard({ imageSrc, className }: IdCardProps) {
         <div className="absolute inset-0 z-0">
           {/* Try Next.js Image first, fallback to img for HEIC */}
           {!hasImageError && imageSrc.toLowerCase().includes('.heic') ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={imageSrc}
               alt="ID Card"
