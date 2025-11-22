@@ -1,15 +1,97 @@
 'use client'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { useHapticFeedback } from '@/hooks/use-haptic-feedback'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { CAPABILITIES } from '@/config/capabilities'
 import type { CapabilityBlock } from '@/config/capabilities'
 
+// Mobile Scan Line Item Component
+function MobileScanItem({
+  item,
+  index,
+  isInView,
+  onScan,
+}: {
+  item: { id: string; name: string; description: string }
+  index: number
+  isInView: boolean
+  onScan: () => void
+}) {
+  const { lightTap } = useHapticFeedback()
+
+  useEffect(() => {
+    if (isInView) {
+      lightTap()
+      onScan()
+    }
+  }, [isInView, lightTap, onScan])
+
+  return (
+    <motion.div
+      className={`relative py-8 border-b border-foreground/10 transition-colors duration-500 ${
+        isInView ? 'bg-foreground/5' : 'bg-transparent'
+      }`}
+    >
+      {/* Text */}
+      <div className="relative z-20 flex justify-between items-center px-4">
+        <span
+          className={`font-mono text-sm transition-colors duration-300 ${
+            isInView ? 'text-cyan-400' : 'text-foreground/40'
+          }`}
+        >
+          {`0${index + 1} // ${item.name}`}
+        </span>
+
+        {/* Status Indicator */}
+        <motion.div
+          animate={{ opacity: isInView ? 1 : 0 }}
+          className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"
+        />
+      </div>
+
+      {/* Description Preview (appears when in view) */}
+      <AnimatePresence>
+        {isInView && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative z-10 mt-4 px-4"
+          >
+            <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
+              {item.description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Background glow effect */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        animate={{
+          opacity: isInView ? 0.1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        style={{
+          background: 'radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%)',
+        }}
+      />
+    </motion.div>
+  )
+}
+
 function AssetBrowser({ block }: { block: CapabilityBlock }) {
   const t = useTranslations('capabilities')
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [scannedItems, setScannedItems] = useState<Set<number>>(new Set())
+
+  const handleScan = (index: number) => {
+    setScannedItems((prev) => new Set([...prev, index]))
+  }
 
   return (
     <div className="border border-foreground/10 bg-accent/50 font-mono text-xs uppercase tracking-widest">
@@ -27,8 +109,28 @@ function AssetBrowser({ block }: { block: CapabilityBlock }) {
         </motion.span>
       </div>
 
-      {/* List */}
-      <div className="divide-y divide-foreground/10">
+      {/* Mobile: Scan Line List */}
+      <div className="md:hidden">
+        {block.items.map((item, i) => {
+          const ref = useRef(null)
+          // Triggers when element is in center of viewport (-45% margin from top and bottom)
+          const isInView = useInView(ref, { margin: '-45% 0px -45% 0px', once: false })
+
+          return (
+            <div key={item.id} ref={ref}>
+              <MobileScanItem
+                item={item}
+                index={i}
+                isInView={isInView}
+                onScan={() => handleScan(i)}
+              />
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Desktop: Hover List */}
+      <div className="hidden md:block divide-y divide-foreground/10">
         {block.items.map((item, i) => (
           <motion.div
             key={item.id}
@@ -251,6 +353,7 @@ function SchematicBlueprint({ block }: { block: CapabilityBlock }) {
 function NeuralActivity({ block }: { block: CapabilityBlock }) {
   const t = useTranslations('capabilities')
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [decryptedItems, setDecryptedItems] = useState<Set<number>>(new Set())
 
   const encryptedText = (text: string) => {
     return text
@@ -293,8 +396,88 @@ function NeuralActivity({ block }: { block: CapabilityBlock }) {
         </motion.span>
       </div>
 
-      {/* Items with decryption effect */}
-      <div className="relative z-10 divide-y divide-foreground/10">
+      {/* Mobile: Scan Line List with Decryption */}
+      <div className="md:hidden relative z-10">
+        {block.items.map((item, i) => {
+          const ref = useRef(null)
+          const isInView = useInView(ref, { margin: '-45% 0px -45% 0px', once: false })
+          const { lightTap } = useHapticFeedback()
+          const isDecrypted = decryptedItems.has(i) || isInView
+
+          // Trigger haptic and mark as decrypted when in view
+          if (isInView && !decryptedItems.has(i)) {
+            // Use setTimeout to avoid calling setState during render
+            setTimeout(() => {
+              lightTap()
+              setDecryptedItems((prev) => new Set([...prev, i]))
+            }, 0)
+          }
+
+          return (
+            <motion.div
+              key={item.id}
+              ref={ref}
+              className={`relative py-8 border-b border-foreground/10 transition-colors duration-500 ${
+                isInView ? 'bg-foreground/5' : 'bg-transparent'
+              }`}
+            >
+              <div className="relative z-20 flex justify-between items-center px-4">
+                <motion.span
+                  className={`font-mono text-sm transition-colors duration-300 ${
+                    isInView ? 'text-cyan-400' : 'text-foreground/40'
+                  }`}
+                  key={isDecrypted ? 'decrypted' : 'encrypted'}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {isDecrypted ? item.name : encryptedText(item.name)}
+                </motion.span>
+
+                <motion.div
+                  animate={{ opacity: isInView ? 1 : 0 }}
+                  className="flex items-center gap-2"
+                >
+                  {isDecrypted && (
+                    <span className="text-cyan-400 text-[10px]">[DECRYPTED]</span>
+                  )}
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
+                </motion.div>
+              </div>
+
+              <AnimatePresence>
+                {isInView && isDecrypted && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative z-10 mt-4 px-4"
+                  >
+                    <p className="text-foreground/60 text-[10px] leading-relaxed normal-case">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <motion.div
+                className="absolute inset-0 z-0"
+                animate={{
+                  opacity: isInView ? 0.1 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  background: 'radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%)',
+                }}
+              />
+            </motion.div>
+          )
+        })}
+      </div>
+
+      {/* Desktop: Hover List */}
+      <div className="hidden md:block relative z-10 divide-y divide-foreground/10">
         {block.items.map((item, i) => {
           const isHovered = hoveredIndex === i
           return (
